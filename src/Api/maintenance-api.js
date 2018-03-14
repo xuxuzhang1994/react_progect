@@ -1,6 +1,7 @@
 
 import http from './http'
 
+
 export default {
     /*
     主页
@@ -12,6 +13,10 @@ export default {
     //品牌列表
     carBrandList(params){
         return http.get("wx661c1bed18ad67c4/Public/Api/Debug/Login/SetCookie?uid=06640ED47F0000011E8EBAA4798E5F15&_identifier=datago",params);
+    },
+    // 图表数据
+    getCharts(params){
+        return http.get('wx661c1bed18ad67c4/Public/Api/Debug/Login/SetCookie?uid=06640ED47F0000011E8EBAA4798E5F15&_identifier=datago',params);
     },
     //根据车辆获取车型
     choosType(params){
