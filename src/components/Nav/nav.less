@@ -1,0 +1,46 @@
+.tab{
+    width: 100%;
+    background: rgba(42, 42, 42,0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    .container{
+        width: 7.31rem;
+        height: .4rem;
+        margin: 0 auto;
+        color: #98A7CE;
+        align-items: flex-start;
+        .tab-item{
+            background: url("../../images/nav/left.png");
+            background-size: 100% 100%;
+            font-size: 14px;
+            height: .25rem;
+            line-height: .25rem;
+            text-align: center;
+            flex-grow: 1;
+            cursor:pointer;
+        }
+        .tab-right{
+            background: url("../../images/nav/right.png");
+            background-size: 100% 100%;
+        }
+        .tab-item-current{
+            background: url("../../images/nav/leftClick.png");
+            background-size: 100% 100%;
+        }
+        .tab-item--right-current{
+            background: url("../../images/nav/rightClick.png");
+            background-size: 100% 100%;
+        }
+        .tab-title{
+            height: 100%;
+            color: #fff;
+            background: url("../../images/nav/middle.png");
+            background-size: 100% 100%;
+            line-height: .4rem;
+            width: 250px;
+            text-align: center;
+        }
+    }
+}
