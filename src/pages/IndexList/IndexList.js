@@ -53,11 +53,19 @@ class IndexList extends Component {
                        <span>反选</span>
                    </div>
                </div>
-               <div className="">
+               <div className="switch-com">
                    <div className="tab-com">
                        <span>微卡口</span>
                        <i></i>
                    </div>
+                   <ul className="switch-item">
+                       <li>
+                           <div className="check-item">
+                               <img src={require("../../images/check.png")}  alt=""/>
+                               <span>反选</span>
+                           </div>
+                       </li>
+                   </ul>
                </div>
 
 
