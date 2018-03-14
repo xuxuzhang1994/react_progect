@@ -20,7 +20,8 @@ class EarlyWarningCenter extends Component {
                 text: '包含负值的柱形图'
             },
             xAxis: {
-                categories: ['苹果', '橘子', '梨', '葡萄', '香蕉']
+                categories: ['苹果', '橘子', '梨', '葡萄', '香蕉'],
+                className:'zhangjiayu'
             },
             yAxis: {
                 title: {
@@ -69,8 +70,26 @@ class EarlyWarningCenter extends Component {
         return (
             <div className='early-warning-center'>
                 <Nav/>
-                <div className='chart-box'>
-                    <div id="colume"></div>
+                <div className='chart-box flex'>
+
+                    <div className='zhizhu-box shandow'>
+                        <div className='jiao'>
+                            <div className='top'></div>
+                            <div className='right'></div>
+                            <div className='bottom'></div>
+                            <div className='left'></div>
+                        </div>
+                        <div id='zhizhu'></div>
+                    </div>
+                    <div className='colume-box shandow'>
+                        <div className='jiao'>
+                            <div className='top'></div>
+                            <div className='right'></div>
+                            <div className='bottom'></div>
+                            <div className='left'></div>
+                        </div>
+                        <div id='colume'></div>
+                    </div>
                 </div>
 
                 {/*<div className='bar'>*/}
