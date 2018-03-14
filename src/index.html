@@ -13,8 +13,10 @@
             docEl.firstElementChild.appendChild(metaEl);
             var recalc = function () {
                 var deviceWidth = docEl.clientWidth;
-                if (deviceWidth > 960) deviceWidth = 960;
+                //deviceWidth = 960;
                 docEl.style.fontSize = deviceWidth / 9.6 + 'px';
+
+
             };
             recalc();
 
