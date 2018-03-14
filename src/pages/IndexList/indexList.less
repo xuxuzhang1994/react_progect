@@ -1,6 +1,7 @@
 .flex{
   display: flex;
 }
+//列表
 .left-list{
   width:1.97rem;
   height:4.95rem;
@@ -76,20 +77,98 @@
     width: .08rem;
     height: .08rem;
     margin-right:.03rem;
+    vertical-align: middle;
   }
   margin-right:.14rem;
 }
-.switch-com{
 
-}
 .tab-com{
   width: 1.79rem;
   height:0.17rem;
   line-height: .17rem;
-  background: #539CFF;
+  background: rgba(83,156,255,.5);
   color: #FEFEFE;
   padding: 0 .07rem;
 }
 .switch-item{
+  width: 1.79rem;
   padding: .1rem .07rem;
+  >li{
+    width:50%;
+    float: left;
+    margin-bottom:.13rem;
+  }
+}
+.chart-title{
+  >p{
+    display: inline-block;
+    margin-right:.12rem;
+  }
+}
+.circles{
+  display: inline-block;
+  width: .07rem;
+  height: .07rem;
+  border-radius: 50%;
+  margin-right:.05rem;
+}
+.bg-blue{
+  background: #539CFF;
+}
+.bg-yellow{
+  background: #F8B551;
+}
+.bg-red{
+  background: #E71F19;
+}
+
+//雷达
+.radar{
+  width:2.24rem;
+  position: fixed;
+  bottom:.1rem;
+  right: .1rem;
+  font-size: 9px;
+  .waring{
+    width:2.24rem;
+    height:.44rem;
+    border: 1px solid #FF0000;
+    background:rgba(255,0,0,.2);
+    padding:.1rem .13rem;
+    display: flex;
+    margin-bottom:.06rem;
+    >img {
+      width:.2rem;
+      margin-right:.13rem;
+    }
+  }
+  .scan{
+    width: 2.23rem;
+    height: 1.87rem;
+    border: 1px solid #0B5ECF;
+    >img  {
+      width: .9rem;
+      height: .9rem;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+    .warn-count{
+      width: 1.03rem;
+      height: .28rem;
+      border: 1px solid #E71F19;
+      color: #FF1818;
+      background: rgba(0,0,0,0.5);
+      padding: 0.08rem .1rem ;
+    }
+  }
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
 }
