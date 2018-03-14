@@ -55,6 +55,7 @@ import Counter from 'bundle-loader?lazy&name=counter!pages/Counter/Counter';
 import UserInfo from 'bundle-loader?lazy&name=userInfo!pages/UserInfo/UserInfo';
 import NotFound from 'bundle-loader?lazy&name=notFound!pages/NotFound/NotFound';
 import Waring from "bundle-loader?lazy&name=waring!pages/Waring/Waring";
+import IndexList from "bundle-loader?lazy&name=indexList!pages/IndexList/IndexList";
 
 const createComponent = (component) => (props) => (
     <Bundle load={component}>
@@ -85,6 +86,7 @@ const Parent = () => (
             <Route path="/counter" component={createComponent(Counter)}/>
             <Route path="/userinfo" component={createComponent(UserInfo)}/>
             <Route path="/waring" component={createComponent(Waring)}/>
+            <Route path="/indexList" component={createComponent(IndexList)}/>
             <Route component={createComponent(NotFound)}/>
         </Switch>
     </div>
