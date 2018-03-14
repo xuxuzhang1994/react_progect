@@ -32,10 +32,13 @@ commonConfig = {
         }, {
             test: /\.(png|jpg|gif)$/,
             use: [{
-                loader: 'url-loader',
-                options: {
-                    limit: 8192
-                }
+                loader: 'file-loader',
+                // options: {
+                //     limit: 8192
+                // },
+                query: {
+                    name: 'images/[name]-[hash:5].[ext]'
+                },
             }]
         }]
     },

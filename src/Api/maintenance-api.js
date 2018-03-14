@@ -6,8 +6,8 @@ export default {
     主页
     * */
     //热门列表
-    hotBrand(params){
-        return http.get("front/brand/hot_list",params);
+    dataTest(params){
+        return http.get("api/data.txt",params);
     },
     //品牌列表
     carBrandList(params){
