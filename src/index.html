@@ -13,7 +13,7 @@
             docEl.firstElementChild.appendChild(metaEl);
             var recalc = function () {
                 var deviceWidth = docEl.clientWidth;
-                if (deviceWidth > 960) deviceWidth = 960;
+                //if (deviceWidth > 960) deviceWidth = 960;
                 docEl.style.fontSize = deviceWidth / 9.6 + 'px';
             };
             recalc();
@@ -27,6 +27,7 @@
     <div id="app"></div>
     <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.4&key=a468a785bd7fa419084f85a2d5f5733c"></script>
     <script src="//webapi.amap.com/ui/1.0/main.js"></script>
+    <script src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
     <script type="text/javascript">
         //JSAPI回调入口
         function my_init() {
