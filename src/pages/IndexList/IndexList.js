@@ -185,10 +185,88 @@ class IndexList extends Component {
                        <div className='bottom'></div>
                        <div className='left'></div>
                    </div>
+                   <div className="slide-up">收起</div>
                    <p className="one-six">实有人口</p>
-                   <div className="search-input-two">
+                   <div className="search-input-right">
                        <input type="text" placeholder="搜索人员姓名"/>
+                       <i className="iconfont icon-sousuo"></i>
+                       <ul className="search-right-list">
+                           <li>xx小区</li>
+                           <li className="checked-list">xx小区</li>
+                           <li>xx小区</li>
+                       </ul>
                    </div>
+                   <div className="sel-item">
+                       <div className="sels">
+                           {/*<select>*/}
+                               {/*<option value="">重点人口</option>*/}
+                           {/*</select>*/}
+                       </div>
+                   </div>
+                   <ul className="person-list">
+                       <li className="checked-people">
+                           <div className="person-pic">
+                               <img src={require("../../images/person-pic.jpg")} alt=""/>
+                           </div>
+                           <div className="person-info">
+                               <div className="base-info">
+                                   <b>姓名：张家瑜</b>
+                                   <p className="sex color-blue">男</p>
+                                   <span className="color-blue">32岁</span>
+                               </div>
+                               <p ><span>身份证号：</span><span className="color-blue">342222222222****</span></p>
+                               <p><span>家庭住址：</span><span className="color-blue">青浦区xx小区2栋3单元508室</span></p>
+                               <div className="label-item"><span>标签：</span><span className="person-label">精神病人</span></div>
+                           </div>
+                       </li>
+                       <li >
+                           <div className="person-pic">
+                               <img src={require("../../images/person-pic.jpg")} alt=""/>
+                           </div>
+                           <div className="person-info">
+                               <div className="base-info">
+                                   <b>姓名：张家瑜</b>
+                                   <p className="sex color-blue">男</p>
+                                   <span className="color-blue">32岁</span>
+                               </div>
+                               <p ><span>身份证号：</span><span className="color-blue">342222222222****</span></p>
+                               <p><span>家庭住址：</span><span className="color-blue">青浦区xx小区2栋3单元508室</span></p>
+                               <div className="label-item"><span>标签：</span><span className="person-label">精神病人</span></div>
+                           </div>
+                       </li>
+                       <li >
+                           <div className="person-pic">
+                               <img src={require("../../images/person-pic.jpg")} alt=""/>
+                           </div>
+                           <div className="person-info">
+                               <div className="base-info">
+                                   <b>姓名：张家瑜</b>
+                                   <p className="sex color-blue">男</p>
+                                   <span className="color-blue">32岁</span>
+                               </div>
+                               <p ><span>身份证号：</span><span className="color-blue">342222222222****</span></p>
+                               <p><span>家庭住址：</span><span className="color-blue">青浦区xx小区2栋3单元508室</span></p>
+                               <div className="label-item"><span>标签：</span><span className="person-label">精神病人</span></div>
+                           </div>
+                       </li>
+                       <li >
+                           <div className="person-pic">
+                               <img src={require("../../images/person-pic.jpg")} alt=""/>
+                           </div>
+                           <div className="person-info">
+                               <div className="base-info">
+                                   <b>姓名：张家瑜</b>
+                                   <p className="sex color-blue">男</p>
+                                   <span className="color-blue">32岁</span>
+                               </div>
+                               <p ><span>身份证号：</span><span className="color-blue">342222222222****</span></p>
+                               <p><span>家庭住址：</span><span className="color-blue">青浦区xx小区2栋3单元508室</span></p>
+                               <div className="label-item"><span>标签：</span><span className="person-label">精神病人</span></div>
+                           </div>
+                       </li>
+
+                   </ul>
+                   <div className="bulr"></div>
                </div>
            </div>
         )
