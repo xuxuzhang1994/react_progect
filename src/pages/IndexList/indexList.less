@@ -1,11 +1,11 @@
 @import '../../base/css/flex.less';
+@import '../../base/project-common.less';
 
 //列表
 .left-list{
+  position: relative;
   width:1.97rem;
   height:4.95rem;
-  background: url("../../images/border-list.png") no-repeat;
-  background-size: 100% 100%;
   padding: .07rem .09rem .1rem .12rem;
   font-size: 9px;
   color: #fff;
@@ -89,6 +89,9 @@
       padding-right: .07rem;
     }
   }
+  >li.six-checked{
+    border: 1px solid #FFC000;
+  }
 }
 .checkAll{
   margin:.11rem 0 .06rem;
@@ -161,6 +164,7 @@
     border: 1px solid #FF0000;
     background:rgba(255,0,0,.2);
     padding:.1rem .13rem;
+    color: #fff;
     .flex-container-setting();
     margin-bottom:.06rem;
     >img {
@@ -211,6 +215,17 @@
       z-index: 10;
     }
   }
+}
+//实有人口
+.person-count{
+  width:2.32rem;
+  height: 3.5rem;
+  padding: .12rem .07rem .09rem .07rem;
+  position: fixed;
+  right: 0;
+  top: 0;
+  color: #fff;
+  font-size: 9px;
 }
 
 .clearfix:before,

@@ -10,8 +10,14 @@ class IndexList extends Component {
     render() {
         return (
 
-           <div>
-               <div className="left-list">
+           <div style={{background:'#000'}}>
+               <div className="left-list shandow">
+                   <div className='jiao'>
+                       <div className='top'></div>
+                       <div className='right'></div>
+                       <div className='bottom'></div>
+                       <div className='left'></div>
+                   </div>
                 <div className="search-top ">
                   <p className="search-btn">全区</p>
                   <div className="search-input">
@@ -157,7 +163,7 @@ class IndexList extends Component {
                    <p><i className="circles bg-red"></i><span>故障</span></p>
                </div>
            </div>
-               <div className="radar">
+               <div className="radar" style={{display:'none'}}>
                    <div className="waring">
                        <img src={require("../../images/waring.png")} alt=""/>
                        <p>01青浦区二联馨苑2栋6楼601室
@@ -170,6 +176,18 @@ class IndexList extends Component {
                        </div>
                        <div className="scan-circle"><img src={require("../../images/scan.png")} alt=""/></div>
 
+                   </div>
+               </div>
+               <div className="person-count shandow">
+                   <div className='jiao'>
+                       <div className='top'></div>
+                       <div className='right'></div>
+                       <div className='bottom'></div>
+                       <div className='left'></div>
+                   </div>
+                   <p className="one-six">实有人口</p>
+                   <div className="search-input-two">
+                       <input type="text" placeholder="搜索人员姓名"/>
                    </div>
                </div>
            </div>
