@@ -65,7 +65,7 @@ class IndexList extends Component {
                <div className="switch-com clearfix">
                    <div className="tab-com clearfix">
                        <span>微卡口</span>
-                       <i></i>
+                       <i className="iconfont icon-gengduo"></i>
                    </div>
                    <ul className="switch-item">
                        <li>
