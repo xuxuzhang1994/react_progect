@@ -4,6 +4,7 @@ import {hot} from 'react-hot-loader';
 import api from "../../api/maintenance-api";
 import './home.less';
 import Nav from 'components/Nav/Nav';
+//import Page1 from '../Page1/Page1';
 
 class EarlyWarningCenter extends Component {
     componentDidMount(){
@@ -293,7 +294,7 @@ class EarlyWarningCenter extends Component {
         return (
             <div className='early-warning-center'>
                 <Nav/>
-
+                {/*<Page1/>*/}
                 <div className='chart-box flex'>
                     <div className='zhizhu-box shandow'>
                         <div className='jiao'>
