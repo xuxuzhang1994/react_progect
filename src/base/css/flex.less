@@ -1,0 +1,21 @@
+@import "./vendor-prefixes.less";
+
+.flex-container-setting(
+  @flex-direction:row,
+  @flex-wrap:nowrap,
+  @justify-content:space-between,
+  @align-items:center,
+  @align-content:stretch
+) {
+  .display-flex();
+  .flex-direction(@flex-direction);
+  .flex-wrap(flex-wrap);
+  .justify-content(@justify-content);
+  .align-items(@align-items);
+  .align-content(@align-content);
+}
+
+
+.flex-1{
+  .flex-number-loop(1);
+}

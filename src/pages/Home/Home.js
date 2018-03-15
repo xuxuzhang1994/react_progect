@@ -3,6 +3,7 @@ import {hot} from 'react-hot-loader';
 
 import api from "../../api/maintenance-api";
 import './home.less';
+import Nav from 'components/Nav/Nav';
 
 class Home extends Component {
     componentDidMount(){
@@ -81,6 +82,14 @@ class Home extends Component {
             resizeEnable: true,
             //center: [121.113021, 31.151209],//地图中心点
         });
+        AMap.plugin(['AMap.ToolBar','AMap.Scale','AMap.OverView'],
+            function(){
+                map.addControl(new AMap.ToolBar());
+
+                map.addControl(new AMap.Scale());
+
+                map.addControl(new AMap.OverView({isOpen:true}));
+            });
 
         // AMap.plugin('AMap.DistrictSearch',function(){//回调函数
         //     var opts = {
@@ -123,7 +132,15 @@ class Home extends Component {
         //
         // })
         function initPage(DistrictCluster,PointSimplifier) {
-
+            var colors = [
+                '#0cc2f2',
+                '#4fd2b1',
+                '#90e36f',
+                '#ffe700',
+                '#ff9e00',
+                '#ff6700',
+                '#ff1800'
+            ];
             var pointSimplifierIns = new PointSimplifier({
                 map: map, //所属的地图实例
                 zIndex: 110,
@@ -136,12 +153,73 @@ class Home extends Component {
                     console.log(dataItem.dataItem)
                     return idx + ': ' + dataItem.dataItem.title;
                 },
+                //使用GroupStyleRender
+                renderConstructor: PointSimplifier.Render.Canvas.GroupStyleRender,
                 renderOptions: {
                     //点的样式
+                    // pointStyle: {
+                    //     width: 6,
+                    //     height: 6,
+                    //     fillStyle: 'rgba(153, 0, 153, 0.38)'
+                    // },
+                    //点的样式
                     pointStyle: {
-                        width: 6,
-                        height: 6,
-                        fillStyle: 'rgba(153, 0, 153, 0.38)'
+                        fillStyle: 'red',
+                        width: 5,
+                        height: 5
+                    },
+                    // pointStyle: {
+                    //     //绘制点占据的矩形区域
+                    //     content: PointSimplifier.Render.Canvas.getImageContent(
+                    //         'http://webapi.amap.com/theme/v1.3/markers/n/mark_b1.png',
+                    //         function onload() {
+                    //             pointSimplifierIns.renderLater();
+                    //         },
+                    //         function onerror(e) {
+                    //             alert('图片加载失败！');
+                    //         }),
+                    //     //宽度
+                    //     width: 150,
+                    //     //高度
+                    //     height: 150,
+                    //     //定位点为底部中心
+                    //     offset: ['-50%', '-100%'],
+                    //     fillStyle: null,
+                    //     strokeStyle: null
+                    // },
+
+                    getGroupId: function(item, idx) {
+
+                        var parts = item.dataItem.position.split(',');
+
+                        //按纬度区间分组
+                        console.log(Math.abs(Math.round(parseFloat(parts[1]) / 5)))
+                        if(idx>0 && idx<50){
+                            return 1
+                        }
+                        if(idx>50 && idx<100){
+                            return 2
+                        }
+                        if(idx>100 && idx<150){
+                            return 3
+                        }
+                        return Math.abs(Math.round(parseFloat(parts[1]) / 5));
+                    },
+                    groupStyleOptions: function(gid) {
+
+                        var size = 6;
+                        return {
+                            pointStyle: {
+                                //content: gid % 2 ? 'circle' : 'rect',
+                                fillStyle: colors[gid % colors.length],
+                                width: size,
+                                height: size
+                            },
+                            pointHardcoreStyle: {
+                                width: size - 2,
+                                height: size - 2
+                            }
+                        };
                     },
                     //鼠标hover时的title信息
                     hoverTitleStyle: {
@@ -206,6 +284,9 @@ class Home extends Component {
                         }
 
                         return {};
+                    },
+                    getClusterMarker: function(feature, dataItems, recycledMarker) {
+                        return null;
                     }
                 },
 
@@ -356,6 +437,7 @@ class Home extends Component {
         this.setState({
             count: ++this.state.count
         });
+        this.props.history.push('/page1')
     }
 
     _https() {
@@ -378,16 +460,19 @@ class Home extends Component {
         return (
 
             <div className='x'>
+                <Nav/>
                 <div id="container"></div>
-                this is home~<br/>
-                当前计数：{this.state.count}<br/>
-                <button onClick={() => this._handleClick()}>自增</button>
-                <button onClick={() => this._showData()}>显示数据</button>
+                <div className='bar'>
+                    this is home~<br/>
+                    当前计数：{this.state.count}<br/>
+                    <button onClick={() => this._handleClick()}>自增</button>
+                    <button onClick={() => this._showData()}>显示数据</button>
 
 
-                <h1>{this.state.brandList}</h1>
-                <img src={this.state.brandList} alt="" className='img' />
-                <button onClick={() => this._test()}>登陆111</button>
+                    <h1>{this.state.brandList}</h1>
+                    <img src={this.state.brandList} alt="" className='img' />
+                    <button onClick={() => this._test()}>登陆111</button>
+                </div>
             </div>
         )
     }

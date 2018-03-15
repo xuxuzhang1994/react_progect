@@ -1,4 +1,5 @@
 @import './_variables.less';
+@import './flex.less';
 
 html {
   font-size: @font-size-root;
@@ -197,6 +198,10 @@ a.link:active, a.link:hover, a.link:visited {
   }
 }
 */
-.x{
-  background: lawngreen;
+
+/*flex布局公共*/
+.flex{
+  .flex-container-setting();
 }
+
+.flex-number-loop(6); //  生成 .flex-1 ~ .flex-6
