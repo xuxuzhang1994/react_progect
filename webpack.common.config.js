@@ -40,7 +40,13 @@ commonConfig = {
                     name: 'images/[name]-[hash:5].[ext]'
                 },
             }]
-        }]
+        },{
+            test: /\.(otf|eot|svg|ttf|woff|woff2)(\?.*$|$)/,
+            loader: 'file-loader',
+            query: {
+                name: 'font/[name]-[hash:5].[ext]'
+            },
+        },]
     },
     plugins: [
         new HtmlWebpackPlugin({

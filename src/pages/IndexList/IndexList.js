@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import './indexList.less';
 
 
+
+
 import {connect} from 'react-redux';
 
 class IndexList extends Component {
@@ -10,11 +12,16 @@ class IndexList extends Component {
 
            <div>
                <div className="left-list">
-                <div className="search-top">
+                <div className="search-top ">
                   <p className="search-btn">全区</p>
                   <div className="search-input">
                       <input type="text" placeholder="搜索小区"/>
                       <i className="iconfont icon-sousuo"></i>
+                      <ul className="search-list">
+                          <li>xx小区</li>
+                          <li className="checked-list">xx小区</li>
+                          <li>xx小区</li>
+                      </ul>
                   </div>
               </div>
                <p className="one-six">一标六实</p>
@@ -90,7 +97,7 @@ class IndexList extends Component {
                <div className="switch-com clearfix">
                    <div className="tab-com clearfix">
                        <span>公共设施</span>
-                       <i></i>
+                       <i className="iconfont icon-gengduo"></i>
                    </div>
                    <ul className="switch-item">
                        <li>

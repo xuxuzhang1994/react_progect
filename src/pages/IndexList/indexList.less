@@ -1,6 +1,5 @@
-.flex{
-  display: flex;
-}
+@import '../../base/css/flex.less';
+
 //列表
 .left-list{
   width:1.97rem;
@@ -12,7 +11,7 @@
   color: #fff;
 }
 .search-top{
-  display: flex;
+  .flex-container-setting()
 }
 .search-btn{
   width:.4rem;
@@ -30,14 +29,37 @@
   border: 1px solid #539CFF;
   background:rgba(25,74,141,.4);
   padding: 0 .05rem  0 0.07rem;
+  position: relative;
   >input{
-    width:1.2rem;
+    width:1.1rem;
     background: transparent;
     border: none;
     color: #FEFEFE;
   }
   input::-webkit-input-placeholder { /* WebKit browsers */
     color: #FEFEFE;
+  }
+  >i{
+    position: absolute;
+    right: .02rem;
+  }
+  .search-list{
+    width: 1.37rem;
+    border: 1px solid #539CFF;
+    border-top: none;
+    background:rgba(25,74,141,.4);
+    position: absolute;
+    top:.16rem;
+    left: -1px;
+    display: none;
+    >li{
+      width:1.37rem;
+      padding: .03rem .05rem .03rem .07rem;
+    }
+    >li.checked-list{
+      background: rgba(7,44,69,.7);
+    }
+
   }
 }
 .one-six{
@@ -51,7 +73,7 @@
     height:.15rem;
     line-height: .15rem;
     margin-bottom:.05rem;
-    display: flex;
+    .flex-container-setting();
     .item-info{
       width:1.03rem;
       background: rgba(10,48,97,.6);
@@ -134,7 +156,7 @@
     border: 1px solid #FF0000;
     background:rgba(255,0,0,.2);
     padding:.1rem .13rem;
-    display: flex;
+    .flex-container-setting();
     margin-bottom:.06rem;
     >img {
       width:.2rem;
