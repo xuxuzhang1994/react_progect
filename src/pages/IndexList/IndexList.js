@@ -14,7 +14,7 @@ class IndexList extends Component {
                   <p className="search-btn">全区</p>
                   <div className="search-input">
                       <input type="text" placeholder="搜索小区"/>
-                      <i className=""></i>
+                      <i className="iconfont icon-sousuo"></i>
                   </div>
               </div>
                <p className="one-six">一标六实</p>
@@ -158,10 +158,11 @@ class IndexList extends Component {
                        </p>
                    </div>
                    <div className="scan">
-                       <img src={require("../../images/scan.png")} alt=""/>
                        <div className="warn-count">
                            当前预警总数：<span>1件</span>
                        </div>
+                       <div className="scan-circle"><img src={require("../../images/scan.png")} alt=""/></div>
+
                    </div>
                </div>
            </div>
