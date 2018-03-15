@@ -15,14 +15,14 @@ const publicConfig = {
                 test: /\.css$/,
                 use: ExtractTextPlugin.extract({
                     fallback: "style-loader",
-                    use: ["css-loader","postcss-loader"]
+                    use: ["css-loader"]
                 })
             },
             {
                 test: /\.less$/,
                 use: ExtractTextPlugin.extract({
                     fallback: "style-loader",
-                    use: ['css-loader',"postcss-loader", 'less-loader']
+                    use: ['css-loader', 'less-loader']
                 })
             }
         ]

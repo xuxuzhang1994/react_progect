@@ -125,7 +125,7 @@ const devConfig = {
         rules: [
             {
                 test: /\.css$/,
-                use: ["style-loader", "css-loader","postcss-loader"]
+                use: ["style-loader", "css-loader"]
             },
             {
                 test: /\.less$/,
@@ -134,8 +134,6 @@ const devConfig = {
                         loader: "style-loader" // creates style nodes from JS strings
                     }, {
                         loader: "css-loader" // translates CSS into CommonJS
-                    }, {
-                        loader: "postcss-loader" // compiles Less to CSS
                     }, {
                         loader: "less-loader" // compiles Less to CSS
                     }

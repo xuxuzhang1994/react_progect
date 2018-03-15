@@ -30,7 +30,7 @@ commonConfig = {
             use: ['babel-loader?cacheDirectory=true'],
             include: path.join(__dirname, 'src')
         }, {
-            test: /\.(png|jpg|gif)$/,
+            test: /\.(png|jpg|gif|svg)$/,
             use: [{
                 loader: 'file-loader',
                 // options: {
@@ -40,6 +40,12 @@ commonConfig = {
                     name: 'images/[name]-[hash:5].[ext]'
                 },
             }]
+        },{
+            test: /\.(otf|eot|svg|ttf|woff|woff2)(\?.*$|$)/,
+            loader: 'file-loader',
+            query: {
+                name: 'font/[name]-[hash:5].[ext]'
+            },
         }]
     },
     plugins: [
