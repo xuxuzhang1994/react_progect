@@ -1,0 +1,238 @@
+@import '../../base/css/flex.less';
+@import '../../base/project-common.less';
+
+//列表
+.left-list{
+  position: relative;
+  width:1.97rem;
+  height:4.95rem;
+  padding: .07rem .09rem .1rem .12rem;
+  font-size: 9px;
+  color: #fff;
+}
+.search-top{
+  .flex-container-setting()
+}
+.search-btn{
+  width:.4rem;
+  height:.17rem;
+  line-height: .17rem;
+  color: #fff;
+  background: #1990FF;
+  text-align: center;
+  margin-right:.03rem;
+}
+.search-input{
+  width: 1.37rem;
+  height:.17rem;
+  line-height: .17rem;
+  border: 1px solid #539CFF;
+  background:rgba(25,74,141,.4);
+  padding: 0 .05rem  0 0.07rem;
+  position: relative;
+  >input{
+    width:1.1rem;
+    background: transparent;
+    border: none;
+    color: #FEFEFE;
+  }
+  input::-webkit-input-placeholder { /* WebKit browsers */
+    color: #FEFEFE;
+  }
+  >i{
+    font-size: 11px;
+    position: absolute;
+    right: .02rem;
+  }
+  .search-list{
+    width: 1.37rem;
+    border: 1px solid #539CFF;
+    border-top: none;
+    background:rgba(25,74,141,.4);
+    position: absolute;
+    top:.16rem;
+    left: -1px;
+    display: none;
+    >li{
+      width:1.37rem;
+      padding: .03rem .05rem .03rem .07rem;
+    }
+    >li.checked-list{
+      background: rgba(7,44,69,.7);
+    }
+
+  }
+}
+.one-six{
+  color: #009CFF;
+  margin:.08rem 0 .09rem 0;
+}
+.six-item{
+  width: 1.75rem;
+  >li{
+    width:1.75rem;
+    height:.15rem;
+    line-height: .15rem;
+    margin-bottom:.05rem;
+    .flex-container-setting();
+    .item-info{
+      width:1.03rem;
+      background: rgba(10,48,97,.6);
+      color: #fff;
+      padding-left: .06rem;
+    }
+    .item-count{
+      width: .72rem;
+      background: #0A3061;
+      color: #FFEA00;
+      text-align: right;
+      padding-right: .07rem;
+    }
+  }
+  >li.six-checked{
+    border: 1px solid #FFC000;
+  }
+}
+.checkAll{
+  margin:.11rem 0 .06rem;
+}
+.check-item{
+  display: inline-block;
+  >img {
+    width: .08rem;
+    height: .08rem;
+    margin-right:.03rem;
+    vertical-align: middle;
+  }
+  margin-right:.14rem;
+}
+
+.tab-com{
+  width: 1.79rem;
+  height:0.17rem;
+  line-height: .17rem;
+  background: rgba(83,156,255,.5);
+  color: #FEFEFE;
+  padding: 0 .07rem;
+  >i{
+    float: right;
+    font-size: 11px;
+  }
+}
+.switch-item{
+  width: 1.79rem;
+  padding: .1rem .07rem;
+  >li{
+    width:50%;
+    float: left;
+    margin-bottom:.13rem;
+  }
+}
+.chart-title{
+  >p{
+    display: inline-block;
+    margin-right:.12rem;
+  }
+}
+.circles{
+  display: inline-block;
+  width: .07rem;
+  height: .07rem;
+  border-radius: 50%;
+  margin-right:.05rem;
+}
+.bg-blue{
+  background: #539CFF;
+}
+.bg-yellow{
+  background: #F8B551;
+}
+.bg-red{
+  background: #E71F19;
+}
+
+//雷达
+.radar{
+  width:2.24rem;
+  position: fixed;
+  bottom:.1rem;
+  right: .1rem;
+  font-size: 9px;
+  .waring{
+    width:2.24rem;
+    height:.44rem;
+    border: 1px solid #FF0000;
+    background:rgba(255,0,0,.2);
+    padding:.1rem .13rem;
+    color: #fff;
+    .flex-container-setting();
+    margin-bottom:.06rem;
+    >img {
+      width:.2rem;
+      margin-right:.13rem;
+    }
+  }
+
+  @-webkit-keyframes rotate{
+ 	from{-webkit-transform:rotate(0deg)}
+	to{-webkit-transform:rotate(360deg)}
+	}
+
+  .scan{
+    width: 2.23rem;
+    height: 1.87rem;
+    border: 1px solid #0B5ECF;
+    position: relative;
+    background: #000;
+    .scan-circle{
+      width: 1.73rem;
+      height: 1.73rem;
+      position: relative;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -65%);
+      border: 1px solid #0B5ECF;
+      border-radius: 50%;
+      >img  {
+        width: .7rem;
+        height: .7rem;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transition: All 2s ease-in-out;
+        transform-origin: left top;
+        animation: 9.5s linear 0s normal none infinite rotate;
+      }
+    }
+    .warn-count{
+      width: 1.03rem;
+      height: .28rem;
+      border: 1px solid #E71F19;
+      color: #FF1818;
+      background: rgba(0,0,0,0.5);
+      padding: 0.08rem .1rem ;
+      position: relative;
+      z-index: 10;
+    }
+  }
+}
+//实有人口
+.person-count{
+  width:2.32rem;
+  height: 3.5rem;
+  padding: .12rem .07rem .09rem .07rem;
+  position: fixed;
+  right: 0;
+  top: 0;
+  color: #fff;
+  font-size: 9px;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
