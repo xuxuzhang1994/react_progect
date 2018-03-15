@@ -1,13 +1,211 @@
 import React, {Component} from 'react';
 import './indexList.less';
-
-
-
-
+import OneTask from './test.js'
 import {connect} from 'react-redux';
 
 class IndexList extends Component {
+    constructor(props) {
+        super(props);
+
+        const books=[{ name: '出租房', color: '#1050C7',},
+            { name: '自住房屋', color: '#326AD5'},
+            { name: '闲置空房', color: '#2EA7D1'},
+            {name: '商业用房', color: '#30DAE9'},
+            {name: '田间窝棚', color: '#1AD1BE'},
+            {name: '其他', color: '#30E97E'},]
+
+        this.state = {
+            list: books,
+        }
+        console.log(this.state.booksElements)
+    }
+    componentDidMount(){
+       // this._colume()
+        this._pie()
+    }
+
+    _colume(){
+        console.log(Highcharts.getOptions().colors)
+        Highcharts.getOptions().colors = Highcharts.map(["#009FEB", "#E91F1F"], function (color) {
+            return {
+                linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
+                stops: [
+                    [0, '#25D7FB'],
+                    [1, '#0B5ECF']
+                ]
+            };
+            console.log(Highcharts.Color(color).brighten(-0.3).get('rgb'))
+
+        });
+        // 图表配置
+        var options = {
+            colors:{
+                linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
+                stops: [
+                    [0, '#0B5ECF'],
+                    [1, '#25D7FB']
+                ]
+            },
+            chart: {
+                type: 'column',
+                spacing : [40, 15 , 10, 10]
+            },
+            title: {
+                text: '》年度预警趋势分析',
+                useHTML:true
+            },
+            legend:{
+                enabled: false,
+                align: 'right',
+                verticalAlign: 'top',
+                x: 0,
+                y: 29,
+                useHTML:true
+            },
+            xAxis: {
+                tickPosition: 'inside',
+                categories: ['1月', '2月','3月', '4月','5月','6月','7月', '8月','9月', '10月','11月','12月'],
+                className:'zhangjiayu',
+                tickmarkPlacement:'between',
+                tickPixelInterval:1,
+            },
+            yAxis: {
+                gridLineDashStyle: 'ShortDash',
+                title: {
+                    text: null
+                },
+
+                tickAmount: 6,
+                labels: {
+                    formatter: function () {
+                        return (Math.abs(this.value) / 100)
+                    }
+                },
+            },
+            plotOptions: {
+                useHTML:true,
+                column: {
+                    stacking: 'normal',
+                    //pointInterval:0.6,
+                    //pointPadding:-0.25
+                    pointPadding:0,
+                    //groupPadding: 0
+                }
+            },
+            credits: {
+                enabled: false
+            },
+            series: [{
+                name: '事件预警',
+                data: [ 2000,500, 1300, 400, 700, 2000,500, 1300, 400, 700, 2000,500, 1300, 400, 700, 2000,500,]
+            }],
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.y}</b> ({point.percentage:.1f}%)<br/>'
+            }
+        };
+        // 图表初始化函数
+        var chart = Highcharts.chart('colume', options);
+
+    }
+    _pie(){
+        var self=this
+        Highcharts.getOptions().colors=['#1050C7','#326AD5','#2EA7D1','#30DAE9', '#1AD1BE', '#30E97E', '#f7a35c', '#8085e9',
+            '#f15c80', '#e4d354', '#2b908f', '#f45b5b', '#91e8e1']
+        // 图表配置
+        var options = {
+            credits: {
+                enabled: false
+            },
+            colors:{
+                linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
+                stops: [
+                    [0, '#003399'],
+                    [1, '#3366AA']
+                ]
+            },
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                spacing : [0, 0 , 0, 0]
+            },
+            title: {
+                floating:true,
+                useHTML:true,
+                text: null
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            legend: {
+                enabled: true
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: false,
+                        //format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                        format: '{point.percentage:.1f} %',
+                        style: {
+                            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                        }
+                    },
+                    point: {
+                        events: {
+                            mouseOver: function(e) {  // 鼠标滑过时动态更新标题
+                                // 标题更新函数，API 地址：https://api.hcharts.cn/highcharts#Chart.setTitle
+                                // chart.setTitle({
+                                //     text: e.target.name+ '\t'+ e.target.y + ' %'
+                                // });
+                            }
+                            //,
+                            // click: function(e) { // 同样的可以在点击事件里处理
+                            //     chart.setTitle({
+                            //         text: e.point.name+ '\t'+ e.point.y + ' %'
+                            //     });
+                            // }
+                        }
+                    },
+                    innerSize: 100
+                }
+            },
+            series: [{
+                type: 'pie',
+                innerSize: '60%',
+                name: '市场份额',
+                data: [
+                    {name:'Firefox',   y: 45.0, url : 'http://bbs.hcharts.cn'},
+                    ['IE',       26.8],
+                    {
+                        name: 'Chrome',
+                        y: 12.8,
+                        //sliced: true,
+                        selected: true,
+                        url: 'http://www.hcharts.cn'
+                    },
+                    ['Safari',    8.5],
+                    ['Opera',     6.2],
+                    ['其他',   0.7]
+                ]
+            }]
+        };
+        var func = function (c) {
+            // 环形图圆心
+            var centerY = c.series[0].center[1],
+                titleHeight = parseInt(c.title.styles.fontSize);
+            c.setTitle({
+                y:centerY + titleHeight/2
+            });
+            chart = c;
+        }
+        // 图表初始化函数
+        var chart = Highcharts.chart('pie', options);
+
+    }
     render() {
+
         return (
 
            <div style={{background:'#000'}}>
@@ -188,6 +386,40 @@ class IndexList extends Component {
                    <p className="one-six">实有人口</p>
                    <div className="search-input-two">
                        <input type="text" placeholder="搜索人员姓名"/>
+                   </div>
+               </div>
+               <div className='chart-box'>
+                   <div className='jiao'>
+                       <div className='top'></div>
+                       <div className='right'></div>
+                       <div className='bottom'></div>
+                       <div className='left'></div>
+                   </div>
+                   <div className='page flex'>
+                       <div className='left btn'>
+                           <i className='iconfont icon-arrowL'></i>
+                       </div>
+                       <div className='right btn'>
+                           <i className='iconfont icon-arrowR'></i>
+                       </div>
+                   </div>
+
+                   <div id='colume' className=''></div>
+                   <div className='pir-box'>
+                       <div className='title'>标题</div>
+                       <div id='pie'></div>
+                       <div className='legend'>
+                           {this.state.list.map((item,$index) => {
+                               return (
+                                   <div key={$index} className='legend-item flex'>
+                                       <div className='color' style={{'background':item.color}}></div>
+                                       <div>{item.name}</div>
+                                   </div>
+                               )
+                           })}
+                       </div>
+
+
                    </div>
                </div>
            </div>
