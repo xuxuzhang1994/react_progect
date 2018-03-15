@@ -30,7 +30,7 @@ commonConfig = {
             use: ['babel-loader?cacheDirectory=true'],
             include: path.join(__dirname, 'src')
         }, {
-            test: /\.(png|jpg|gif)$/,
+            test: /\.(png|jpg|gif|svg)$/,
             use: [{
                 loader: 'file-loader',
                 // options: {
@@ -46,7 +46,7 @@ commonConfig = {
             query: {
                 name: 'font/[name]-[hash:5].[ext]'
             },
-        },]
+        }]
     },
     plugins: [
         new HtmlWebpackPlugin({

@@ -7,8 +7,7 @@ import {BrowserRouter as Router} from 'react-router-dom';
 import App from 'components/App/App';
 import ro from 'components/App/App';
 import baseCss from './base/css/base.less'
-
-
+import font from './base/glyphicons.less';
 import getRouter from 'router/router';
 
 /*初始化*/
