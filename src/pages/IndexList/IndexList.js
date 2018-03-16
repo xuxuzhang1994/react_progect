@@ -3,7 +3,9 @@ import './indexList.less';
 import Nav from 'components/Nav/Nav';
 import OneTask from './test.js'
 import {connect} from 'react-redux';
-import api from "../../Api/maintenance-api";
+import api from "../../api/maintenance-api";
+
+import { Button ,ButtonGroup,ButtonToolbar,DropdownButton,MenuItem} from 'react-bootstrap';
 
 class IndexList extends Component {
     constructor(props) {
@@ -18,11 +20,12 @@ class IndexList extends Component {
 
         this.state = {
             list: books,
-            currentTab:1
+            currentTab:0
         }
         console.log(this.state.booksElements)
     }
     componentDidMount(){
+        console.log($('body'))
         this._colume()
         this._map()
     }
@@ -593,13 +596,20 @@ class IndexList extends Component {
     render() {
         return (
            <div className='index-list'>
+               <DropdownButton bsStyle='success' title={'sss'} key={'d'} id={'d'}>
+                   <MenuItem eventKey="1">操作</MenuItem>
+                   <MenuItem eventKey="2">另一操作</MenuItem>
+                   <MenuItem eventKey="3" active>激活条目</MenuItem>
+                   <MenuItem divider />
+                   <MenuItem eventKey="4">分组链接</MenuItem>
+               </DropdownButton>
                <div className='map'>
                    <div id='map'>
 
                    </div>
                </div>
                <div>
-                   <Nav></Nav>
+                   <Nav index='1'></Nav>
                    <div className="left-list shandow">
                        <div className='jiao'>
                            <div className='top'></div>
@@ -752,7 +762,7 @@ class IndexList extends Component {
                            <p><i className="circles bg-red"></i><span>故障</span></p>
                        </div>
                    </div>
-                   <div className="radar" style={{display:'none'}}>
+                   <div className={"radar " + (this.state.currentTab==0 || this.state.slidShowStatus?'':'hide')}>
                        <div className="waring">
                            <img src={require("../../images/waring.png")} alt=""/>
                            <p>01青浦区二联馨苑2栋6楼601室
@@ -767,7 +777,7 @@ class IndexList extends Component {
 
                        </div>
                    </div>
-                   <div className={'model-right ' + (this.state.slidShowStatus?'slid-out':'')} >
+                   <div className={'model-right ' + (this.state.slidShowStatus?'slid-out':'' + this.state.currentTab!=0?'':'hide')} >
                        <div className="person-count shandow">
                            <div className='jiao'>
                                <div className='top'></div>
