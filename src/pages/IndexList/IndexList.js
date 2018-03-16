@@ -3,6 +3,8 @@ import './indexList.less';
 import Nav from 'components/Nav/Nav';
 import OneTask from './test.js'
 import {connect} from 'react-redux';
+import DatePicker from 'react-datepicker';
+import moment from 'moment';
 import api from "../../api/maintenance-api";
 
 import { Button ,ButtonGroup,ButtonToolbar,DropdownButton,MenuItem} from 'react-bootstrap';
@@ -10,17 +12,52 @@ import { Button ,ButtonGroup,ButtonToolbar,DropdownButton,MenuItem} from 'react-
 class IndexList extends Component {
     constructor(props) {
         super(props);
-
+        this.handleChange = this.handleChange.bind(this);
         const books=[{ name: '出租房', color: '#1050C7',},
             { name: '自住房屋', color: '#326AD5'},
             { name: '闲置空房', color: '#2EA7D1'},
             {name: '商业用房', color: '#30DAE9'},
             {name: '田间窝棚', color: '#1AD1BE'},
             {name: '其他', color: '#30E97E'},]
-
+        const personList=[
+            {
+                name:'张静',
+                sex:'女',
+                age:'18',
+                card:'6228858293581925918241',
+                address:'青浦区二连兴源603',
+                flags:'精神病人'
+            },
+            {
+                name:'张静',
+                sex:'女',
+                age:'18',
+                card:'6228858293581925918241',
+                address:'青浦区二连兴源603',
+                flags:'精神病人'
+            },
+            {
+                name:'张静',
+                sex:'女',
+                age:'18',
+                card:'6228858293581925918241',
+                address:'青浦区二连兴源603',
+                flags:'精神病人'
+            },
+            {
+                name:'张静',
+                sex:'女',
+                age:'18',
+                card:'6228858293581925918241',
+                address:'青浦区二连兴源603',
+                flags:'精神病人'
+            },
+        ]
         this.state = {
             list: books,
-            currentTab:0
+            currentTab:0,
+            personList:personList,
+            startDate: moment()
         }
         console.log(this.state.booksElements)
     }
@@ -30,7 +67,14 @@ class IndexList extends Component {
         this._map()
     }
 
-    // 左侧栏tab切换
+    handleChange(date) {
+        this.setState({
+            startDate: date
+        });
+    }
+
+
+        // 左侧栏tab切换
     _changeTab(index){
         var self=this
         self.setState({
@@ -596,13 +640,15 @@ class IndexList extends Component {
     render() {
         return (
            <div className='index-list'>
-               <DropdownButton bsStyle='success' title={'sss'} key={'d'} id={'d'}>
-                   <MenuItem eventKey="1">操作</MenuItem>
-                   <MenuItem eventKey="2">另一操作</MenuItem>
-                   <MenuItem eventKey="3" active>激活条目</MenuItem>
-                   <MenuItem divider />
-                   <MenuItem eventKey="4">分组链接</MenuItem>
-               </DropdownButton>
+               <div className='test'>
+                   <DatePicker
+                       locale='zh-CN'
+                       selected={this.state.startDate}
+                       onChange={this.handleChange}
+                   />
+
+               </div>
+
                <div className='map'>
                    <div id='map'>
 
@@ -797,73 +843,45 @@ class IndexList extends Component {
                                </ul>
                            </div>
                            <div className="sel-item">
-                               <div className="sels">
+                               <DropdownButton bsStyle='success' title={'出租房'} key={'d'} id={'d'}>
+                                   <MenuItem eventKey="1">出租房</MenuItem>
+                                   <MenuItem eventKey="2">出租房</MenuItem>
+                                   <MenuItem eventKey="3" active>激活条目</MenuItem>
+                                   <MenuItem eventKey="4">出租房</MenuItem>
+                               </DropdownButton>
+                               <DropdownButton bsStyle='success' title={'出租房'} key={'ddd'} id={'d'}>
+                                   <MenuItem eventKey="1">操作</MenuItem>
+                                   <MenuItem eventKey="2">另一操作</MenuItem>
+                                   <MenuItem eventKey="3" active>激活条目</MenuItem>
+                                   <MenuItem divider />
+                                   <MenuItem eventKey="4">分组链接</MenuItem>
+                               </DropdownButton>
+                               {/*<div className="sels">*/}
                                    {/*<select>*/}
                                    {/*<option value="">重点人口</option>*/}
                                    {/*</select>*/}
-                               </div>
+                               {/*</div>*/}
                            </div>
                            <ul className="person-list">
-                               <li className="checked-people">
-                                   <div className="person-pic">
-                                       <img src={require("../../images/person-pic.jpeg")} alt=""/>
-                                   </div>
-                                   <div className="person-info">
-                                       <div className="base-info">
-                                           <b>姓名：张家瑜</b>
-                                           <p className="sex color-blue">男</p>
-                                           <span className="color-blue">32岁</span>
-                                       </div>
-                                       <p ><span>身份证号：</span><span className="color-blue">342222222222****</span></p>
-                                       <p><span>家庭住址：</span><span className="color-blue">青浦区xx小区2栋3单元508室</span></p>
-                                       <div className="label-item"><span>标签：</span><span className="person-label">精神病人</span></div>
-                                   </div>
-                               </li>
-                               <li >
-                                   <div className="person-pic">
-                                       <img src={require("../../images/person-pic.jpeg")} alt=""/>
-                                   </div>
-                                   <div className="person-info">
-                                       <div className="base-info">
-                                           <b>姓名：张家瑜</b>
-                                           <p className="sex color-blue">男</p>
-                                           <span className="color-blue">32岁</span>
-                                       </div>
-                                       <p ><span>身份证号：</span><span className="color-blue">342222222222****</span></p>
-                                       <p><span>家庭住址：</span><span className="color-blue">青浦区xx小区2栋3单元508室</span></p>
-                                       <div className="label-item"><span>标签：</span><span className="person-label">精神病人</span></div>
-                                   </div>
-                               </li>
-                               <li >
-                                   <div className="person-pic">
-                                       <img src={require("../../images/person-pic.jpeg")} alt=""/>
-                                   </div>
-                                   <div className="person-info">
-                                       <div className="base-info">
-                                           <b>姓名：张家瑜</b>
-                                           <p className="sex color-blue">男</p>
-                                           <span className="color-blue">32岁</span>
-                                       </div>
-                                       <p ><span>身份证号：</span><span className="color-blue">342222222222****</span></p>
-                                       <p><span>家庭住址：</span><span className="color-blue">青浦区xx小区2栋3单元508室</span></p>
-                                       <div className="label-item"><span>标签：</span><span className="person-label">精神病人</span></div>
-                                   </div>
-                               </li>
-                               <li >
-                                   <div className="person-pic">
-                                       <img src={require("../../images/person-pic.jpeg")} alt=""/>
-                                   </div>
-                                   <div className="person-info">
-                                       <div className="base-info">
-                                           <b>姓名：张家瑜</b>
-                                           <p className="sex color-blue">男</p>
-                                           <span className="color-blue">32岁</span>
-                                       </div>
-                                       <p ><span>身份证号：</span><span className="color-blue">342222222222****</span></p>
-                                       <p><span>家庭住址：</span><span className="color-blue">青浦区xx小区2栋3单元508室</span></p>
-                                       <div className="label-item"><span>标签：</span><span className="person-label">精神病人</span></div>
-                                   </div>
-                               </li>
+                               {this.state.personList.map((item,$index)=>{
+                                   return(
+                                       <li className={$index==1?"checked-people":''} key={'person-item'+$index}>
+                                           <div className="person-pic">
+                                               <img src={require("../../images/person-pic.jpeg")} alt=""/>
+                                           </div>
+                                           <div className="person-info">
+                                               <div className="base-info">
+                                                   <b>姓名：{item.name}</b>
+                                                   <p className="sex color-blue">男</p>
+                                                   <span className="color-blue">32岁</span>
+                                               </div>
+                                               <p ><span>身份证号：</span><span className="color-blue">342222222222****</span></p>
+                                               <p><span>家庭住址：</span><span className="color-blue">青浦区xx小区2栋3单元508室</span></p>
+                                               <div className="label-item"><span>标签：</span><span className="person-label">精神病人</span></div>
+                                           </div>
+                                       </li>
+                                   )
+                               })}
 
                            </ul>
                            <div className="bulr"></div>
@@ -876,10 +894,10 @@ class IndexList extends Component {
                                <div className='left'></div>
                            </div>
                            <div className='page flex'>
-                               <div className='left btn'>
+                               <div className='left page-btn'>
                                    <i className='iconfont icon-arrowL'></i>
                                </div>
-                               <div className='right btn'>
+                               <div className='right page-btn'>
                                    <i className='iconfont icon-arrowR'></i>
                                </div>
                            </div>

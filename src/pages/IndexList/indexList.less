@@ -4,6 +4,13 @@
 .index-list{
   overflow: hidden;
   background: black;
+  .test{
+    position: absolute;
+    position: absolute;
+    z-index: 9999;
+    top: 1rem;
+    left: 1rem;
+  }
   .map{
     position: absolute;
     width: 100%;
@@ -102,6 +109,8 @@
       background: rgba(10,48,97,.6);
       color: #fff;
       padding-left: .06rem;
+      height: 100%;
+      line-height: .15rem;
     }
     .item-count{
       width: .72rem;
@@ -109,6 +118,8 @@
       color: #FFEA00;
       text-align: right;
       padding-right: .07rem;
+      height: 100%;
+      line-height: .15rem;
     }
   }
   li.six-checked{
@@ -307,6 +318,23 @@
     }
     .sel-item{
       margin:.07rem 0;
+      .dropdown{
+        .btn{
+          width: 1.06rem;
+          height: 0.17rem;
+          border-radius: 0;
+          background: #194A8D;
+          font-size: .08rem;
+          padding: 0;
+          border: 1px solid #539CFF;
+          span{
+            margin-left: .54rem;
+          }
+        }
+      }
+      .dropdown:nth-child(1){
+        margin-right: .04rem;
+      }
       .sels{
         width: 1.06rem;
         height: .17rem;
@@ -416,7 +444,7 @@
       right: .11rem;
       width: 100%;
       justify-content: flex-end;
-      .btn{
+      .page-btn{
         color: #0096FF;
         width: .19rem;
         height: .12rem;
