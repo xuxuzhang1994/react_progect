@@ -890,7 +890,7 @@ class IndexList extends Component {
                            </div>
                        </div>
                    </div>
-                   <div className={this.state.currentTab==1?'':'hide' +' tips-house'}>
+                   <div className={(this.state.currentTab==2?'':'hide') +' tips-house'}>
                        <p className="house-name">》二联馨苑小区12号</p>
                        <ul className="house-num ">
                            <li>601</li>
@@ -901,7 +901,7 @@ class IndexList extends Component {
                            <li>606</li>
                        </ul>
                    </div>
-                   <div className={this.state.currentTab==2?'':'hide' +' tips-person flex'}>
+                   <div className={(this.state.currentTab==1?'':'hide' ) +' tips-person flex'}>
                        <div className="left-info">
                            <p className="info-name">张云飞</p>
                            <p className="info-adr">地址：青浦区xxx小区2栋3单元508室</p>
