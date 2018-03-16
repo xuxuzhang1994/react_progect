@@ -796,7 +796,7 @@ class IndexList extends Component {
                            <ul className="person-list">
                                <li className="checked-people">
                                    <div className="person-pic">
-                                       <img src={require("../../images/person-pic.jpg")} alt=""/>
+                                       <img src={require("../../images/person-pic.jpeg")} alt=""/>
                                    </div>
                                    <div className="person-info">
                                        <div className="base-info">
@@ -811,7 +811,7 @@ class IndexList extends Component {
                                </li>
                                <li >
                                    <div className="person-pic">
-                                       <img src={require("../../images/person-pic.jpg")} alt=""/>
+                                       <img src={require("../../images/person-pic.jpeg")} alt=""/>
                                    </div>
                                    <div className="person-info">
                                        <div className="base-info">
@@ -826,7 +826,7 @@ class IndexList extends Component {
                                </li>
                                <li >
                                    <div className="person-pic">
-                                       <img src={require("../../images/person-pic.jpg")} alt=""/>
+                                       <img src={require("../../images/person-pic.jpeg")} alt=""/>
                                    </div>
                                    <div className="person-info">
                                        <div className="base-info">
@@ -841,7 +841,7 @@ class IndexList extends Component {
                                </li>
                                <li >
                                    <div className="person-pic">
-                                       <img src={require("../../images/person-pic.jpg")} alt=""/>
+                                       <img src={require("../../images/person-pic.jpeg")} alt=""/>
                                    </div>
                                    <div className="person-info">
                                        <div className="base-info">
@@ -889,6 +889,24 @@ class IndexList extends Component {
                                </div>
                            </div>
                        </div>
+                   </div>
+                   <div className={this.state.currentTab==1?'':'hide' +' tips-house'}>
+                       <p className="house-name">》二联馨苑小区12号</p>
+                       <ul className="house-num ">
+                           <li>601</li>
+                           <li className="checked">602</li>
+                           <li>603</li>
+                           <li>604</li>
+                           <li>605</li>
+                           <li>606</li>
+                       </ul>
+                   </div>
+                   <div className={this.state.currentTab==2?'':'hide' +' tips-person flex'}>
+                       <div className="left-info">
+                           <p className="info-name">张云飞</p>
+                           <p className="info-adr">地址：青浦区xxx小区2栋3单元508室</p>
+                       </div>
+                       <p className="right-icons"><i className="iconfont icon-right"></i></p>
                    </div>
                </div>
 

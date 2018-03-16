@@ -30,7 +30,7 @@ commonConfig = {
             use: ['babel-loader?cacheDirectory=true'],
             include: path.join(__dirname, 'src')
         }, {
-            test: /\.(png|jpg|gif|svg)$/,
+            test: /\.(png|jpg|gif|svg|jpeg)$/,
             use: [{
                 loader: 'file-loader',
                 // options: {

@@ -533,6 +533,118 @@
   }
 }
 
+//实有房屋弹窗
+.tips-house{
+  width: 2.29rem;
+  //height: 1.92rem;
+  border:1px solid #265DC0;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background:rgba(7,44,69,.7);
+  font-size: .08rem;
+  padding: .12rem;
+  .house-name{
+    color: #0094FC;
+    margin-bottom:.12rem;
+  }
+  .house-num{
+    >li{
+      width: .46rem;
+      height: .2rem;
+      line-height: .2rem;
+      border: 1px solid #0094FC;
+      text-align: center;
+      color: #FEFEFE;
+      background: rgba(0, 148, 252, .7);
+      margin:0 .04rem .05rem 0;
+      float: left;
+    }
+    >li.checked{
+      border-color: #FFC000;
+    }
+  }
+
+}
+.tips-house:before {
+  transform: rotate(45deg);
+  content: " ";
+  display: block;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  right: 30px;
+  bottom: -5px;
+  background: rgba(7,44,69,1);
+  border: 1px solid #265DC0;
+}
+.tips-house:after {
+  content: " ";
+  display: block;
+  width: 17px;
+  height: 10px;
+  position: absolute;
+  right: 27px;
+  bottom: 0;
+  background: rgba(7,44,69,1);
+}
+
+//实有人口弹窗
+.tips-person{
+  width: 1.54rem;
+  height: .51rem;
+  border:1px solid #265DC0;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background:rgba(7,44,69,.7);
+  font-size: .08rem;
+  padding: .06rem;
+  .left-info{
+    .info-name{
+      color:#0094FC;
+      font-weight: bold;
+      margin-bottom:.07rem;
+    }
+    .info-adr{
+      color: #fff;
+      font-size: .07rem;
+    }
+  }
+  .right-icons{
+    >i{
+      color: #0094FC;
+      font-size: .08rem;
+    }
+  }
+}
+.tips-person:before {
+  transform: rotate(45deg);
+  content: " ";
+  display: block;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  background: rgba(7,44,69,1);
+  border: 1px solid #265DC0;
+}
+.tips-person:after {
+  content: " ";
+  display: block;
+  width: 17px;
+  height: 10px;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-13% ,0);
+  background: rgba(7,44,69,1);
+}
+
+
 
 .clearfix:before,
 .clearfix:after {
