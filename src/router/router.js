@@ -55,7 +55,7 @@ import Counter from 'bundle-loader?lazy&name=counter!pages/Counter/Counter';
 import UserInfo from 'bundle-loader?lazy&name=userInfo!pages/UserInfo/UserInfo';
 import EarlyWarningCenter from 'bundle-loader?lazy&name=early-warning-center!pages/early-warning-center/early-warning-center';
 import NotFound from 'bundle-loader?lazy&name=notFound!pages/NotFound/NotFound';
-import Waring from "bundle-loader?lazy&name=waring!pages/Waring/Waring";
+import Warning from "bundle-loader?lazy&name=warning!pages/Warning/Warning";
 import IndexList from "bundle-loader?lazy&name=indexList!pages/IndexList/IndexList";
 
 const createComponent = (component) => (props) => (
@@ -87,7 +87,7 @@ const Parent = () => (
             <Route path="/counter" component={createComponent(Counter)}/>
             <Route path="/userinfo" component={createComponent(UserInfo)}/>
             <Route path="/early-warning-center" component={createComponent(EarlyWarningCenter)}/>
-            <Route path="/waring" component={createComponent(Waring)}/>
+            <Route path="/warning" component={createComponent(Warning)}/>
             <Route path="/indexList" component={createComponent(IndexList)}/>
             <Route component={createComponent(NotFound)}/>
         </Switch>
