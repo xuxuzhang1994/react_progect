@@ -54,6 +54,13 @@ commonConfig = {
             template: path.join(__dirname, 'src/index.html')
         }),
         new webpack.HashedModuleIdsPlugin(),
+        new webpack.ProvidePlugin({
+            $:"jquery",
+            jQuery:"jquery",
+            "window.jQuery":"jquery",
+            moment:'moment',
+            "window.moment":"moment",
+        })
     ],
 
     resolve: {
