@@ -1,8 +1,158 @@
+@import "../../../base/project-common";
 .model-danwei{
-  padding: 0 .18rem 0 .1rem;
+  position: relative;
+  padding: 0 .9rem 0 .05rem;
+  width: 2.32rem;
+  height: 3.5rem;
   .type-box{
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: .06rem;
     .type-item{
-
+      flex-grow: 1;
+      height: .17rem;
+      line-height: .17rem;
+      color: #FEFEFE;
     }
+  }
+  .data-list{
+    .data-item{
+      width: 2.13rem;
+      height: .28rem;
+      line-height: .28rem;
+      padding-left: .09rem;
+      border: 1px solid #0075FC;
+    }
+  }
+  // 图表
+  .chart-box{
+    text-align: right;
+    color: #fff;
+    position: relative;
+    margin-top: .06rem;
+    .page{
+      position: absolute;
+      z-index: 999;
+      top: 0.11rem;
+      right: .11rem;
+      width: 100%;
+      justify-content: flex-end;
+      .page-btn{
+        color: #0096FF;
+        width: .19rem;
+        height: .12rem;
+        line-height: .1rem;
+        text-align: center;
+        border: 1px solid #0096FF;
+        margin-left: .03rem;
+        i{
+          font-size: .04rem;
+        }
+      }
+      .left{
+        background: #0096FF;
+        color: #fff;
+      }
+    }
+    #colume,#pie{
+      width: 2.32rem;
+      height:1.41rem;
+      .highcharts-background{
+        //fill: rgba(12, 20, 55, .68);
+        fill: none;
+      }
+      .highcharts-yaxis-labels{
+        text{
+          fill:#fff !important;
+        }
+      }
+      .zhangjiayu{
+        text{
+          fill:#76797F !important;
+        }
+      }
+      .highcharts-title{
+        position: absolute;
+        left: .05rem !important;
+        top: .11rem !important;
+        font-size: .09rem !important;
+        line-height: 1;
+        color: #46A1FE !important;
+      }
+      .highcharts-point{
+        // fill:url('../../images/x.svg');
+        stroke:none;
+      }
+      .highcharts-grid-line,.highcharts-axis-line{
+        stroke:#00AEFF
+      }
+      .highcharts-xaxis-grid{
+        .highcharts-grid-line{
+          stroke: none !important;
+        }
+      }
+
+      .highcharts-legend-item:nth-child(1){
+        .highcharts-point{
+          fill: #009AE5;
+          rx:0;
+          width: 8px;
+          height: 8px;
+        }
+      }
+      .highcharts-legend-item:nth-child(2){
+        .highcharts-point{
+          fill: #FF0000;
+          rx:0;
+          width: 8px;
+          height: 8px;
+        }
+      }
+      .highcharts-legend-item{
+        span{
+          color: #fff !important;
+          font-size: 12px !important;
+          top: 0 !important;
+        }
+
+      }
+    }
+    .pir-box{
+      width: 2.32rem;
+      height:1.41rem;
+      position: relative;
+      padding-top: .38rem;
+      padding-left: .38rem;
+      .title{
+        position: absolute;
+        top: .12rem;
+        left: .06rem;
+        color: #009CFF;
+        font-size: .09rem;
+      }
+      #pie{
+        border: 1px solid #2EA7D1;
+        border-radius: 100%;
+        width: .92rem;
+        height: .92rem;
+      }
+      .legend{
+        width: max-content;
+        font-size: .07rem;
+        position: absolute;
+        top: .43rem;
+        right: .21rem;
+        .legend-item{
+          justify-content: flex-start;
+          margin-top: .03rem;
+        }
+        .color{
+          width: .11rem;
+          height: .06rem;
+          margin-right: .04rem;
+        }
+      }
+    }
+
   }
 }
