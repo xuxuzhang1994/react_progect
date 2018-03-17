@@ -9,7 +9,7 @@
     position: absolute;
     left: 0;
     top: 0;
-    z-index: 99991;
+    z-index: 9;
     width: .1rem;
     height: .1rem;
     border: .03rem solid #46A1FE;
@@ -20,7 +20,7 @@
     position: absolute;
     right: 0;
     top: 0;
-    z-index: 99991;
+    z-index: 9;
     width: .1rem;
     height: .1rem;
     border: .03rem solid #46A1FE;
@@ -31,7 +31,7 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    z-index: 99991;
+    z-index: 9;
     width: .1rem;
     height: .1rem;
     border: .03rem solid #46A1FE;
@@ -42,7 +42,7 @@
     position: absolute;
     left: 0;
     bottom: 0;
-    z-index: 99991;
+    z-index: 9;
     width: .1rem;
     height: .1rem;
     border: .03rem solid #46A1FE;
@@ -50,3 +50,55 @@
     border-right: none;
   }
 }
+.main-text-color{
+  color: #0094FC;
+}
+
+
+// 移除ant弹框样式
+.ant-modal{
+  width: 5.5rem !important;
+  height: 4.47rem !important;
+  .ant-modal-content{
+    background-color: transparent;
+    .ant-modal-close{
+      display: none;
+    }
+    .ant-modal-header{
+      display: none;
+    }
+    .ant-modal-body{
+      padding: 0;
+    }
+    .ant-modal-footer{
+      display: none;
+    }
+  }
+}
+
+// 重写page
+.ant-pagination {
+  text-align: right;
+  margin-bottom: .09rem;
+  margin-top: .07rem;
+  .ant-pagination-item{
+    background-color: transparent;
+
+    border: 1px solid #0096FF;
+    a{
+      color: #0096FF;
+    }
+  }
+  .ant-pagination-item-active{
+    a{
+      color: #FEFFFF;
+    }
+  }
+  .ant-pagination-item-link{
+    background-color: transparent;
+    color: #0096FF;
+    border: 1px solid #0096FF;
+  }
+}
+
+
