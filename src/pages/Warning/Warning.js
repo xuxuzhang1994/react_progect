@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import api from "../../api/maintenance-api";
 import './Warning.less';
+import 'antd/dist/antd.css';
 import Nav from 'components/Nav/Nav';
-// import { DatePicker } from 'antd';
+import { DatePicker } from 'antd';
 const { MonthPicker, RangePicker, WeekPicker } = DatePicker;
 
 
@@ -35,7 +36,7 @@ class Waring extends Component {
             },
             {
                 id:5,
-                value:'更多'
+                value:'更多》'
             }
         ];
         const warningList=[
@@ -102,7 +103,9 @@ class Waring extends Component {
                 case 4:return 'bg-yellow';break;
                 case 5:return 'bg-green';break;
             }
-
+        }
+        function onChange(date, dateString) {
+            console.log(date, dateString);
         }
         return (
             <div >

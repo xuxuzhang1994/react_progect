@@ -8,18 +8,33 @@
 .bg-red{
   background:rgba(255,0,0,.6);
   border: 1px solid #FF0000;
+  &:before{
+    background: #FF0000;
+  }
 }
 .bg-red2{
   background:rgba(255,0,0,.2);
+  &:before{
+    background: #FF0000;
+  }
 }
 .bg-origin{
   background:rgba(243,132,0,.2);
+  &:before{
+    background: #F38400;
+  }
 }
 .bg-yellow{
   background:rgba(255,210,0,.2);
+  &:before{
+    background: #FFD200;
+  }
 }
 .bg-green{
   background:rgba(0,167,47,.2);
+  &:before{
+    background: #00A72F;
+  }
 }
 
 .p-l-15{
@@ -104,10 +119,15 @@
       border:1px solid #3088FF ;
       >li{
         width: .76rem;
+        height:.2rem;
+        line-height: .2rem;
         color: #B8D6FF;
         font-size: .08rem;
         text-align: center;
         border-right:1px solid #3088FF ;
+      }
+      >li:last-child{
+      border-right: none;
       }
       .checked-item{
         background: #0075FC;
@@ -132,36 +152,36 @@
           height: .30rem;
         }
       }
-      >li:nth-child(1){
-        &:before{
-          background: #FF0000;
-        }
-      }
-      >li:nth-child(2){
-        &:before{
-          background: #FF0000;
-        }
-      }
-      >li:nth-child(3){
-        &:before{
-          background: #F38400;
-        }
-      }
-      >li:nth-child(4){
-        &:before{
-          background: #FFD200;
-        }
-      }
-      >li:nth-child(5){
-        &:before{
-          background: #FFD200;
-        }
-      }
-      >li:nth-child(6){
-        &:before{
-          background: #00A72F;
-        }
-      }
+      //>li:nth-child(1){
+      //  &:before{
+      //    background: #FF0000;
+      //  }
+      //}
+      //>li:nth-child(2){
+      //  &:before{
+      //    background: #FF0000;
+      //  }
+      //}
+      //>li:nth-child(3){
+      //  &:before{
+      //    background: #F38400;
+      //  }
+      //}
+      //>li:nth-child(4){
+      //  &:before{
+      //    background: #FFD200;
+      //  }
+      //}
+      //>li:nth-child(5){
+      //  &:before{
+      //    background: #FFD200;
+      //  }
+      //}
+      //>li:nth-child(6){
+      //  &:before{
+      //    background: #00A72F;
+      //  }
+      //}
       .info-left{
         max-width: 1.96rem;
         overflow:hidden;
