@@ -54,6 +54,7 @@ import Page1 from 'bundle-loader?lazy&name=page1!pages/Page1/Page1';
 import Counter from 'bundle-loader?lazy&name=counter!pages/Counter/Counter';
 import UserInfo from 'bundle-loader?lazy&name=userInfo!pages/UserInfo/UserInfo';
 import EarlyWarningCenter from 'bundle-loader?lazy&name=early-warning-center!pages/early-warning-center/early-warning-center';
+import PerceptionQingpu from 'bundle-loader?lazy&name=perception-qingpu!pages/perception-qingpu/perception-qingpu';
 import NotFound from 'bundle-loader?lazy&name=notFound!pages/NotFound/NotFound';
 import Warning from "bundle-loader?lazy&name=warning!pages/Warning/Warning";
 import IndexList from "bundle-loader?lazy&name=indexList!pages/IndexList/IndexList";
@@ -89,6 +90,7 @@ const Parent = () => (
             <Route path="/early-warning-center" component={createComponent(EarlyWarningCenter)}/>
             <Route path="/warning" component={createComponent(Warning)}/>
             <Route path="/indexList" component={createComponent(IndexList)}/>
+            <Route path="/perception-qingpu" component={createComponent(PerceptionQingpu)}/>
             <Route component={createComponent(NotFound)}/>
         </Switch>
     </div>
