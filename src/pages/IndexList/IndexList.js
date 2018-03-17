@@ -900,18 +900,18 @@ class IndexList extends Component {
                            <ul className="person-list">
                                {this.state.personList.map((item,$index)=>{
                                    return(
-                                       <li className={$index==1?"checked-people":''} key={'person-item'+$index}>
+                                       <li className={ 'flex'+ ($index==1? " checked-people": '') } key={'person-item'+$index}>
                                            <div className="person-pic">
                                                <img src={require("../../images/person-pic.jpeg")} alt=""/>
                                            </div>
                                            <div className="person-info">
-                                               <div className="base-info">
+                                               <div className="base-info ">
                                                    <b>姓名：{item.name}</b>
                                                    <p className="sex color-blue">男</p>
                                                    <span className="color-blue">32岁</span>
                                                </div>
                                                <p ><span>身份证号：</span><span className="color-blue">342222222222****</span></p>
-                                               <p><span>家庭住址：</span><span className="color-blue">青浦区xx小区2栋3单元508室</span></p>
+                                               <div className="flex"><span className="adr-label">家庭住址：</span><p className="color-blue adr-info">青浦区xx小区2栋3单元508室</p></div>
                                                <div className="label-item"><span>标签：</span><span className="person-label">精神病人</span></div>
                                            </div>
                                        </li>
@@ -948,18 +948,18 @@ class IndexList extends Component {
                            <ul className="person-list">
                                {this.state.houseList.map((item,$index)=>{
                                    return (
-                                       <li  className={($index==1?"checked-people":'') +'flex' } key={'person-item'+$index}>
+                                       <li  className={'flex'+ ($index==1?" checked-people":'') } key={'person-item'+$index}>
                                            <div className="person-pic">
                                                <img src={require("../../images/person-pic.jpeg")} alt=""/>
                                            </div>
                                            <div className="person-info">
-                                               <div className="base-info">
+                                               <div className="base-info ">
                                                    <b>户主：{item.name}</b>
                                                    <p className="sex color-blue">男</p>
                                                    <span className="color-blue">32岁</span>
                                                </div>
-                                               <p>登记人口：<span className="color-blue">{item.count}人</span>  </p>
-                                               <div className="flex"><span>房屋位置：</span><p className="color-blue">{item.address}</p></div>
+                                               <p><span>登记人口：</span><span className="color-blue">{item.count}人</span>  </p>
+                                               <div className="flex"><span className="adr-label">房屋位置：</span><p className="color-blue adr-info">{item.address}</p></div>
                                                <div className="label-item"><span>标签：</span><span className="person-label">{item.flags}</span></div>
                                            </div>
                                        </li>
