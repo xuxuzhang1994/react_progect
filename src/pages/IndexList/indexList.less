@@ -363,8 +363,10 @@
         }
         .person-info{
           font-size: .07rem;
+          flex-grow: 1;
+          overflow: hidden;
           .base-info{
-            //.flex-container-setting(@justify-content:flex-start);
+            .flex-container-setting(@justify-content:flex-start);
             .sex{
               margin-left:.15rem;
               margin-right:.11rem;
@@ -386,6 +388,16 @@
                 right: 0;
               }
             }
+
+          }
+          .adr-label{
+            min-width:max-content ;
+          }
+          .adr-info{
+            overflow:hidden;
+            text-overflow:ellipsis;
+            white-space:nowrap;
+            max-width:100%;
           }
           .label-item{
             margin-top:.03rem;
