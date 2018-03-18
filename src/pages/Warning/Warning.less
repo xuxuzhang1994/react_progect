@@ -56,6 +56,7 @@
       width:4.69rem;
       height:3.02rem;
       padding: 0 .1rem;
+      overflow: scroll;
     }
     .police-waring{
       margin-right:.04rem;
@@ -86,17 +87,20 @@
       }
       .search-right{
         font-size: .08rem;
-        //margin-left:.35rem;
         .search-input{
           width:1.83rem;
           height:.2rem;
           margin-left:.05rem;
           margin-right:.03rem;
-          display: inline-block;
-          >img {
-            width: 1.83rem;
+          justify-content: flex-start;
+          .search-txt{
+            display: block;
+            width: .17rem;
             height: .2rem;
-            margin-bottom:-.05rem;
+            line-height: .2rem;
+            text-align: center;
+            background: #3088FF;
+            color: #0B0F28;
           }
         }
         .cor-time{

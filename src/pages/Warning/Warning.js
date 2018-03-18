@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import api from "../../api/maintenance-api";
+// import 'antd/dist/antd.css';
 import './Warning.less';
-import 'antd/dist/antd.css';
+import 'antd/lib/time-picker/style/index.css';
 import Nav from 'components/Nav/Nav';
 import { DatePicker } from 'antd';
 const { MonthPicker, RangePicker, WeekPicker } = DatePicker;
@@ -119,18 +120,19 @@ class Waring extends Component {
                                 <div className='bottom'></div>
                                 <div className='left'></div>
                             </div>
-                            <p className="warning-title title-color ">》公安实战预警</p>
+                            <div className="warning-title title-color ">》公安实战预警</div>
                             <div className="search-top flex">
                                 <div className="waring-totle  flex">
-                                    <p >预警总数：</p> <p className="warning-count">16条</p>
+                                    <div >预警总数：</div> <div className="warning-count">16条</div>
                                 </div>
                                 <div className="search-right flex">
                                     <span className="cor-time">起止时间</span>
-                                    <DatePicker onChange={onChange} />
-                                    {/*<div className="search-input">*/}
-                                        {/*<img src={require("../../images/construct/search.jpeg")} alt=""/>*/}
-                                    {/*</div>*/}
-                                    <p className="search-btn">查询</p>
+                                    <div className="search-input flex">
+                                        <DatePicker onChange={onChange} allowClear="false" placeholder="请选择开始时间"/>
+                                        <span className="search-txt">至</span>
+                                        <DatePicker onChange={onChange} allowClear="false" placeholder="请选择结束时间"/>
+                                    </div>
+                                    <div className="search-btn">查询</div>
                                 </div>
                             </div>
                             <ul className="tab-items flex">
@@ -146,10 +148,10 @@ class Waring extends Component {
                                     this.state.warningList.map((item,$index)=>{
                                         return (
                                             <li className={"flex "+  ( chooseColor(item.level)) } key={$index}>
-                                                <p className="info-left">预警信息：{item.info}</p>
+                                                <div className="info-left">预警信息：{item.info}</div>
                                                 <span>类型：{item.type}</span>
                                                 <div className="info-right flex">
-                                                    <p className="">时间：{item.time}</p>
+                                                    <div className="">时间：{item.time}</div>
                                                     <i className="iconfont icon-icon7">  </i>
                                                 </div>
                                             </li>
