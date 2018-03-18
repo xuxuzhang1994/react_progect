@@ -29,3 +29,64 @@
   }
 }
 
+//实有人口弹窗
+
+.amap-info-sharp{
+  display: none !important;
+}
+.amap-info-content{
+  border: none;
+  background: transparent;
+  padding: 0;
+  padding-bottom: 10px;
+  box-shadow: none;
+  .tips-person{
+    width: 1.54rem;
+    height: .51rem;
+    border:1px solid #265DC0;
+    position: relative;
+    background:rgba(7,44,69,.7);
+    font-size: .08rem;
+    padding: .06rem;
+    .left-info{
+      .info-name{
+        color:#0094FC;
+        font-weight: bold;
+        margin-bottom:.07rem;
+      }
+      .info-adr{
+        color: #fff;
+        font-size: .07rem;
+      }
+    }
+    .right-icons{
+      >i{
+        color: #0094FC;
+        font-size: .08rem;
+      }
+    }
+  }
+  .tips-person:before {
+    transform: rotate(45deg);
+    content: " ";
+    display: block;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    background: rgba(7,44,69,1);
+    border: 1px solid #265DC0;
+  }
+  .tips-person:after {
+    content: " ";
+    display: block;
+    width: 17px;
+    height: 10px;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-13% ,0);
+    background: rgba(7,44,69,1);
+  }
+}

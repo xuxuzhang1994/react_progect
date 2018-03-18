@@ -5,7 +5,15 @@ import {connect} from 'react-redux';
 import api from "../../api/maintenance-api";
 import ModelPerson from './model-person/model-person'
 import ModelDanwei from './model-danwei/model-danwei'
+import ModelSecurityEquipment from './model-security-equipment/model-security-equipment'
 import ModelMenuLeft from './model-menu-left/model-menu-left'
+import { Popconfirm, message, Button } from 'antd';
+
+const text = 'Are you sure delete this task?';
+
+function confirm() {
+    message.info('Click on Yes.');
+}
 
 class IndexList extends Component {
     constructor(props) {
@@ -85,12 +93,45 @@ class IndexList extends Component {
         var self=this
         var district;
 
+
+
         var map = new AMap.Map('map',{
             //zoom: 10,
             mapStyle: 'amap://styles/dark',//样式URL
             resizeEnable: true,
             //center: [121.113021, 31.151209],//地图中心点
         });
+
+        var lnglats=[//也可以使用LngLat对象
+            [121.113021,31.151209],[121.085201,31.124653],
+        ];
+        var infoWindow = new AMap.InfoWindow({
+            //isCustom: true,  //使用自定义窗体
+            offset: new AMap.Pixel(-16, -35)
+        });
+        for(var i = 0, marker; i < lnglats.length; i++){
+            marker=new AMap.Marker({
+                position:lnglats[i],
+                map:map
+            });
+            marker.content=`<div class='tips-person flex'>
+                <div class="left-info">
+                    <div class="info-name">张云飞</div>
+                    <div class="info-adr">地址：青浦区xxx小区2栋3单元508室</div>
+                </div>
+                <p class="right-icons"><i class="iconfont icon-right"></i></p>
+            </div>`
+            infoWindow.offset=new AMap.Pixel(0, -30)
+            //给Marker绑定单击事件
+            marker.on('click', markerClick);
+        }
+        function markerClick(e){
+            infoWindow.setContent(e.target.content);
+            infoWindow.open(map, e.target.getPosition());
+        }
+
+
+
         AMap.plugin(['AMap.ToolBar','AMap.Scale'],
             function(){
                 map.addControl(new AMap.ToolBar());
@@ -99,47 +140,6 @@ class IndexList extends Component {
 
                // map.addControl(new AMap.OverView({isOpen:true}));
             });
-
-        // AMap.plugin('AMap.DistrictSearch',function(){//回调函数
-        //     var opts = {
-        //         subdistrict: 1,   //返回下一级行政区
-        //         extensions: 'all',  //返回行政区边界坐标组等具体信息
-        //         level: 'district  '  //查询行政级别为 市
-        //     };
-        //     //实例化DistrictSearch
-        //     district = new AMap.DistrictSearch(opts);
-        //     district.setLevel('district');
-        //     //行政区查询
-        //     var opts = {
-        //         subdistrict: 1,   //返回下一级行政区
-        //         extensions: 'all',  //返回行政区边界坐标组等具体信息
-        //         level: 'biz_area',  //查询行政级别为 市
-        //         showbiz:false
-        //     };
-        //     //实例化DistrictSearch
-        //     district.search('青浦区', function(status, result) {
-        //         console.log(result.districtList)
-        //         var bounds = result.districtList[0].boundaries;
-        //         var polygons = [];
-        //         if (bounds) {
-        //             for (var i = 0, l = bounds.length; i < l; i++) {
-        //                 //生成行政区划polygon
-        //                 var polygon = new AMap.Polygon({
-        //                     map: map,
-        //                     strokeWeight: 3,
-        //                     path: bounds[i],
-        //                     fillOpacity: 0,
-        //                     fillColor: '#fff',
-        //                     strokeColor: '#CC66CC'
-        //                 });
-        //                 polygons.push(polygon);
-        //             }
-        //             // map.clearMap();
-        //            // map.setFitView();//地图自适应
-        //         }
-        //     });
-        //
-        // })
         function initPage(DistrictCluster,PointSimplifier) {
             var colors = [
                 '#0cc2f2',
@@ -453,6 +453,7 @@ class IndexList extends Component {
                    <div className='current-tab-info'>
                        <ModelPerson currentTab={this.state.currentTab} />
                        <ModelDanwei currentTab={this.state.currentTab} />
+                       <ModelSecurityEquipment currentTab={this.state.currentTab} />
                    </div>
                </div>
            </div>

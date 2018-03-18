@@ -4,6 +4,8 @@ const Search = Input.Search;
 import './model-person.less'
 import ModelPopupDanwei from '../model-popup-danwei/model-popup-danwei'
 import { Modal, Button } from 'antd';
+import { DropdownButton,MenuItem} from 'react-bootstrap';
+
 export default class  ModelPerson extends Component{
     constructor(props) {
         super(props);
@@ -56,7 +58,6 @@ export default class  ModelPerson extends Component{
     }
 
     componentWillReceiveProps(nextProps) {
-        debugger
         this.setState({
             currentTab: nextProps.currentTab
         });
@@ -177,7 +178,7 @@ export default class  ModelPerson extends Component{
                         <div className='left'></div>
                     </div>
                     <div className='person-count'>
-                        <p className="one-six">实有房屋</p>
+                        <div className="one-six">实有房屋</div>
                         <div className="search-input-right">
                             <input type="text" placeholder="搜索人员姓名"/>
                             <i className="iconfont icon-sousuo"></i>
@@ -188,11 +189,24 @@ export default class  ModelPerson extends Component{
                             </ul>
                         </div>
                         <div className="sel-item">
-                            <div className="sels">
-                                {/*<select>*/}
-                                {/*<option value="">出租房</option>*/}
-                                {/*</select>*/}
-                            </div>
+                            <DropdownButton bsStyle='success' title={'出租房'} key={'d'} id={'d'}>
+                                <MenuItem eventKey="1">出租房</MenuItem>
+                                <MenuItem eventKey="2">出租房</MenuItem>
+                                <MenuItem eventKey="3" active>激活条目</MenuItem>
+                                <MenuItem eventKey="4">出租房</MenuItem>
+                            </DropdownButton>
+                            <DropdownButton bsStyle='success' title={'出租房'} key={'ddd'} id={'d'}>
+                                <MenuItem eventKey="1">操作</MenuItem>
+                                <MenuItem eventKey="2">另一操作</MenuItem>
+                                <MenuItem eventKey="3" active>激活条目</MenuItem>
+                                <MenuItem divider />
+                                <MenuItem eventKey="4">分组链接</MenuItem>
+                            </DropdownButton>
+                            {/*<div className="sels">*/}
+                            {/*<select>*/}
+                            {/*<option value="">重点人口</option>*/}
+                            {/*</select>*/}
+                            {/*</div>*/}
                         </div>
                         <ul className="person-list">
                             {this.state.houseList.map((item,$index)=>{
@@ -204,11 +218,11 @@ export default class  ModelPerson extends Component{
                                         <div className="person-info">
                                             <div className="base-info flex">
                                                 <b>户主：{item.name}</b>
-                                                <p className="sex color-blue">男</p>
+                                                <div className="sex color-blue">男</div>
                                                 <span className="color-blue">32岁</span>
                                             </div>
-                                            <p><span>登记人口：</span><span className="color-blue">{item.count}人</span>  </p>
-                                            <div className="flex"><span className="adr-label">房屋位置：</span><p className="color-blue adr-info">{item.address}</p></div>
+                                            <div><span>登记人口：</span><span className="color-blue">{item.count}人</span>  </div>
+                                            <div className="flex house"><span className="adr-label">房屋位置：</span><div className="color-blue adr-info">{item.address}</div></div>
                                             <div className="label-item"><span>标签：</span><span className="person-label">{item.flags}</span></div>
                                         </div>
                                     </li>

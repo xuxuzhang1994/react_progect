@@ -101,7 +101,6 @@
         padding: .04rem .05rem .04rem 0 ;
         border-bottom: 1px solid #0075FC;
         margin-bottom:.06rem;
-        //.flex-container-setting(@justify-content:flex-start);
         .person-pic{
           width: .38rem;
           height: .45rem;
@@ -117,6 +116,7 @@
           flex-grow: 1;
           overflow: hidden;
           .base-info{
+            justify-content: flex-start;
             .sex{
               margin-left:.15rem;
               margin-right:.11rem;
@@ -139,6 +139,9 @@
               }
             }
 
+          }
+          .house{
+            justify-content: flex-start;
           }
           .adr-label{
             min-width:max-content ;
@@ -224,7 +227,7 @@
         color: #fff;
       }
     }
-    #colume,#pie{
+    #danwei_colume,#pie{
       width: 2.32rem;
       height:1.41rem;
       .highcharts-background{
