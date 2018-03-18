@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import api from "../../api/maintenance-api";
-// import 'antd/dist/antd.css';
+import 'antd/dist/antd.css';
 import './Warning.less';
-import 'antd/lib/time-picker/style/index.css';
+// import 'antd/lib/time-picker/style/index.css';
 import Nav from 'components/Nav/Nav';
 import { DatePicker } from 'antd';
 const { MonthPicker, RangePicker, WeekPicker } = DatePicker;
@@ -113,7 +113,7 @@ class Waring extends Component {
                 <Nav index='1'></Nav>
                 <div className="waring-list">
                     <section className="search-section clearfix ">
-                        <div className="police-waring pull-left shandow">
+                        <div className="police-waring   shandow">
                             <div className='jiao'>
                                 <div className='top'></div>
                                 <div className='right'></div>
@@ -128,9 +128,9 @@ class Waring extends Component {
                                 <div className="search-right flex">
                                     <span className="cor-time">起止时间</span>
                                     <div className="search-input flex">
-                                        <DatePicker onChange={onChange} allowClear="false" placeholder="请选择开始时间"/>
+                                        <DatePicker onChange={onChange} allowClear={false}  placeholder="请选择开始时间"/>
                                         <span className="search-txt">至</span>
-                                        <DatePicker onChange={onChange} allowClear="false" placeholder="请选择结束时间"/>
+                                        <DatePicker onChange={onChange} allowClear={false} placeholder="请选择结束时间"/>
                                     </div>
                                     <div className="search-btn">查询</div>
                                 </div>
@@ -160,85 +160,54 @@ class Waring extends Component {
                                 }
                             </ul>
                         </div>
-                        <div className="society-waring pull-left shandow">
+                        <div className="society-waring   shandow">
                             <div className='jiao'>
                                 <div className='top'></div>
                                 <div className='right'></div>
                                 <div className='bottom'></div>
                                 <div className='left'></div>
                             </div>
-                            <p className="warning-title title-color font-18 p-t-10 ">》社会共治预警</p>
+                            <div className="warning-title title-color ">》社会共治预警</div>
                             <div className="search-top flex">
-                                <div className="waring-totle font-18 ">
-                                    <p className="">预警总数：</p> <span>11条</span>
+                                <div className="waring-totle  flex">
+                                    <div >预警总数：</div> <div className="warning-count">16条</div>
                                 </div>
-                                <div className="search-right ">
-                                    <label className="cor-time">起止时间</label>
-                                    <div className="search-input">
-                                        <img src={require("../../images/construct/search.jpeg")} alt=""/>
+                                <div className="search-right flex">
+                                    <span className="cor-time">起止时间</span>
+                                    <div className="search-input flex">
+                                        <DatePicker onChange={onChange} allowClear={false}  placeholder="请选择开始时间"/>
+                                        <span className="search-txt">至</span>
+                                        <DatePicker onChange={onChange} allowClear={false} placeholder="请选择结束时间"/>
                                     </div>
-                                    <p className="search-btn">查询</p>
+                                    <div className="search-btn">查询</div>
                                 </div>
                             </div>
                             <ul className="tab-items flex">
-                                <li className="checked-item">综治办</li>
-                                <li>网格中心</li>
-                                <li>居委会</li>
-                                <li>物业</li>
-                                <li>交警支队</li>
-                                <li>更多》</li>
+                                {this.state.warnTabList.map((item,$index)=>{
+                                    return(
+                                        <li className={ $index==1? "checked-item":''} key={$index}>{item.value}</li>
+                                    )
+                                })}
+
                             </ul>
                             <ul className="info-item">
-                                <li className="flex bg-red">
-                                    <p className="info-left">预警信息：青浦区二联馨苑1栋301室出现烟雾报警请及时处理！</p>
-                                    <span>类型：火灾消防</span>
-                                    <div className="info-right flex">
-                                        <p className="">时间：2018/02/01  19:12</p>
-                                        <i className="iconfont icon-icon7">  </i>
-                                    </div>
-                                </li>
-                                <li className="flex bg-red2">
-                                    <p className="info-left">预警信息：青浦区二联馨苑1栋301室出现烟雾报警请及时处理！</p>
-                                    <span>类型：火灾消防</span>
-                                    <div className="info-right flex">
-                                        <p className="">时间：2018/02/01  19:12</p>
-                                        <i className="iconfont icon-icon7">  </i>
-                                    </div>
-                                </li>
-                                <li className="flex bg-origin">
-                                    <p className="info-left">预警信息：青浦区二联馨苑1栋301室出现烟雾报警请及时处理！</p>
-                                    <span>类型：火灾消防</span>
-                                    <div className="info-right flex">
-                                        <p className="">时间：2018/02/01  19:12</p>
-                                        <i className="iconfont icon-icon7">  </i>
-                                    </div>
-                                </li>
-                                <li className="flex bg-yellow">
-                                    <p className="info-left">预警信息：青浦区二联馨苑1栋301室出现烟雾报警请及时处理！</p>
-                                    <span>类型：火灾消防</span>
-                                    <div className="info-right flex">
-                                        <p className="">时间：2018/02/01  19:12</p>
-                                        <i className="iconfont icon-icon7">  </i>
-                                    </div>
-                                </li>
-                                <li className="flex bg-yellow">
-                                    <p className="info-left">预警信息：青浦区二联馨苑1栋301室出现烟雾报警请及时处理！</p>
-                                    <span>类型：火灾消防</span>
-                                    <div className="info-right flex">
-                                        <p className="">时间：2018/02/01  19:12</p>
-                                        <i className="iconfont icon-icon7">  </i>
-                                    </div>
-                                </li>
-                                <li className="flex bg-green">
-                                    <p className="info-left">预警信息：青浦区二联馨苑1栋301室出现烟雾报警请及时处理！</p>
-                                    <span>类型：火灾消防</span>
-                                    <div className="info-right flex">
-                                        <p className="">时间：2018/02/01  19:12</p>
-                                        <i className="iconfont icon-icon7">  </i>
-                                    </div>
-                                </li>
+                                {
+                                    this.state.warningList.map((item,$index)=>{
+                                        return (
+                                            <li className={"flex "+  ( chooseColor(item.level)) } key={$index}>
+                                                <div className="info-left">预警信息：{item.info}</div>
+                                                <span>类型：{item.type}</span>
+                                                <div className="info-right flex">
+                                                    <div className="">时间：{item.time}</div>
+                                                    <i className="iconfont icon-icon7">  </i>
+                                                </div>
+                                            </li>
+                                        )
+                                    })
+                                }
                             </ul>
                         </div>
+
                     </section>
                 </div>
 
