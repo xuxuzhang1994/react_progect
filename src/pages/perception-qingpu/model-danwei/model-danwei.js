@@ -46,13 +46,22 @@ export default class  OneTask extends Component{
                 }
 
             ],
+            slidShowStatus:this.props.slidShowStatus,
+            currentTab:this.props.currentTab,
         }
         console.log(this.props.list)
     }
     componentDidMount(){
-        var self=this;
-        this._colume()
-        console.log($('body'))
+
+    }
+
+    componentWillReceiveProps(nextProps) {
+        var self=this
+        self.setState({
+            currentTab: nextProps.currentTab
+        });
+        self._colume()
+        console.log(this.props.currentTab)
     }
     onPressEnter(data){
         alert(data)
@@ -62,6 +71,15 @@ export default class  OneTask extends Component{
             visible: !this.state.visible,
         });
     }
+
+    slidUp(){
+        var self=this
+        self.setState({
+            slidShowStatus:!this.state.slidShowStatus
+        })
+    }
+
+
     // 绘制柱状图
     _colume(){
         console.log(Highcharts.getOptions().colors)
@@ -148,10 +166,10 @@ export default class  OneTask extends Component{
     }
     render(){
         return (
-            <div className='model-danwei'>
-                <div className='sild-btn'>收起</div>
+            <div className={"model-danwei " + (this.state.slidShowStatus?'slid-out':'' + this.state.currentTab==3?'':'hide')}>
+                <div className='sild-btn' onClick={() => this.slidUp()}>{this.state.slidShowStatus?'展开':'收起'}</div>
 
-                <div className='right-container shandow'>
+                <div className='right-container shandow' >
                     <div className='jiao'>
                         <div className='top'></div>
                         <div className='right'></div>

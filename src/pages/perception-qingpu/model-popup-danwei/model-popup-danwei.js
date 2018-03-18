@@ -8,6 +8,9 @@ import { Pagination ,Icon} from 'antd';
 export default class ModelPopupDanwei extends Component{
     constructor(props) {
         super(props);
+        this.state={
+
+        }
         this.handleCancel=this.props.cancelFunc
         console.log(this.props)
     }
@@ -20,6 +23,8 @@ export default class ModelPopupDanwei extends Component{
             visible: !this.state.visible,
         });
     }
+
+
 
     onShowSizeChange(current, pageSize) {
         console.log(current, pageSize);

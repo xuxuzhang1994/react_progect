@@ -3,9 +3,9 @@ import './perception-qingpu.less';
 import Nav from 'components/Nav/Nav';
 import {connect} from 'react-redux';
 import api from "../../api/maintenance-api";
+import ModelPerson from './model-person/model-person'
 import ModelDanwei from './model-danwei/model-danwei'
-
-// import { Button ,ButtonGroup,ButtonToolbar,DropdownButton,MenuItem} from 'react-bootstrap';
+import ModelMenuLeft from './model-menu-left/model-menu-left'
 
 class IndexList extends Component {
     constructor(props) {
@@ -47,6 +47,7 @@ class IndexList extends Component {
         ]
         this.state = {
             personList:personList,
+            currentTab:0
         }
     }
     componentDidMount(){
@@ -60,8 +61,24 @@ class IndexList extends Component {
         });
     }
 
+    // 左侧栏tab切换
 
 
+    changeTab(){
+        var self=this
+
+        return function (index) {
+            self.setState({
+                currentTab:index
+            })
+            console.log(self.state.currentTab)
+            // switch (index){
+            //     case 1:this._colume() ;break;
+            //     case 2:this._pie() ;break;
+            //     default:console.log('default')
+            // }
+        }
+    }
 
     // 地图
     _map(){
@@ -431,9 +448,11 @@ class IndexList extends Component {
                    </div>
                </div>
                <Nav index='1'></Nav>
+               <ModelMenuLeft currentTab={this.state.currentTab} changeTab={this.changeTab()} />
                <div className='main'>
                    <div className='current-tab-info'>
-                       <ModelDanwei></ModelDanwei>
+                       <ModelPerson currentTab={this.state.currentTab} />
+                       <ModelDanwei currentTab={this.state.currentTab} />
                    </div>
                </div>
            </div>
