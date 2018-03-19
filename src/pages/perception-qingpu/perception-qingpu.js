@@ -88,6 +88,48 @@ class IndexList extends Component {
         }
     }
 
+    markerClick(){
+        var self=this;
+        return function (e,index) {
+            if(index==4){
+                self.state.infoWindow.setContent(e.target.content);
+                self.state.infoWindow.open(self.state.map, e.target.getPosition());
+            }
+
+        }
+    }
+
+    message(){
+        var self=this
+        var lnglats=[//也可以使用LngLat对象
+            [121.113021,31.151209],[121.085201,31.124653],
+        ];
+        self.state.infoWindow = new AMap.InfoWindow({
+            //isCustom: true,  //使用自定义窗体
+            offset: new AMap.Pixel(-16, -35)
+        });
+        for(var i = 0, marker; i < lnglats.length; i++){
+            marker=new AMap.Marker({
+                position:lnglats[i],
+                map:self.map
+            });
+            marker.content=`<div class='tips-person flex'>
+                <div class="left-info">
+                    <div class="info-name">张云飞</div>
+                    <div class="info-adr">地址：青浦区xxx小区2栋3单元508室</div>
+                </div>
+                <p class="right-icons"><i class="iconfont icon-right"></i></p>
+            </div>`
+            self.state.infoWindow.offset=new AMap.Pixel(0, -30)
+            //给Marker绑定单击事件
+            marker.on('click', markerClick);
+        }
+        function markerClick(e){
+            self.state.infoWindow.setContent(e.target.content);
+            self.state.infoWindow.open(map, e.target.getPosition());
+        }
+    }
+
     // 地图
     _map(){
         var self=this
@@ -102,33 +144,7 @@ class IndexList extends Component {
             //center: [121.113021, 31.151209],//地图中心点
         });
 
-        var lnglats=[//也可以使用LngLat对象
-            [121.113021,31.151209],[121.085201,31.124653],
-        ];
-        var infoWindow = new AMap.InfoWindow({
-            //isCustom: true,  //使用自定义窗体
-            offset: new AMap.Pixel(-16, -35)
-        });
-        for(var i = 0, marker; i < lnglats.length; i++){
-            marker=new AMap.Marker({
-                position:lnglats[i],
-                map:map
-            });
-            marker.content=`<div class='tips-person flex'>
-                <div class="left-info">
-                    <div class="info-name">张云飞</div>
-                    <div class="info-adr">地址：青浦区xxx小区2栋3单元508室</div>
-                </div>
-                <p class="right-icons"><i class="iconfont icon-right"></i></p>
-            </div>`
-            infoWindow.offset=new AMap.Pixel(0, -30)
-            //给Marker绑定单击事件
-            marker.on('click', markerClick);
-        }
-        function markerClick(e){
-            infoWindow.setContent(e.target.content);
-            infoWindow.open(map, e.target.getPosition());
-        }
+
 
 
 
