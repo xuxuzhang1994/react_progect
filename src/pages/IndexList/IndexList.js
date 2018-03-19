@@ -867,7 +867,7 @@ class IndexList extends Component {
                                <div className='left'></div>
                            </div>
                            <div className="slide-up" onClick={() => this._slidUp()}>{this.state.slidShowStatus?'展开':'收起'}</div>
-                           <p className="one-six">实有人口</p>
+                           <p className="color-blue">实有人口</p>
                            <div className="search-input-right">
                                <input type="text" placeholder="搜索人员姓名"/>
                                <i className="iconfont icon-sousuo"></i>
@@ -928,7 +928,7 @@ class IndexList extends Component {
                                <div className='left'></div>
                            </div>
                            <div className="slide-up" onClick={() => this._slidUp()}>{this.state.slidShowStatus?'展开':'收起'}</div>
-                           <p className="one-six">实有房屋</p>
+                           <p className="color-blue">实有房屋</p>
                            <div className="search-input-right">
                                <input type="text" placeholder="搜索人员姓名"/>
                                <i className="iconfont icon-sousuo"></i>
