@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { Input } from 'antd';
 const Search = Input.Search;
 import './model-person.less'
-import ModelPopupDanwei from '../model-popup-danwei/model-popup-danwei'
+import ModelPopupPerson from './model-popup-person/model-popup-person'
 import { Modal, Button } from 'antd';
 import { DropdownButton,MenuItem} from 'react-bootstrap';
 
@@ -211,7 +211,7 @@ export default class  ModelPerson extends Component{
                         <ul className="person-list">
                             {this.state.houseList.map((item,$index)=>{
                                 return (
-                                    <li  className={'flex'+ ($index==1?" checked-people":'') } key={'person-item'+$index}>
+                                    <li  className={'flex'+ ($index==1?" checked-people":'') } key={'person-item'+$index} onClick={()=>{this.showModal()}}>
                                         <div className="person-pic">
                                             <img src={require("../../../images/person-pic.jpeg")} alt=""/>
                                         </div>
@@ -257,7 +257,7 @@ export default class  ModelPerson extends Component{
                     onOk={this.handleOk}
                     onCancel={this.handleCancel}
                 >
-                    <ModelPopupDanwei cancelFunc={()=>this.showModal()}></ModelPopupDanwei>
+                    <ModelPopupPerson cancelFunc={()=>this.showModal()}></ModelPopupPerson>
                 </Modal>
 
             </div>
