@@ -1,7 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
-
 commonConfig = {
     optimization: {
         splitChunks: {
@@ -30,7 +29,7 @@ commonConfig = {
             use: ['babel-loader?cacheDirectory=true'],
             include: path.join(__dirname, 'src')
         }, {
-            test: /\.(png|jpg|gif|svg|jpeg)$/,
+            test: /\.(png|jpg|gif|svg|jpeg|mp4)$/,
             use: [{
                 loader: 'file-loader',
                 // options: {
@@ -60,6 +59,8 @@ commonConfig = {
             "window.jQuery":"jquery",
             moment:'moment',
             "window.moment":"moment",
+            Highcharts:'Highcharts',
+            "window.Highcharts":"Highcharts",
         })
     ],
 

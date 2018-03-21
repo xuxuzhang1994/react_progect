@@ -402,7 +402,7 @@ class IndexList extends Component {
                     // pointStyle: {
                     //     width: 6,
                     //     height: 6,
-                    //     fillStyle: 'rgba(153, 0, 153, 0.38)'
+                    //     fillStyle: radar'rgba(153, 0, 153, 0.38)'
                     // },
                     //点的样式
                     pointStyle: {

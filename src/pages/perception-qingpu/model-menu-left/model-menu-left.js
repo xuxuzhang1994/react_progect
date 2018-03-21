@@ -20,6 +20,9 @@ export default class  ModelMenuLeft extends Component{
 
 
     componentWillReceiveProps(nextProps) {
+        this.setState({
+            currentTab:nextProps.currentTab
+        })
         console.log(this.nextProps)
     }
 
@@ -66,7 +69,7 @@ export default class  ModelMenuLeft extends Component{
                         <div className="item-info">实有力量与装备</div>
                         <div className="item-count">23,567</div>
                     </li>
-                    <li className={(this.state.currentTab==6?"current-tab":" "+ ' flex') } onClick={() => this.changeTab(6)}>
+                    <li className={(this.state.currentTab==6?"current-tab":" ")+ ' flex' } onClick={() => this.changeTab(6)}>
                         <div className="item-info">实有警情事件</div>
                         <div className="item-count">12</div>
                     </li>

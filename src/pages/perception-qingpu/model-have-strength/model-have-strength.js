@@ -1,69 +1,66 @@
 import React, {Component} from 'react';
 import { Input } from 'antd';
 const Search = Input.Search;
-import './model-person.less'
-import ModelPopupPerson from './model-popup-person/model-popup-person'
-import { Modal, Button } from 'antd';
-import { DropdownButton,MenuItem} from 'react-bootstrap';
+import './model-have-strength.less'
+import ModelPopupHaveStrength from '../model-popup-have-strength/model-popup-have-strength'
+import { Modal } from 'antd';
+import {DropdownButton,MenuItem} from 'react-bootstrap';
 
-export default class  ModelPerson extends Component{
+export default class  modelSecurityEquipment extends Component{
     constructor(props) {
         super(props);
-        const houseList=[
-            {
-                name:'张静',
-                sex:'女',
-                age:'18',
-                count:'4',
-                address:'徐泾镇二联馨苑2栋3单元502室',
-                flags:'群租房'
-            },
-            {
-                name:'张静',
-                sex:'女',
-                age:'18',
-                count:'4',
-                address:'徐泾镇二联馨苑2栋3单元502室',
-                flags:'群租房'
-            },
-            {
-                name:'张静',
-                sex:'女',
-                age:'18',
-                count:'4',
-                address:'徐泾镇二联馨苑2栋3单元502室',
-                flags:'群租房'
-            },
-            {
-                name:'张静',
-                sex:'女',
-                age:'18',
-                count:'4',
-                address:'徐泾镇二联馨苑2栋3单元502室',
-                flags:'群租房'
-            },
-        ];
         this.state = {
-            houseList: houseList,
+            dataList: [
+                {
+                    id:'上海xxx科技信息有限公司',
+                    address:'xxx路与xx路交叉口'
+                },
+                {
+                    id:'上海xxx科技信息有限公司',
+                    address:'xxx路与xx路交叉口'
+                },
+                {
+                    id:'上海xxx科技信息有限公司',
+                    address:'xxx路与xx路交叉口'
+                },
+                {
+                    id:'上海xxx科技信息有限公司',
+                    address:'xxx路与xx路交叉口'
+                },
+                {
+                    id:'上海xxx科技信息有限公司',
+                    address:'xxx路与xx路交叉口'
+                },
+                {
+                    id:'上海xxx科技信息有限公司',
+                    address:'xxx路与xx路交叉口'
+                },
+                {
+                    id:'上海xxx科技信息有限公司',
+                    address:'xxx路与xx路交叉口'
+                },
+                {
+                    id:'上海xxx科技信息有限公司',
+                    address:'xxx路与xx路交叉口'
+                },
+            ],
             slidShowStatus:this.props.slidShowStatus,
-            currentTab:this.props.currentTab
+            currentTab:this.props.currentTab,
         }
-        console.log(this.props.currentTab)
+        console.log(this.props.list)
     }
-
     componentDidMount(){
-        var self=this;
-        this._colume()
-        console.log($('body'))
+
     }
 
     componentWillReceiveProps(nextProps) {
-        this.setState({
+        var self=this
+        self.setState({
             currentTab: nextProps.currentTab
         });
+        self._colume()
         console.log(this.props.currentTab)
     }
-
     onPressEnter(data){
         alert(data)
     }
@@ -162,12 +159,12 @@ export default class  ModelPerson extends Component{
             }
         };
         // 图表初始化函数
-        var chart = Highcharts.chart('danwei_colume', options);
+        var chart = Highcharts.chart('strength-colume', options);
 
     }
     render(){
         return (
-            <div className={"model-person " + (this.state.slidShowStatus?'slid-out':'' + this.state.currentTab==1?'':'hide')}>
+            <div className={"model-have-strength " + (this.state.slidShowStatus?'slid-out':'' + this.state.currentTab==5?'':'hide')}>
                 <div className='sild-btn' onClick={() => this.slidUp()}>{this.state.slidShowStatus?'展开':'收起'}</div>
 
                 <div className='right-container shandow' >
@@ -177,64 +174,56 @@ export default class  ModelPerson extends Component{
                         <div className='bottom'></div>
                         <div className='left'></div>
                     </div>
-                    <div className='person-count'>
-                        <div className="color-blue">实有房屋</div>
-                        <div className="search-input-right">
-                            <input type="text" placeholder="搜索人员姓名"/>
-                            <i className="iconfont icon-sousuo"></i>
-                            <ul className="search-right-list">
-                                <li>xx小区</li>
-                                <li className="checked-list">xx小区</li>
-                                <li>xx小区</li>
-                            </ul>
+                    <div className='type-list'>
+                        <div className='title'>实有安防设备</div>
+                        <div className='search-box'>
+                            <Search
+                                placeholder="搜索单位"
+                                onSearch={value => this.onPressEnter(value)}
+                            />
                         </div>
-                        <div className="sel-item">
-                            <DropdownButton bsStyle='success' title={'出租房'} key={'d'} id={'d'}>
+                        <div className='select-box'>
+                            <DropdownButton bsStyle='success' title={'民警'} key={'d'} id={'d'}>
                                 <MenuItem eventKey="1">出租房</MenuItem>
                                 <MenuItem eventKey="2">出租房</MenuItem>
                                 <MenuItem eventKey="3" active>激活条目</MenuItem>
                                 <MenuItem eventKey="4">出租房</MenuItem>
                             </DropdownButton>
-                            <DropdownButton bsStyle='success' title={'出租房'} key={'ddd'} id={'d'}>
+                            <DropdownButton bsStyle='success' title={'装备'} key={'ddd'} id={'d'}>
                                 <MenuItem eventKey="1">操作</MenuItem>
                                 <MenuItem eventKey="2">另一操作</MenuItem>
                                 <MenuItem eventKey="3" active>激活条目</MenuItem>
                                 <MenuItem divider />
                                 <MenuItem eventKey="4">分组链接</MenuItem>
                             </DropdownButton>
-                            {/*<div className="sels">*/}
-                            {/*<select>*/}
-                            {/*<option value="">重点人口</option>*/}
-                            {/*</select>*/}
-                            {/*</div>*/}
                         </div>
-                        <ul className="person-list">
-                            {this.state.houseList.map((item,$index)=>{
-                                return (
-                                    <li  className={'flex'+ ($index==1?" checked-people":'') } key={'person-item'+$index} onClick={()=>{this.showModal()}}>
-                                        <div className="person-pic">
-                                            <img src={require("../../../images/person-pic.jpeg")} alt=""/>
+                        <div className='data-list' >
+                            {this.state.dataList.map((item,$index) => {
+                                return(
+                                    <div key={$index} className={'data-item flex ' + ($index==1?'data-item-active':'')} onClick={()=>{this.showModal()}}>
+                                        <img src={require('./photo.png')} alt=""/>
+                                        <div className='item-info'>
+                                            <div className='name flex'>
+                                                <span>姓名</span>
+                                                <span>李大庄</span>
+                                            </div>
+                                            <div className='other flex'>
+                                                <span>警号</span>
+                                                <span>4002189</span>
+                                            </div>
+                                            <div className='other flex'>
+                                                <span>电话</span>
+                                                <span>021-2341341</span>
+                                            </div>
+                                            <div className='other flex'>
+                                                <span>装备</span>
+                                                <span>电棍，手枪，摩托车</span>
+                                            </div>
                                         </div>
-                                        <div className="person-info">
-                                            <div className="base-info flex">
-                                                <b>姓名：{item.name}</b>
-                                                <div className="sex color-blue">男</div>
-                                                <span className="color-blue">32岁</span>
-                                            </div>
-                                            <div>
-                                                <span>身份证号：</span>
-                                                <span className="color-blue">342222222222****</span>
-                                            </div>
-                                            <div className="flex address">
-                                                <span className="adr-label">家庭住址：</span>
-                                                <div className="color-blue adr-info">青浦区xx小区2栋3单元508室</div>
-                                            </div>
-                                            <div className="label-item"><span>标签：</span><span className="person-label">精神病人</span></div>
-                                        </div>
-                                    </li>
+                                    </div>
                                 )
                             })}
-                        </ul>
+                        </div>
                     </div>
                 </div>
 
@@ -253,7 +242,7 @@ export default class  ModelPerson extends Component{
                             <i className='iconfont icon-arrowR'></i>
                         </div>
                     </div>
-                    <div id='danwei_colume'></div>
+                    <div id='strength-colume' className='home-chars'></div>
                 </div>
 
                 {/* 单位详情弹框 */}
@@ -263,7 +252,7 @@ export default class  ModelPerson extends Component{
                     onOk={this.handleOk}
                     onCancel={this.handleCancel}
                 >
-                    <ModelPopupPerson cancelFunc={()=>this.showModal()}></ModelPopupPerson>
+                    <ModelPopupHaveStrength cancelFunc={()=>this.showModal()}></ModelPopupHaveStrength>
                 </Modal>
 
             </div>

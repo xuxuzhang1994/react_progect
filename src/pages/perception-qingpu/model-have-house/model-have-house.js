@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import { Input } from 'antd';
 const Search = Input.Search;
-import './model-person.less'
-import ModelPopupPerson from './model-popup-person/model-popup-person'
+import './model-have-house.less'
+import ModelPopupHaveHousei from './model-popup-hvae-house/model-popup-hvae-house'
 import { Modal, Button } from 'antd';
 import { DropdownButton,MenuItem} from 'react-bootstrap';
 
@@ -43,7 +43,14 @@ export default class  ModelPerson extends Component{
                 flags:'群租房'
             },
         ];
+        const books=[{ name: '出租房', color: '#1050C7',},
+            { name: '自住房屋', color: '#326AD5'},
+            { name: '闲置空房', color: '#2EA7D1'},
+            {name: '商业用房', color: '#30DAE9'},
+            {name: '田间窝棚', color: '#1AD1BE'},
+            {name: '其他', color: '#30E97E'},]
         this.state = {
+            list:books,
             houseList: houseList,
             slidShowStatus:this.props.slidShowStatus,
             currentTab:this.props.currentTab
@@ -53,7 +60,7 @@ export default class  ModelPerson extends Component{
 
     componentDidMount(){
         var self=this;
-        this._colume()
+        this._pie()
         console.log($('body'))
     }
 
@@ -81,93 +88,108 @@ export default class  ModelPerson extends Component{
     }
 
 
-    // 绘制柱状图
-    _colume(){
-        console.log(Highcharts.getOptions().colors)
-        Highcharts.getOptions().colors = Highcharts.map(["#009FEB", "#E91F1F"], function (color) {
-            return {
-                linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
-                stops: [
-                    [0, '#25D7FB'],
-                    [1, '#0B5ECF']
-                ]
-            };
-            console.log(Highcharts.Color(color).brighten(-0.3).get('rgb'))
-
-        });
+    // 绘制饼图
+    _pie(){
+        var self=this
+        Highcharts.getOptions().colors=['#1050C7','#326AD5','#2EA7D1','#30DAE9', '#1AD1BE', '#30E97E', '#f7a35c', '#8085e9',
+            '#f15c80', '#e4d354', '#2b908f', '#f45b5b', '#91e8e1']
         // 图表配置
         var options = {
-            colors:{
-                linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
-                stops: [
-                    [0, '#0B5ECF'],
-                    [1, '#25D7FB']
-                ]
-            },
-            chart: {
-                type: 'column',
-                spacing : [40, 15 , 10, 10]
-            },
-            title: {
-                text: '》年度预警趋势分析',
-                useHTML:true
-            },
-            legend:{
-                enabled: false,
-                align: 'right',
-                verticalAlign: 'top',
-                x: 0,
-                y: 29,
-                useHTML:true
-            },
-            xAxis: {
-                tickPosition: 'inside',
-                categories: ['1月', '2月','3月', '4月','5月','6月','7月', '8月','9月', '10月','11月','12月'],
-                className:'zhangjiayu',
-                tickmarkPlacement:'between',
-                tickPixelInterval:1,
-            },
-            yAxis: {
-                gridLineDashStyle: 'ShortDash',
-                title: {
-                    text: null
-                },
-
-                tickAmount: 6,
-                labels: {
-                    formatter: function () {
-                        return (Math.abs(this.value) / 100)
-                    }
-                },
-            },
-            plotOptions: {
-                useHTML:true,
-                column: {
-                    stacking: 'normal',
-                    //pointInterval:0.6,
-                    //pointPadding:-0.25
-                    pointPadding:0,
-                    //groupPadding: 0
-                }
-            },
             credits: {
                 enabled: false
             },
-            series: [{
-                name: '事件预警',
-                data: [ 2000,500, 1300, 400, 700, 2000,500, 1300, 400, 700, 2000,500, 1300, 400, 700, 2000,500,]
-            }],
+            colors:{
+                linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
+                stops: [
+                    [0, '#003399'],
+                    [1, '#3366AA']
+                ]
+            },
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                spacing : [0, 0 , 0, 0]
+            },
+            title: {
+                floating:true,
+                useHTML:true,
+                text: null
+            },
             tooltip: {
-                pointFormat: '{series.name}: <b>{point.y}</b> ({point.percentage:.1f}%)<br/>'
-            }
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            legend: {
+                enabled: true
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: false,
+                        //format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                        format: '{point.percentage:.1f} %',
+                        style: {
+                            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                        }
+                    },
+                    point: {
+                        events: {
+                            mouseOver: function(e) {  // 鼠标滑过时动态更新标题
+                                // 标题更新函数，API 地址：https://api.hcharts.cn/highcharts#Chart.setTitle
+                                // chart.setTitle({
+                                //     text: e.target.name+ '\t'+ e.target.y + ' %'
+                                // });
+                            }
+                            //,
+                            // click: function(e) { // 同样的可以在点击事件里处理
+                            //     chart.setTitle({
+                            //         text: e.point.name+ '\t'+ e.point.y + ' %'
+                            //     });
+                            // }
+                        }
+                    },
+                    innerSize: 100
+                }
+            },
+            series: [{
+                type: 'pie',
+                innerSize: '60%',
+                name: '市场份额',
+                data: [
+                    {name:'Firefox',   y: 45.0, url : 'http://bbs.hcharts.cn'},
+                    ['IE',       26.8],
+                    {
+                        name: 'Chrome',
+                        y: 12.8,
+                        //sliced: true,
+                        selected: true,
+                        url: 'http://www.hcharts.cn'
+                    },
+                    ['Safari',    8.5],
+                    ['Opera',     6.2],
+                    ['其他',   0.7]
+                ]
+            }]
         };
+        var func = function (c) {
+            // 环形图圆心
+            var centerY = c.series[0].center[1],
+                titleHeight = parseInt(c.title.styles.fontSize);
+            c.setTitle({
+                y:centerY + titleHeight/2
+            });
+            chart = c;
+        }
         // 图表初始化函数
-        var chart = Highcharts.chart('danwei_colume', options);
+        var chart = Highcharts.chart('pie', options);
 
     }
+
     render(){
         return (
-            <div className={"model-person " + (this.state.slidShowStatus?'slid-out':'' + this.state.currentTab==1?'':'hide')}>
+            <div className={"model-person " + (this.state.slidShowStatus?'slid-out':'' + this.state.currentTab==2?'':'hide')}>
                 <div className='sild-btn' onClick={() => this.slidUp()}>{this.state.slidShowStatus?'展开':'收起'}</div>
 
                 <div className='right-container shandow' >
@@ -178,7 +200,7 @@ export default class  ModelPerson extends Component{
                         <div className='left'></div>
                     </div>
                     <div className='person-count'>
-                        <div className="color-blue">实有房屋</div>
+                        <div className="one-six">实有房屋</div>
                         <div className="search-input-right">
                             <input type="text" placeholder="搜索人员姓名"/>
                             <i className="iconfont icon-sousuo"></i>
@@ -202,34 +224,23 @@ export default class  ModelPerson extends Component{
                                 <MenuItem divider />
                                 <MenuItem eventKey="4">分组链接</MenuItem>
                             </DropdownButton>
-                            {/*<div className="sels">*/}
-                            {/*<select>*/}
-                            {/*<option value="">重点人口</option>*/}
-                            {/*</select>*/}
-                            {/*</div>*/}
                         </div>
                         <ul className="person-list">
                             {this.state.houseList.map((item,$index)=>{
                                 return (
-                                    <li  className={'flex'+ ($index==1?" checked-people":'') } key={'person-item'+$index} onClick={()=>{this.showModal()}}>
+                                    <li onClick={ () => {this.showModal()}}  className={'flex'+ ($index==1?" checked-people":'') } key={'person-item'+$index}>
                                         <div className="person-pic">
                                             <img src={require("../../../images/person-pic.jpeg")} alt=""/>
                                         </div>
                                         <div className="person-info">
                                             <div className="base-info flex">
-                                                <b>姓名：{item.name}</b>
+                                                <b>户主：{item.name}</b>
                                                 <div className="sex color-blue">男</div>
                                                 <span className="color-blue">32岁</span>
                                             </div>
-                                            <div>
-                                                <span>身份证号：</span>
-                                                <span className="color-blue">342222222222****</span>
-                                            </div>
-                                            <div className="flex address">
-                                                <span className="adr-label">家庭住址：</span>
-                                                <div className="color-blue adr-info">青浦区xx小区2栋3单元508室</div>
-                                            </div>
-                                            <div className="label-item"><span>标签：</span><span className="person-label">精神病人</span></div>
+                                            <div><span>登记人口：</span><span className="color-blue">{item.count}人</span>  </div>
+                                            <div className="flex house"><span className="adr-label">房屋位置：</span><div className="color-blue adr-info">{item.address}</div></div>
+                                            <div className="label-item"><span>标签：</span><span className="person-label">{item.flags}</span></div>
                                         </div>
                                     </li>
                                 )
@@ -253,7 +264,20 @@ export default class  ModelPerson extends Component{
                             <i className='iconfont icon-arrowR'></i>
                         </div>
                     </div>
-                    <div id='danwei_colume'></div>
+                    <div className='pir-box'>
+                        <div className='title'>标题</div>
+                        <div id='pie'></div>
+                        <div className='legend'>
+                            {this.state.list.map((item,$index) => {
+                                return (
+                                    <div key={$index} className='legend-item flex'>
+                                        <div className='color' style={{'background':item.color}}></div>
+                                        <div>{item.name}</div>
+                                    </div>
+                                )
+                            })}
+                        </div>
+                    </div>
                 </div>
 
                 {/* 单位详情弹框 */}
@@ -263,7 +287,7 @@ export default class  ModelPerson extends Component{
                     onOk={this.handleOk}
                     onCancel={this.handleCancel}
                 >
-                    <ModelPopupPerson cancelFunc={()=>this.showModal()}></ModelPopupPerson>
+                    <ModelPopupHaveHousei cancelFunc={()=>this.showModal()}></ModelPopupHaveHousei>
                 </Modal>
 
             </div>

@@ -1,9 +1,10 @@
 @import "../../../base/project-common";
-.model-person{
+.model-have-strength{
   position: relative;
   transition: 0.5s;
   //padding: 0 .09rem 0 .05rem;
   width: 2.32rem;
+  color: #0094FC;
   .sild-btn{
     width: .17rem;
     height: .33rem;
@@ -16,62 +17,35 @@
     border-radius: .1rem 0rem 0rem .1rem;
     padding: .05rem;
   }
-  //实有人口
-  .person-count{
-    width:2.32rem;
+  .right-container{
+    width: 2.32rem;
     height: 3.5rem;
-    padding: .12rem .07rem .09rem .07rem;
-    color: #fff;
-    font-size: 9px;
-    .font-7{
-      font-size: .07rem;
-    }
-    .color-blue{
+    margin-bottom: .06rem;
+  }
+  .type-list{
+    padding: 0 .09rem 0 0.05rem;
+    height: 3.5rem;
+    overflow: hidden;
+    .title{
       color: #009CFF;
+      font-size: .09rem;
+      margin: .12rem 0 .06rem 0;
     }
-    .search-input-right{
-      width: 2.18rem;
-      height:.17rem;
-      line-height: .17rem;
-      border: 1px solid #539CFF;
-      background:rgba(25,74,141,.4);
-      padding: 0 .05rem  0 0.07rem;
-      margin-top:.05rem;
-      position: relative;
-      >input{
-        width:1.9rem;
-        background: transparent;
-        border: none;
-        color: #FEFEFE;
-      }
-      input::-webkit-input-placeholder { /* WebKit browsers */
-        color: #FEFEFE;
-      }
-      >i{
-        font-size: 11px;
-        position: absolute;
-        right: .02rem;
-      }
-      .search-right-list{
-        width: 2.18rem;
-        border: 1px solid #539CFF;
-        border-top: none;
-        background:rgba(25,74,141,.4);
-        position: absolute;
-        top:.16rem;
-        left: -1px;
-        display: none;
-        >li{
-          width:100%;
-          padding: .03rem .05rem .03rem .07rem;
+    .search-box{
+      .ant-input-search{
+        width: 100%;
+        .ant-input{
+          height: .17rem;
+          background: RGBA(25, 74, 141, 0.5);
+          border: 1px solid #539CFF;
+          color: #FEFEFE;
         }
-        >li.checked-list{
-          background: rgba(7,44,69,.7);
+        .ant-input-search-icon{
+          color: #1990FF;
         }
-
       }
     }
-    .sel-item{
+    .select-box{
       margin:.07rem 0;
       .dropdown{
         .btn{
@@ -90,119 +64,70 @@
       .dropdown:nth-child(1){
         margin-right: .04rem;
       }
-      .sels{
-        width: 1.06rem;
+    }
+    .type-box{
+      margin-top: .07rem;
+      margin-bottom: .07rem;
+      width: 100%;
+      justify-content: space-between;
+
+      .type-item{
+        width: .52rem;
+        text-align: center;
+        font-size: .08rem;
         height: .17rem;
+        line-height: .17rem;
+        color: #FEFEFE;
+        background: #194A8D;
         border: 1px solid #539CFF;
       }
-    }
-    .person-list{
-      width: 2.18rem;
-      height:2.55rem;
-      overflow: scroll;
-      >li{
-        width:2.13rem;
-        padding: .04rem .05rem .04rem 0 ;
-        border-bottom: 1px solid #0075FC;
-        margin-bottom:.06rem;
-        .person-pic{
-          min-width: .38rem;
-          height: .45rem;
-          margin-right:.04rem;
-          border: 1px solid #539CFF;
-          >img  {
-            width:100%;
-            height:100%;
-          }
-        }
-        .person-info{
-          font-size: .07rem;
-          flex-grow: 1;
-          overflow: hidden;
-          .base-info{
-            justify-content: flex-start;
-            .sex{
-              margin-left:.15rem;
-              margin-right:.11rem;
-              padding-left:.11rem;
-              padding-right:.14rem;
-              position: relative;
-              &:before,&:after{
-                content: '';
-                position: absolute;
-                top: 30%;
-                width: 1px;
-                height: .06rem;
-                background: #367EDE;
-              }
-              &:before{
-                left: 0;
-              }
-              &:after{
-                right: 0;
-              }
-            }
-
-          }
-          .address{
-            justify-content: flex-start;
-          }
-          .house{
-            justify-content: flex-start;
-          }
-          .adr-label{
-            min-width:max-content ;
-          }
-          .adr-info{
-            overflow:hidden;
-            text-overflow:ellipsis;
-            white-space:nowrap;
-            max-width:100%;
-          }
-          .label-item{
-            margin-top:.03rem;
-          }
-          .person-label{
-            width: .32rem;
-            height: .11rem;
-            background: #FF0000;
-            color: #fff;
-            border-radius: 3px;
-            font-size: .06rem;
-            padding: 0 .05rem;
-          }
-        }
-        .color-blue{
-          color: #009CFF;
-        }
+      .type-item-current{
+        background: #0094FC;
       }
-      >li.checked-people{
-        background: rgba(0,148,252,.3);
+    }
+    .data-list{
+      height: 2.77rem;
+      overflow: scroll;
+      .data-item{
+        width: 2.13rem;
+        height: .56rem;
+        padding-left: .09rem;
+        font-size: .08rem;
+        border-bottom: 1px solid #0075FC;
+        justify-content: flex-start;
+        img{
+          width: .37rem;
+          height: .45rem;
+          margin-right: .04rem;
+          border:  1px solid #0075FC;
+        }
+        .item-info{
+          height: 100%;
+          line-height: 1;
+          .other,.name{
+            font-size: .07rem;
+            margin-top: .04rem;
+            span:nth-child(1){
+              color: #FEFEFE;
+            }
+          }
+          .name{
+            font-size: .08rem;
+            margin-top: .06rem;
+          }
+          .term:nth-child(2){
+            font-size: .05rem;
+          }
+        }
+
+      }
+      .data-item-active{
+        background: RGBA(0, 148, 252, 0.3);
         border: 1px solid #FFC000;
       }
     }
-    .bulr{
-      width:100%;
-      height: .85rem;
-      background: linear-gradient(rgba(255,0,0,0), rgba(0,0,0,1));
-      position: absolute;
-      bottom: 0;
-      left: 0;
-    }
-    .slide-up{
-      width: .17rem;
-      height: .33rem;
-      text-align: center;
-      padding: .04rem 0;
-      background:rgba(14,94,182,.72);
-      color: #4FB2FE;
-      border-radius: 13px 0 0 13px;
-      position: absolute;
-      left: -.17rem;
-      top:0;
-      padding: 5px;
-    }
   }
+
 
   // 图表
   .chart-box{
@@ -234,7 +159,7 @@
         color: #fff;
       }
     }
-    #danwei_colume,#pie{
+    .home-chars{
       width: 2.32rem;
       height:1.41rem;
       .highcharts-background{
@@ -340,3 +265,4 @@
 .slid-out{
   transform: translateX(2.32rem);
 }
+

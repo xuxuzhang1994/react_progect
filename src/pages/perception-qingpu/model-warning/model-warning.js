@@ -1,48 +1,50 @@
 import React, {Component} from 'react';
 import { Input } from 'antd';
 const Search = Input.Search;
-import './model-security-equipment.less'
-import ModelPopupSecurityEquipment from '../model-popup-security-equipment/model-popup-security-equipment'
-import { Modal } from 'antd';
-import {DropdownButton,MenuItem} from 'react-bootstrap';
-
-export default class  modelSecurityEquipment extends Component{
+import './model-warning.less'
+import ModelPopupWarning from './model-popup-warning/model-popup-warning'
+import { Modal, Button } from 'antd';
+export default class  ModelWarning extends Component{
     constructor(props) {
         super(props);
         this.state = {
             dataList: [
                 {
-                    id:'上海xxx科技信息有限公司',
-                    address:'xxx路与xx路交叉口'
+                    title:'上海xxx科技信息有限公司'
                 },
                 {
-                    id:'上海xxx科技信息有限公司',
-                    address:'xxx路与xx路交叉口'
+                    title:'上海xxx科技信息有限公司'
                 },
                 {
-                    id:'上海xxx科技信息有限公司',
-                    address:'xxx路与xx路交叉口'
+                    title:'上海xxx科技信息有限公司'
                 },
                 {
-                    id:'上海xxx科技信息有限公司',
-                    address:'xxx路与xx路交叉口'
+                    title:'上海xxx科技信息有限公司'
                 },
                 {
-                    id:'上海xxx科技信息有限公司',
-                    address:'xxx路与xx路交叉口'
+                    title:'上海xxx科技信息有限公司'
                 },
                 {
-                    id:'上海xxx科技信息有限公司',
-                    address:'xxx路与xx路交叉口'
+                    title:'上海xxx科技信息有限公司'
                 },
                 {
-                    id:'上海xxx科技信息有限公司',
-                    address:'xxx路与xx路交叉口'
+                    title:'上海xxx科技信息有限公司'
                 },
                 {
-                    id:'上海xxx科技信息有限公司',
-                    address:'xxx路与xx路交叉口'
-                },
+                    title:'上海xxx科技信息有限公司'
+                },{
+                    title:'上海xxx科技信息有限公司'
+                }
+                ,{
+                    title:'上海xxx科技信息有限公司'
+                }
+                ,{
+                    title:'上海xxx科技信息有限公司'
+                }
+                ,{
+                    title:'上海xxx科技信息有限公司'
+                }
+
             ],
             slidShowStatus:this.props.slidShowStatus,
             currentTab:this.props.currentTab,
@@ -106,7 +108,7 @@ export default class  modelSecurityEquipment extends Component{
                 spacing : [40, 15 , 10, 10]
             },
             title: {
-                text: '》实有安防设施统计分析',
+                text: '》实有警情事件',
                 useHTML:true
             },
             legend:{
@@ -159,12 +161,12 @@ export default class  modelSecurityEquipment extends Component{
             }
         };
         // 图表初始化函数
-        var chart = Highcharts.chart('equipment-colume', options);
+        var chart = Highcharts.chart('warning-colume', options);
 
     }
     render(){
         return (
-            <div className={"model-security-equipment " + (this.state.slidShowStatus?'slid-out':'' + this.state.currentTab==4?'':'hide')}>
+            <div className={"model-warning " + (this.state.slidShowStatus?'slid-out':'' + this.state.currentTab==6?'':'hide')}>
                 <div className='sild-btn' onClick={() => this.slidUp()}>{this.state.slidShowStatus?'展开':'收起'}</div>
 
                 <div className='right-container shandow' >
@@ -175,47 +177,44 @@ export default class  modelSecurityEquipment extends Component{
                         <div className='left'></div>
                     </div>
                     <div className='type-list'>
-                        <div className='title'>实有安防设备</div>
+                        <div className='title'>实有警情事件</div>
                         <div className='search-box'>
                             <Search
-                                placeholder="搜索单位"
+                                placeholder="输入编号地址"
                                 onSearch={value => this.onPressEnter(value)}
                             />
                         </div>
-                        <div className='select-box'>
-                            <DropdownButton bsStyle='success' title={'技防设施'} key={'d'} id={'d'}>
-                                <MenuItem eventKey="1">出租房</MenuItem>
-                                <MenuItem eventKey="2">出租房</MenuItem>
-                                <MenuItem eventKey="3" active>激活条目</MenuItem>
-                                <MenuItem eventKey="4">出租房</MenuItem>
-                            </DropdownButton>
-                            <DropdownButton bsStyle='success' title={'监控探头'} key={'ddd'} id={'d'}>
-                                <MenuItem eventKey="1">操作</MenuItem>
-                                <MenuItem eventKey="2">另一操作</MenuItem>
-                                <MenuItem eventKey="3" active>激活条目</MenuItem>
-                                <MenuItem divider />
-                                <MenuItem eventKey="4">分组链接</MenuItem>
-                            </DropdownButton>
+                        <div className='type-box flex'>
+                            <div className='type-item'>
+                                实时警情列表
+                            </div>
+                            <div className='type-item'>
+                                历史警情列表
+                            </div>
                         </div>
-                        <div className='data-list' >
-                            {this.state.dataList.map((item,$index) => {
+                        <div className='data-list'>
+                            {this.state.dataList.map((item,$index)=>{
                                 return(
-                                    <div key={$index} className={'data-item flex ' + ($index==1?'data-item-active':'')} onClick={()=>{this.showModal()}}>
-                                        <img src={require('./shexiangtou.png')} alt=""/>
-                                        <div className='item-info'>
-                                            <div className='term'>
-                                                <span>编号</span>
-                                                <span>00124</span>
+                                    <div className='data-item flex' key={$index} key={$index} onClick={() => {this.showModal()}}>
+                                        <img src={require('./WechatIMG2681521429351_.pic.jpg')} alt=""/>
+                                        <div className='data-item-right'>
+                                            <div className='item-info'>
+                                                <span>时间</span>
+                                                <span>2018-03-15   17:12:43</span>
                                             </div>
-                                            <div className='term'>
-                                                <span>位置</span>
-                                                <span>xxx路与xx路交叉口</span>
+                                            <div className='item-info'>
+                                                <span>事件</span>
+                                                <span>电瓶车停在楼下被偷</span>
+                                            </div>
+                                            <div className='item-info'>
+                                                <span>地点</span>
+                                                <span>青浦区xx路110号xxx小区</span>
                                             </div>
                                         </div>
+
                                     </div>
                                 )
                             })}
-
                         </div>
                     </div>
                 </div>
@@ -235,7 +234,7 @@ export default class  modelSecurityEquipment extends Component{
                             <i className='iconfont icon-arrowR'></i>
                         </div>
                     </div>
-                    <div id='equipment-colume'></div>
+                    <div id='warning-colume' className='home-chars'></div>
                 </div>
 
                 {/* 单位详情弹框 */}
@@ -245,7 +244,7 @@ export default class  modelSecurityEquipment extends Component{
                     onOk={this.handleOk}
                     onCancel={this.handleCancel}
                 >
-                    <ModelPopupSecurityEquipment cancelFunc={()=>this.showModal()}></ModelPopupSecurityEquipment>
+                    <ModelPopupWarning cancelFunc={()=>this.showModal()}></ModelPopupWarning>
                 </Modal>
 
             </div>
