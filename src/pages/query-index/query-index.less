@@ -1,0 +1,75 @@
+@import '../../base/css/flex.less';
+@import '../../base/project-common.less';
+
+.query-index{
+  .query-model{
+    width:100%;
+    min-height: 100vh;
+    margin-top:-48px;
+    background: url("./background-search.jpg")no-repeat;
+    background-size:100% 100% ;
+    .query-title{
+      width: 4.1rem;
+      height: .27rem;
+      position: fixed;
+      top: 35%;
+      left: 50%;
+      transform: translate(-50%,0);
+      >img  {
+        width:100%;
+        height:100%;
+      }
+    }
+    .query-item{
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      justify-content: flex-start;
+      .query-input{
+        width: 4.3rem;
+        height: .4rem;
+        padding: .05rem 0 ;
+        border-top: 2px solid #67C8FF;
+        border-bottom: 2px solid #67C8FF;
+        .search-icon{
+          position: absolute;
+          right: -.4rem;
+          top: 50%;
+          color: #fff;
+          z-index: 10;
+          transform: translate(0,-50%);
+          font-size: .15rem;
+        }
+        .ant-input-search, .ant-input-search-enter-button, .ant-input-affix-wrapper{
+          .ant-input{
+            height: .28rem;
+            background:rgba(0, 148, 252, 0.3);
+            color: #fff;
+            border-radius:0 ;
+            border: 0;
+            border-left: 1px solid #67C8FF;
+            border-right: 1px solid #67C8FF;
+            position: relative;
+          }
+          .ant-input-suffix{
+            right: -1.1rem;
+            .ant-btn{
+              width: 1rem;
+              height: .4rem;
+              color: #fff;
+              border: 0;
+              background: RGBA(11, 94, 207, 1);
+              font-family: "SourceHanSansCN-Bold" !important;
+              box-shadow: 0 0 20px RGBA(48, 136, 255, 1) inset;
+              font-size: .15rem;
+            }
+          }
+        }
+      }
+
+    }
+
+  }
+
+}
