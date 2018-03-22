@@ -59,8 +59,8 @@ commonConfig = {
             "window.jQuery":"jquery",
             moment:'moment',
             "window.moment":"moment",
-            Highcharts:'Highcharts',
-            "window.Highcharts":"Highcharts",
+            // Highcharts:'Highcharts',
+            // "window.Highcharts":"Highcharts",
         })
     ],
 
