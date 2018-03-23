@@ -57,11 +57,9 @@ import {
 } from 'react-router-dom'
 import PerceptionQingpu from 'bundle-loader?lazy!../pages/qinpu/perception-qingpu/perception-qingpu';
 import PageRoute from '../pages/page.routes';
-import QueueAnim from 'rc-queue-anim';
 
 let routes = [{ path: '/',  component: PerceptionQingpu}]
 routes=routes.concat(PageRoute);
-
 
 const createComponent = (component) => (props) => (
     <Bundle load={component}>
@@ -84,14 +82,6 @@ const RouteWithSubRoutes = (route) => (
 
 )
 
-// const RouteWithSubRoutes = (route) => (
-//         <Route exact path={route.path} render={()=>(
-//             <QueueAnim delay={300} className="queue-simple">
-//                 <h1 key={'a'}>11111111</h1>
-//                 <h1 key={'b'}>11111111</h1>
-//             </QueueAnim>
-//         )}/>
-// )
 const RouteConfig = () => (
     <div>
         {routes.map((route, i) => (
