@@ -1,6 +1,6 @@
 //import PerceptionQingpuModel from 'bundle-loader?page/perception-qingpu/perception-qingpu';
 import PerceptionQingpuModel from 'bundle-loader?lazy!./perception-qingpu/perception-qingpu';
-import page1Route from './perception-qingpu/page1/page1.routes';
+import page1 from './perception-qingpu/page1/page1.routes';
 
 
 let PerceptionQingpuRoutes = [
@@ -13,7 +13,7 @@ let PerceptionQingpuRoutes = [
     }
 ]
 PerceptionQingpuRoutes=PerceptionQingpuRoutes.concat(
-    page1Route
+    page1
 );
 console.log(PerceptionQingpuRoutes)
 

@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import css from './nav.less'
+import './nav.less'
 import Clock from '../Clock/Clock'
-import moment from "moment/moment";
 export default class Nav extends Component {
     constructor(props) {
         super(props);

@@ -3,15 +3,9 @@ import ReactDom from 'react-dom';
 import {AppContainer} from 'react-hot-loader';
 import {Provider} from 'react-redux';
 import store from './redux/store';
-import { Router,Route} from 'react-router-dom';
-//import {hashHistory} from 'react-router';
+import {Router} from 'react-router-dom';
 import App from 'components/App/App';
-import ro from 'components/App/App';
-import baseCss from './base/css/base.less'
-import font from './base/glyphicons.less';
-import getRouter from 'router/router';
-//import test1 from 'components/components';
-
+import './base/css/base.less'
 import createBrowserHistory from 'history/createBrowserHistory'
 
 
@@ -20,7 +14,7 @@ renderWithHotReload(App);
 
 /*热更新*/
 if (module.hot) {
-    module.hot.accept('./App/App', () => {
+    module.hot.accept('components/App/App', () => {
         const NextApp = require('components/App/App').default;
         renderWithHotReload(NextApp);
     });

@@ -79,7 +79,6 @@ const createComponent = (component) => (props) => (
 // )
 const RouteWithSubRoutes = (route) => (
         <Route exact path={route.path} component={createComponent(route.component)}/>
-
 )
 
 const RouteConfig = () => (
