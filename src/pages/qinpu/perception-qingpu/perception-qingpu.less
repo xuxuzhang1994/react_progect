@@ -1,0 +1,162 @@
+@import '../../base/css/flex.less';
+@import '../../base/project-common.less';
+
+.index-list{
+  overflow: hidden;
+  background: black;
+  min-height: 100vh;
+  position: relative;
+  .main{
+    padding: 0 .07rem;
+  }
+  .map{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    #map{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .amap-toolbar{
+    left: 50% !important;
+    top: 90% !important;
+    bottom: 0 !important;
+    transform: rotateZ(90deg);
+  }
+  .current-tab-info{
+    float: right;
+  }
+}
+
+//实有人口弹窗
+
+.amap-info-sharp{
+  display: none !important;
+}
+.amap-info-content{
+  border: none;
+  background: transparent;
+  padding: 0;
+  padding-bottom: 10px;
+  box-shadow: none;
+  .tips-person{
+    width: 1.54rem;
+    height: .51rem;
+    border:1px solid #265DC0;
+    position: relative;
+    background:rgba(7,44,69,.7);
+    font-size: .08rem;
+    padding: .06rem;
+    .left-info{
+      .info-name{
+        color:#0094FC;
+        font-weight: bold;
+        margin-bottom:.07rem;
+      }
+      .info-adr{
+        color: #fff;
+        font-size: .07rem;
+      }
+    }
+    .right-icons{
+      >i{
+        color: #0094FC;
+        font-size: .08rem;
+      }
+    }
+  }
+  .tips-person:before {
+    transform: rotate(45deg);
+    content: " ";
+    display: block;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    background: rgba(7,44,69,1);
+    border: 1px solid #265DC0;
+  }
+  .tips-person:after {
+    content: " ";
+    display: block;
+    width: 17px;
+    height: 10px;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-13% ,0);
+    background: rgba(7,44,69,1);
+  }
+}
+
+
+//雷达
+.radar{
+  width:2.24rem;
+  position: fixed;
+  bottom:.1rem;
+  right: .1rem;
+  font-size: 9px;
+  .waring{
+    width:2.24rem;
+    height:.44rem;
+    border: 1px solid #FF0000;
+    background:RGBA(51, 1, 1, 0.5);
+    padding:.1rem .13rem;
+    color: #fff;
+    .flex-container-setting();
+    margin-bottom:.06rem;
+    >img {
+      width:.2rem;
+      margin-right:.13rem;
+    }
+  }
+
+  @-webkit-keyframes rotate{
+    from{-webkit-transform:rotate(0deg)}
+    to{-webkit-transform:rotate(360deg)}
+  }
+
+  .scan{
+    width: 2.23rem;
+    height: 1.87rem;
+    border: 1px solid #0B5ECF;
+    position: relative;
+    background: rgba(0, 22, 58, 0.6);
+    .scan-circle{
+      width: 1.73rem;
+      height: 1.73rem;
+      position: relative;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -65%);
+      border: 1px dashed #539CFF;
+      border-radius: 50%;
+      >img  {
+        width: .7rem;
+        height: .7rem;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transition: All 2s ease-in-out;
+        transform-origin: left top;
+        animation: 9.5s linear 0s normal none infinite rotate;
+      }
+    }
+    .warn-count{
+      width: 1.56rem;
+      height: .28rem;
+      line-height: .28rem;
+      border: 1px solid #E71F19;
+      color: #FF1818;
+      background: rgba(0, 0, 0, 0.5);
+      /* padding: 0.08rem .1rem; */
+      position: relative;
+      z-index: 10;
+      font-size: .12rem;
+      padding-left: .23rem;
+    }
+  }
+}

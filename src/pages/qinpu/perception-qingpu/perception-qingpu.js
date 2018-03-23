@@ -456,8 +456,6 @@ class IndexList extends Component {
     }
 
     render() {
-        console.log(this)
-        debugger
         return (
            <div className='index-list'>
                <div className='map'>

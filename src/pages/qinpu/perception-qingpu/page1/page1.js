@@ -1,24 +1,7 @@
 import React, {Component} from 'react';
-import './perception-qingpu.less';
-import Nav from 'components/Nav/Nav';
-import {connect} from 'react-redux';
-import api from "../../api/maintenance-api";
-import ModelPerson from './model-person/model-person'
-import ModelHaveHouse from './model-have-house/model-have-house'
-import ModelDanwei from './model-danwei/model-danwei'
-import ModelSecurityEquipment from './model-security-equipment/model-security-equipment'
-import ModelHaveStrength from './model-have-strength/model-have-strength'
-import ModelWarning from './model-warning/model-warning'
-import ModelMenuLeft from './model-menu-left/model-menu-left'
-import { Popconfirm, message, Button } from 'antd';
 
-const text = 'Are you sure delete this task?';
-
-function confirm() {
-    message.info('Click on Yes.');
-}
-
-class IndexList extends Component {
+import './page1.less';
+class pppp extends Component {
     constructor(props) {
         super(props);
         //this.handleChange = this.handleChange.bind(this);
@@ -63,12 +46,12 @@ class IndexList extends Component {
     }
     componentDidMount(){
         console.log($('body'))
-       // this._map()
+        // this._map()
     }
 
     handleChange(date) {
         this.setState({
-           // startDate: date
+            // startDate: date
         });
     }
 
@@ -154,7 +137,7 @@ class IndexList extends Component {
 
                 map.addControl(new AMap.Scale());
 
-               // map.addControl(new AMap.OverView({isOpen:true}));
+                // map.addControl(new AMap.OverView({isOpen:true}));
             });
         function initPage(DistrictCluster,PointSimplifier) {
             var colors = [
@@ -456,52 +439,13 @@ class IndexList extends Component {
     }
 
     render() {
-        console.log(this)
-        debugger
         return (
-           <div className='index-list'>
-               <div className='map'>
-                   <div id='map'>
-
-                   </div>
-               </div>
-               <Nav index='1'></Nav>
-               <ModelMenuLeft currentTab={this.state.currentTab} changeTab={this.changeTab()} />
-               <div className='main'>
-                   <div className='current-tab-info'>
-                       <ModelPerson currentTab={this.state.currentTab} />
-                       <ModelHaveHouse currentTab={this.state.currentTab} />
-                       <ModelDanwei currentTab={this.state.currentTab} />
-                       <ModelSecurityEquipment currentTab={this.state.currentTab} />
-                       <ModelHaveStrength currentTab={this.state.currentTab} />
-                       <ModelWarning currentTab={this.state.currentTab} />
-                   </div>
-                   <div>{this.state.currentTab==0 || this.state.slidShowStatus}</div>
-                   {
-                       console.log(this.state.currentTab,11111)
-                   }
-                   <div className={"radar " + (!this.state.currentTab ? '':'hide')}>
-                       <div className="waring">
-                           <img src={require("../../images/waring.png")} alt=""/>
-                           <p>01青浦区二联馨苑2栋6楼601室
-                               出现烟雾报警温感报警请及时处理!
-                           </p>
-                       </div>
-                       <div className="scan">
-                           <div className="warn-count">
-                               当前预警总数：<span>1件</span>
-                           </div>
-                           <div className="scan-circle"><img src={require("../../images/scan.png")} alt=""/></div>
-
-                       </div>
-                   </div>
-               </div>
-           </div>
+            <div>
+                <h1>hdsgjkaldhjklda</h1>
+            </div>
         )
     }
 }
 
 
-
-
-export default IndexList;
+export default pppp;

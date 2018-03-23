@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
+console.log(path.resolve('./src/index.js'))
 commonConfig = {
     optimization: {
         splitChunks: {
@@ -13,12 +14,12 @@ commonConfig = {
     entry: {
         app: [
             'babel-polyfill',  //Babel默认只转换新的JavaScript句法（syntax），而不转换新的API，比如Iterator、Generator、Set、Maps、Proxy、Reflect、Symbol、Promise等全局对象，以及一些定义在全局对象上的方法（比如Object.assign）都不会转码。举例来说，ES6在Array对象上新增了Array.from方法。Babel就不会转码这个方法。如果想让这个方法运行，必须使用babel-polyfill，为当前环境提供一个垫片。
-            path.join(__dirname, 'src/index.js')
+            path.join(__dirname, '../src/index.js')
         ],
         vendor: ['react', 'react-router-dom', 'redux', 'react-dom', 'react-redux']
     },
     output: {
-        path: path.join(__dirname, './dist'),
+        path: path.join(__dirname, '../dist'),
         filename: '[name].[chunkhash].js',
         chunkFilename: '[name].[chunkhash].js',
         publicPath: "/"
@@ -27,7 +28,7 @@ commonConfig = {
         rules: [{
             test: /\.js$/,
             use: ['babel-loader?cacheDirectory=true'],
-            include: path.join(__dirname, 'src')
+            include: path.join(__dirname, '../src')
         }, {
             test: /\.(png|jpg|gif|svg|jpeg|mp4)$/,
             use: [{
@@ -50,7 +51,7 @@ commonConfig = {
     plugins: [
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            template: path.join(__dirname, 'src/index.html')
+            template: path.join(__dirname, '../src/index.html')
         }),
         new webpack.HashedModuleIdsPlugin(),
         new webpack.ProvidePlugin({
@@ -66,11 +67,12 @@ commonConfig = {
 
     resolve: {
         alias: {
-            pages: path.join(__dirname, 'src/pages'),
-            components: path.join(__dirname, 'src/components'),
-            router: path.join(__dirname, 'src/router'),
-            actions: path.join(__dirname, 'src/redux/actions'),
-            reducers: path.join(__dirname, 'src/redux/reducers')
+            pages: path.join(__dirname, '../src/pages'),
+            components: path.join(__dirname, '../src/components'),
+            router: path.join(__dirname, '../src/router'),
+            actions: path.join(__dirname, '../src/redux/actions'),
+            reducers: path.join(__dirname, '../src/redux/reducers'),
+            test: path.join(__dirname, '../src/redux/test')
         }
     }
 };

@@ -3,13 +3,16 @@ import ReactDom from 'react-dom';
 import {AppContainer} from 'react-hot-loader';
 import {Provider} from 'react-redux';
 import store from './redux/store';
-import {BrowserRouter as Router} from 'react-router-dom';
+import { Router,Route} from 'react-router-dom';
+//import {hashHistory} from 'react-router';
 import App from 'components/App/App';
 import ro from 'components/App/App';
 import baseCss from './base/css/base.less'
 import font from './base/glyphicons.less';
 import getRouter from 'router/router';
+//import test1 from 'components/components';
 
+import createBrowserHistory from 'history/createBrowserHistory'
 
 
 /*初始化*/
@@ -24,11 +27,12 @@ if (module.hot) {
 }
 
 function renderWithHotReload(RootElement) {
+    const customHistory = createBrowserHistory()
     ReactDom.render(
         <AppContainer>
             <Provider store={store}>
-                <Router>
-                    <RootElement/>
+                <Router history={customHistory}>
+                    <RootElement />
                 </Router>
             </Provider>
         </AppContainer>,

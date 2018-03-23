@@ -1,0 +1,131 @@
+@import "../../../../base/project-common";
+@import "./model-popup-person.less";
+
+.model-popup-person{
+  width:5.5rem;
+  height: 3.33rem;
+  padding: .12rem .12rem .18rem .16rem;
+  font-size: .08rem;
+  .model-title{
+    color: #46A1FE;
+    font-size: .1rem;
+    margin-bottom:.2rem;
+  }
+  .model-info{
+    justify-content: flex-start;
+    .info-left{
+      width: 2.08rem;
+      height: 2.73rem;
+      background: url("background.png")no-repeat;
+      background-size: 100% 100%;
+      position: relative;
+      margin-right:.37rem;
+      position: relative;
+      &:after{
+        content: '';
+        width: 1px;
+        height: 2.56rem;
+        background: #0094FC;
+        position: absolute;
+        right: -.08rem;
+        top: 0;
+      }
+      >div{
+        position: absolute;
+        >img {
+          width:100%;
+          height:100%;
+        }
+      }
+      .car-info{
+        width: .34rem;
+        height: .39rem;
+        right: .74rem;
+        top: .05rem;
+      }
+      .smoke-info{
+        width: .33rem;
+        height: .39rem;
+        left:.31rem;
+        top:.47rem;
+      }
+      .mac-info{
+        width: .5rem;
+        height: .58rem;
+        left:.67rem;
+        top:.33rem;
+      }
+      .event-info{
+        width: .33rem;
+        height: .39rem;
+        right:.49rem;
+        top:.5rem;
+      }
+      .house-info{
+        width: .34rem;
+        height: .39rem;
+        left:.51rem;
+        top:.81rem;
+      }
+      .base-info{
+        width: .5rem;
+        height: .58rem;
+        right:.65rem;
+        top:.79rem;
+      }
+      .door-info{
+        width: .5rem;
+        height: .58rem;
+        left:.68rem;
+        top:1.26rem;
+      }
+      .unit-info{
+        width: .34rem;
+        height: .39rem;
+        right:.5rem;
+        top:1.47rem;
+      }
+    }
+    .info-right{
+      font-size: .08rem;
+      color: #fff;
+      .base-infos{
+        justify-content: flex-start;
+        .person-pic{
+          width: .52rem;
+          height: .63rem;
+          >img  {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .right-info{
+          margin-left:.11rem;
+          >div{
+            >span:last-child{
+              color: #0094FC;
+            }
+          }
+        }
+      }
+      .other-info{
+        margin-top:.13rem;
+        >div{
+          margin-bottom:.1rem;
+          >span:last-child{
+            color: #0094FC;
+          }
+          .phone-info{
+            color: #0094FC;
+            margin-right:.11rem;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+.slid-out{
+  transform: translateX(2.32rem);
+}
