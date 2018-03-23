@@ -12,11 +12,6 @@ import ModelWarning from './model-warning/model-warning'
 import ModelMenuLeft from './model-menu-left/model-menu-left'
 import { Popconfirm, message, Button } from 'antd';
 
-const text = 'Are you sure delete this task?';
-
-function confirm() {
-    message.info('Click on Yes.');
-}
 
 class IndexList extends Component {
     constructor(props) {
