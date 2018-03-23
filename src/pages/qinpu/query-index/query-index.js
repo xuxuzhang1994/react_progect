@@ -11,7 +11,7 @@ export default class QueryIndex extends Component{
     render(){
         return (
             <div className="query-index">
-                <Nav/>
+                <Nav index='3'/>
                 <div className="query-model">
                     <div className="query-title">
                         <img src={require("./search-title.jpg")} alt=""/>

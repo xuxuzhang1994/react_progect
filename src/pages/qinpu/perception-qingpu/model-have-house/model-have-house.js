@@ -60,7 +60,6 @@ export default class  ModelPerson extends Component{
 
     componentDidMount(){
         var self=this;
-        this._pie()
         console.log($('body'))
     }
 
@@ -68,6 +67,7 @@ export default class  ModelPerson extends Component{
         this.setState({
             currentTab: nextProps.currentTab
         });
+        this._pie()
         console.log(this.props.currentTab)
     }
 
