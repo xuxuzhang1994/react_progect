@@ -230,7 +230,7 @@ export default class  ModelPerson extends Component{
                                 return (
                                     <li onClick={ () => {this.showModal()}}  className={'flex'+ ($index==1?" checked-people":'') } key={'person-item'+$index}>
                                         <div className="person-pic">
-                                            <img src={require("../../../images/person-pic.jpeg")} alt=""/>
+                                            <img src={require("../../../../images/person-pic.jpeg")} alt=""/>
                                         </div>
                                         <div className="person-info">
                                             <div className="base-info flex">

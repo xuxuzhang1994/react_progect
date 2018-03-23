@@ -3,20 +3,27 @@ import {Modal, Tabs , Input,Table,DatePicker,Dropdown,Menu,Button,Icon} from 'an
 const { MonthPicker, RangePicker, WeekPicker } = DatePicker;
 const TabPane = Tabs.TabPane;
 import HighchartsMore from 'highcharts/highcharts-more';
+import Highcharts from 'highcharts/highstock';
 HighchartsMore(Highcharts)
-import 'antd/dist/antd.css';
-const Search = Input.Search;
+SolidGauge(Highcharts)
 import './model-chart.less'
 import { Pagination } from 'antd';
+import SolidGauge from "highcharts/modules/solid-gauge";
 
 export default class ModelChart extends Component{
     constructor(props) {
         super(props);
         console.log(this.props)
+
     }
-    componentWillReceiveProps(nextProps) {
+
+    componentDidMount(){
         var self=this
         self._solidgauge()
+    }
+
+    componentWillReceiveProps(nextProps) {
+
     }
 
     // 绘制仪表盘
@@ -81,7 +88,7 @@ export default class ModelChart extends Component{
                 ],
                 title: {
                     text: '红色预警',
-                    y: 50,
+                    y: 70,
                     style:{
                         "color":'#FF0000',
                         "fontSize":".09rem",
@@ -114,7 +121,7 @@ export default class ModelChart extends Component{
         var option2={
             yAxis: {
                 title: {
-                    y: 50,
+                    y: 70,
                     text: '橙色预警',
                     style:{
                         "color":'#FF7E00',
@@ -181,7 +188,7 @@ export default class ModelChart extends Component{
                     }],
                 ],
                 title: {
-                    y: 50,
+                    y: 70,
                     text: '黄色预警',
                     style:{
                         "color":'#FFE400',
@@ -232,7 +239,7 @@ export default class ModelChart extends Component{
                     }],
                 ],
                 title: {
-                    y: 50,
+                    y: 70,
                     text: '绿色预警',
                     style:{
                         "color":'#36F136',
@@ -279,9 +286,6 @@ export default class ModelChart extends Component{
                 <div id="green-warning" className="green-warning" ></div>
             </div>
             )
-
-
-
     }
 }
 

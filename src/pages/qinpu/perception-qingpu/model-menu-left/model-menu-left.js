@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { Input } from 'antd';
 const Search = Input.Search;
 import './model-menu-left.less'
+import ModelChart from './model-chart/model-chart'
 import { Modal, Button } from 'antd';
 import moment from "moment/moment";
 export default class  ModelMenuLeft extends Component{
@@ -77,11 +78,11 @@ export default class  ModelMenuLeft extends Component{
                 <div className="checkAll">
                     <div className="one-six">感知设备</div>
                     <div className="check-item">
-                        <img src={require("../../../images/check.png")} alt=""/>
+                        <img src={require("../../../../images/check.png")} alt=""/>
                         <span>全部</span>
                     </div>
                     <div className="check-item">
-                        <img src={require("../../../images/check.png")}  alt=""/>
+                        <img src={require("../../../../images/check.png")}  alt=""/>
                         <span>反选</span>
                     </div>
                 </div>
@@ -93,25 +94,25 @@ export default class  ModelMenuLeft extends Component{
                     <ul className="switch-item">
                         <li>
                             <div className="check-item">
-                                <img src={require("../../../images/check.png")}  alt=""/>
+                                <img src={require("../../../../images/check.png")}  alt=""/>
                                 <span>人像识别</span>
                             </div>
                         </li>
                         <li>
                             <div className="check-item">
-                                <img src={require("../../../images/check.png")}  alt=""/>
+                                <img src={require("../../../../images/check.png")}  alt=""/>
                                 <span>车牌识别</span>
                             </div>
                         </li>
                         <li>
                             <div className="check-item">
-                                <img src={require("../../../images/check.png")}  alt=""/>
+                                <img src={require("../../../../images/check.png")}  alt=""/>
                                 <span>非机动车识别</span>
                             </div>
                         </li>
                         <li>
                             <div className="check-item">
-                                <img src={require("../../../images/check.png")}  alt=""/>
+                                <img src={require("../../../../images/check.png")}  alt=""/>
                                 <span>Wifi嗅探</span>
                             </div>
                         </li>
@@ -125,49 +126,49 @@ export default class  ModelMenuLeft extends Component{
                     <ul className="switch-item">
                         <li>
                             <div className="check-item">
-                                <img src={require("../../../images/check.png")}  alt=""/>
+                                <img src={require("../../../../images/check.png")}  alt=""/>
                                 <span>人像门禁</span>
                             </div>
                         </li>
                         <li>
                             <div className="check-item">
-                                <img src={require("../../../images/check.png")}  alt=""/>
+                                <img src={require("../../../../images/check.png")}  alt=""/>
                                 <span>视频监控</span>
                             </div>
                         </li>
                         <li>
                             <div className="check-item">
-                                <img src={require("../../../images/check.png")}  alt=""/>
+                                <img src={require("../../../../images/check.png")}  alt=""/>
                                 <span>消防烟感</span>
                             </div>
                         </li>
                         <li>
                             <div className="check-item">
-                                <img src={require("../../../images/check.png")}  alt=""/>
+                                <img src={require("../../../../images/check.png")}  alt=""/>
                                 <span>消防栓</span>
                             </div>
                         </li>
                         <li>
                             <div className="check-item">
-                                <img src={require("../../../images/check.png")}  alt=""/>
+                                <img src={require("../../../../images/check.png")}  alt=""/>
                                 <span>水质检测</span>
                             </div>
                         </li>
                         <li>
                             <div className="check-item">
-                                <img src={require("../../../images/check.png")}  alt=""/>
+                                <img src={require("../../../../images/check.png")}  alt=""/>
                                 <span>电子巡更</span>
                             </div>
                         </li>
                         <li>
                             <div className="check-item">
-                                <img src={require("../../../images/check.png")}  alt=""/>
+                                <img src={require("../../../../images/check.png")}  alt=""/>
                                 <span>电梯监控</span>
                             </div>
                         </li>
                         <li>
                             <div className="check-item">
-                                <img src={require("../../../images/check.png")}  alt=""/>
+                                <img src={require("../../../../images/check.png")}  alt=""/>
                                 <span>电梯监控</span>
                             </div>
                         </li>
@@ -179,6 +180,7 @@ export default class  ModelMenuLeft extends Component{
                     <div><i className="circles bg-yellow"></i><span>离线</span></div>
                     <div><i className="circles bg-red"></i><span>故障</span></div>
                 </div>
+                <ModelChart/>
             </div>
         )}
 }

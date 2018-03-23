@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './perception-qingpu.less';
 import Nav from 'components/Nav/Nav';
 import {connect} from 'react-redux';
-import api from "../../api/maintenance-api";
+import api from "../../../api/maintenance-api";
 import ModelPerson from './model-person/model-person'
 import ModelHaveHouse from './model-have-house/model-have-house'
 import ModelDanwei from './model-danwei/model-danwei'
@@ -480,7 +480,7 @@ class IndexList extends Component {
                    }
                    <div className={"radar " + (!this.state.currentTab ? '':'hide')}>
                        <div className="waring">
-                           <img src={require("../../images/waring.png")} alt=""/>
+                           <img src={require("../../../images/waring.png")} alt=""/>
                            <p>01青浦区二联馨苑2栋6楼601室
                                出现烟雾报警温感报警请及时处理!
                            </p>
@@ -489,7 +489,7 @@ class IndexList extends Component {
                            <div className="warn-count">
                                当前预警总数：<span>1件</span>
                            </div>
-                           <div className="scan-circle"><img src={require("../../images/scan.png")} alt=""/></div>
+                           <div className="scan-circle"><img src={require("../../../images/scan.png")} alt=""/></div>
 
                        </div>
                    </div>

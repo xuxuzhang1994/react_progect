@@ -60,8 +60,8 @@ commonConfig = {
             "window.jQuery":"jquery",
             moment:'moment',
             "window.moment":"moment",
-            // Highcharts:'Highcharts',
-            // "window.Highcharts":"Highcharts",
+             Highcharts:'Highcharts',
+             "window.Highcharts":"Highcharts",
         })
     ],
 
@@ -72,7 +72,8 @@ commonConfig = {
             router: path.join(__dirname, '../src/router'),
             actions: path.join(__dirname, '../src/redux/actions'),
             reducers: path.join(__dirname, '../src/redux/reducers'),
-            test: path.join(__dirname, '../src/redux/test')
+            test: path.join(__dirname, '../src/redux/test'),
+            base: path.join(__dirname, '../base')
         }
     }
 };

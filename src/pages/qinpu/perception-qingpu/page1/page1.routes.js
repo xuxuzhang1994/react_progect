@@ -1,8 +1,8 @@
-import PageModel from './Page1';
+import PageModel from 'bundle-loader?lazy!./Page1';
 
 let PerceptionQingpuRoutes = [
     {
-        path: '/perception-qingpu/page1',
+        path: '/page/qinpu/perception-qingpu/page1',
         component: PageModel
     }
 ]
