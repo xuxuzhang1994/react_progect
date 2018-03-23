@@ -178,7 +178,7 @@ export default class  ModelPerson extends Component{
                         <div className='left'></div>
                     </div>
                     <div className='person-count'>
-                        <div className="color-blue">实有房屋</div>
+                        <div className="color-blue">实有人口</div>
                         <div className="search-input-right">
                             <input type="text" placeholder="搜索人员姓名"/>
                             <i className="iconfont icon-sousuo"></i>
@@ -189,13 +189,13 @@ export default class  ModelPerson extends Component{
                             </ul>
                         </div>
                         <div className="sel-item">
-                            <DropdownButton bsStyle='success' title={'出租房'} key={'d'} id={'d'}>
+                            <DropdownButton bsStyle='success' title={'重点人口'} key={'d'} id={'d'}>
                                 <MenuItem eventKey="1">出租房</MenuItem>
                                 <MenuItem eventKey="2">出租房</MenuItem>
                                 <MenuItem eventKey="3" active>激活条目</MenuItem>
                                 <MenuItem eventKey="4">出租房</MenuItem>
                             </DropdownButton>
-                            <DropdownButton bsStyle='success' title={'出租房'} key={'ddd'} id={'d'}>
+                            <DropdownButton bsStyle='success' title={'精神病人'} key={'ddd'} id={'d'}>
                                 <MenuItem eventKey="1">操作</MenuItem>
                                 <MenuItem eventKey="2">另一操作</MenuItem>
                                 <MenuItem eventKey="3" active>激活条目</MenuItem>

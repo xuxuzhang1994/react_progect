@@ -200,7 +200,7 @@ export default class  ModelPerson extends Component{
                         <div className='left'></div>
                     </div>
                     <div className='person-count'>
-                        <div className="one-six">实有房屋</div>
+                        <div className="color-blue">实有房屋</div>
                         <div className="search-input-right">
                             <input type="text" placeholder="搜索人员姓名"/>
                             <i className="iconfont icon-sousuo"></i>
