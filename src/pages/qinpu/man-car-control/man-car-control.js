@@ -22,7 +22,7 @@ export default class ManCarControl extends Component{
         return(
             <div className="man-car-control">
                 {/*导航*/}
-                <Nav/>
+                <Nav index='4'/>
                 <section className="man-car-section">
                     <div className="input-item clearfix">
                         <div className="input-name"><Input addonBefore="姓名" defaultValue="" /></div>
