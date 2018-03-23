@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './query-index.less';
 import Nav from 'components/Nav/Nav';
-import api from "../../api/maintenance-api";
 import { Input } from 'antd';
 const Search = Input.Search;
 

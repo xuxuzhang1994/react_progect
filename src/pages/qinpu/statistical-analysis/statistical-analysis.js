@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './statistical-analysis.less';
 import Nav from 'components/Nav/Nav';
-import api from "../../api/maintenance-api";
 import RankSection from './rank-section/rank-section';
 
 
@@ -13,7 +12,7 @@ export default class Statiscal extends Component{
         return(
             <div className="statiscal">
                 <Nav/>
-                <section className="statiscal-section">
+                <section className="statiscal-section ">
                     <div className="rank-chart">
                         <img src={require("./rank-section.jpg")} alt=""/>
                     </div>

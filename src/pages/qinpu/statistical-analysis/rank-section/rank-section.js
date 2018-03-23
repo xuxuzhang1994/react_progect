@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './rank-section.less';
 import Nav from 'components/Nav/Nav';
-import api from "../../api/maintenance-api";
 import { DropdownButton,MenuItem} from 'react-bootstrap';
 
 export default class RankSection extends Component{

@@ -3,6 +3,9 @@ import PerceptionQingpuModel from 'bundle-loader?lazy!./perception-qingpu/percep
 import WaringModel from 'bundle-loader?lazy!./warning/warning';
 import page1 from './perception-qingpu/page1/page1.routes';
 import WaringRoute from './warning/warning.routes';
+import ManCarRoutes from './man-car-control/man-car.routes';
+import QueryIndexRoutes from './query-index/query-index.routes';
+import StatisticalRoutes from './statistical-analysis/statisical-analysis.routes';
 
 
 let PerceptionQingpuRoutes = [
@@ -16,7 +19,10 @@ let PerceptionQingpuRoutes = [
 ]
 PerceptionQingpuRoutes=PerceptionQingpuRoutes.concat(
     page1,
-    WaringRoute
+    WaringRoute,
+    ManCarRoutes,
+    QueryIndexRoutes,
+    StatisticalRoutes
 );
 console.log(PerceptionQingpuRoutes)
 
