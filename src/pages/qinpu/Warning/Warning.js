@@ -5,7 +5,7 @@ import './warning.less';
 // import 'antd/lib/time-picker/style/index.css';
 import Nav from 'components/Nav/Nav';
 import { DatePicker } from 'antd';
-const { MonthPicker, RangePicker, WeekPicker } = DatePicker;
+
 
 
 
