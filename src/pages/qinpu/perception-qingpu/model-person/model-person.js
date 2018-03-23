@@ -53,7 +53,7 @@ export default class  ModelPerson extends Component{
 
     componentDidMount(){
         var self=this;
-        //this._colume()
+        this._colume()
         console.log($('body'))
     }
 
@@ -162,7 +162,7 @@ export default class  ModelPerson extends Component{
             }
         };
         // 图表初始化函数
-        var chart = Highcharts.chart('danwei_colume', options);
+        var chart = Highcharts.chart('person_colume', options);
 
     }
     render(){
@@ -253,7 +253,7 @@ export default class  ModelPerson extends Component{
                             <i className='iconfont icon-arrowR'></i>
                         </div>
                     </div>
-                    <div id='danwei_colume'></div>
+                    <div id='person_colume'></div>
                 </div>
 
                 {/* 单位详情弹框 */}

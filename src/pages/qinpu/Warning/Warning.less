@@ -144,7 +144,7 @@ ol, ul, dl {
       height: 2.1rem;
       color: #fff;
       font-size: .07rem;
-      padding: .07rem 0 .27rem;
+      padding: .07rem 0 0rem;
       overflow: scroll;
       >li{
         margin-bottom:.02rem;
@@ -201,6 +201,127 @@ ol, ul, dl {
     >img {
       width:2rem;
       height: 1.84rem;
+    }
+  }
+}
+
+.warning{
+  min-height: 100vh;
+  overflow: hidden;
+  background: #000;
+  .chart-box{
+    padding: 0 .09rem;
+    width: 100%;
+    height: 1.84rem;
+    margin-top: .06rem;
+    #zhizhu{
+      width: 1.82rem;
+      height: 1.84rem;
+    }
+    #pie{
+      width: 2rem;
+      height: 1.84rem;
+    }
+
+    #colume{
+      width: 5.5rem;
+      height: 1.84rem;
+    }
+
+    #colume{
+      .highcharts-background{
+        fill: rgba(12, 20, 55, .68);
+      }
+      .highcharts-yaxis-labels{
+        text{
+          fill:#fff !important;
+        }
+      }
+      .zhangjiayu{
+        text{
+          fill:#76797F !important;
+        }
+      }
+      .highcharts-title{
+        position: absolute;
+        left: .15rem !important;
+        top: .09rem !important;
+        font-size: 18px;
+        line-height: 1;
+        color: #46A1FE !important;
+      }
+      .highcharts-point{
+        // fill:url('../../images/x.svg');
+        stroke:none;
+      }
+      .highcharts-grid-line,.highcharts-axis-line{
+        stroke:#00AEFF
+      }
+
+      .highcharts-legend-item:nth-child(1){
+        .highcharts-point{
+          fill: #009AE5;
+          rx:0;
+          width: 8px;
+          height: 8px;
+        }
+      }
+      .highcharts-legend-item:nth-child(2){
+        .highcharts-point{
+          fill: #FF0000;
+          rx:0;
+          width: 8px;
+          height: 8px;
+        }
+      }
+      .highcharts-legend-item{
+        span{
+          color: #fff !important;
+          font-size: 12px !important;
+          top: 0 !important;
+        }
+
+      }
+    }
+    #zhizhu{
+      .highcharts-background{
+        fill: rgba(12, 20, 55, .68);
+      }
+      .highcharts-title{
+        position: absolute;
+        left: .15rem !important;
+        top: .09rem !important;
+        font-size: 18px;
+        line-height: 1;
+        color: #46A1FE !important;
+      }
+      .highcharts-grid-line{
+        stroke: orange;
+      }
+      .highcharts-axis-line{
+        fill: RGBA(55, 120, 161, 0.2);
+      }
+    }
+    #pie{
+      .highcharts-background{
+        fill: rgba(12, 20, 55, .68);
+      }
+      .highcharts-title{
+        position: absolute;
+        left: .15rem !important;
+        top: .09rem !important;
+        font-size: 18px;
+        line-height: 1;
+        color: #46A1FE !important;
+      }
+    }
+    .highcharts-tracker{
+      //span{
+      //    left: 50% !important;
+      //    top: 50% !important;
+      //    transform: translate(-50%,-50%) !important;
+      //    color: #fff !important;
+      //}
     }
   }
 }
