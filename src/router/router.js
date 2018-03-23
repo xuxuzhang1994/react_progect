@@ -59,6 +59,7 @@ import NotFound from 'bundle-loader?lazy&name=notFound!pages/NotFound/NotFound';
 import Warning from "bundle-loader?lazy&name=warning!pages/Warning/Warning";
 import IndexList from "bundle-loader?lazy&name=indexList!pages/IndexList/IndexList";
 import QueryIndex from "bundle-loader?lazy&name=query-index!pages/query-index/query-index";
+import ManCarControl from "bundle-loader?lazy&name=man-car-control!pages/man-car-control/man-car-control";
 
 const createComponent = (component) => (props) => (
     <Bundle load={component}>
@@ -93,6 +94,7 @@ const Parent = () => (
             <Route path="/indexList" component={createComponent(IndexList)}/>
             <Route path="/perception-qingpu" component={createComponent(PerceptionQingpu)}/>
             <Route path="/query-index" component={createComponent(QueryIndex)}/>
+            <Route path="/man-car-control" component={createComponent(ManCarControl)}/>
             <Route component={createComponent(NotFound)}/>
         </Switch>
     </div>
