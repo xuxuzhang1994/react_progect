@@ -30,7 +30,7 @@ export default class ManCarControl extends Component{
                         <div className="input-phone"><Input addonBefore="手机号" defaultValue="" /></div>
                         <div className="input-area"><Input addonBefore="布控区域" defaultValue="" /></div>
                         <div className="input-time"><Input addonBefore="时间" defaultValue="" /></div>
-                        <div className="control-btn" onClick={()=>{this.showModal()}}>一键布控</div>
+                        <div className="control-btn" >一键布控</div>
                     </div>
                     <div className="man-car-popup ">
                         <div className="detail-title">预警详细信息</div>
@@ -56,9 +56,9 @@ export default class ManCarControl extends Component{
                                 <span>监控探头</span>
                             </li>
                         </ul>
-                        <div className="look-btn flex">
+                        <div className="look-btn flex" onClick={()=>{this.showModal()}}>
                             <img src={require("./control-icon.jpg")} alt=""/>
-                            <span>查看监控</span>
+                            <span >查看监控</span>
                         </div>
                     </div>
                 </section>
