@@ -90,7 +90,6 @@ class IndexList extends Component {
                 self.state.infoWindow.setContent(e.target.content);
                 self.state.infoWindow.open(self.state.map, e.target.getPosition());
             }
-
         }
     }
 
