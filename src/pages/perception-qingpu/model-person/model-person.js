@@ -53,7 +53,7 @@ export default class  ModelPerson extends Component{
 
     componentDidMount(){
         var self=this;
-        this._colume()
+        //this._colume()
         console.log($('body'))
     }
 
