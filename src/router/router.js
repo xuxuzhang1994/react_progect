@@ -58,6 +58,12 @@ import {
 import PerceptionQingpu from 'bundle-loader?lazy!../pages/qinpu/perception-qingpu/perception-qingpu';
 import PageRoute from '../pages/page.routes';
 
+const NoMatch = ({ location }) => (
+    <div>
+        <h3>No match for <code>{location.pathname}</code></h3>
+    </div>
+)
+
 let routes = [{ path: '/',  component: PerceptionQingpu}]
 routes=routes.concat(PageRoute);
 

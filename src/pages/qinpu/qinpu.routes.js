@@ -5,7 +5,7 @@ import page1 from './perception-qingpu/page1/page1.routes';
 
 let PerceptionQingpuRoutes = [
     {
-        path: '/perception-qingpu',
+        path: '/page/qinpu/perception-qingpu',
         component: PerceptionQingpuModel,
         routes:[
 
