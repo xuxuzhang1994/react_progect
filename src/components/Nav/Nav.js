@@ -19,10 +19,10 @@ export default class Nav extends Component {
             <header className='tab '>
                 <Clock></Clock>
                 <div className='nav-container flex'>
-                    <Link to="/page/qinpu/perception-qingpu/page1">
+                    <Link to="/page/qinpu/perception-qingpu">
                         <div className={'tab-item ' + (this.state.index=='1'?'tab-item-current':'')}>感知青浦</div>
                     </Link>
-                    <Link to="/page/qinpu/perception-qingpu/page1">
+                    <Link to="/page/qinpu/warning">
                         <div className={'tab-item ' + (this.state.index=='2'?'tab-item-current':'')}>预警中心</div>
                     </Link>
                     <Link to="/page/qinpu/perception-qingpu/page1">

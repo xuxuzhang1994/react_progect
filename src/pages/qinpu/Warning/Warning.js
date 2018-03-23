@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import api from "../../api/maintenance-api";
+import api from "../../../api/maintenance-api";
 import 'antd/dist/antd.css';
-import './Warning.less';
+import './warning.less';
 // import 'antd/lib/time-picker/style/index.css';
 import Nav from 'components/Nav/Nav';
 import { DatePicker } from 'antd';
