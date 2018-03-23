@@ -29,6 +29,7 @@ class Bundle extends Component {
     }
 
     render() {
+        console.log(1)
         return this.props.children(this.state.mod)
     }
 }
