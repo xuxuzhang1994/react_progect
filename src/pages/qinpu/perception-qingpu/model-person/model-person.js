@@ -53,7 +53,7 @@ export default class  ModelPerson extends Component{
 
     componentDidMount(){
         var self=this;
-        this._colume()
+        //this._colume()
         console.log($('body'))
     }
 
@@ -213,7 +213,7 @@ export default class  ModelPerson extends Component{
                                 return (
                                     <li  className={'flex'+ ($index==1?" checked-people":'') } key={'person-item'+$index} onClick={()=>{this.showModal()}}>
                                         <div className="person-pic">
-                                            <img src={require("../../../images/person-pic.jpeg")} alt=""/>
+                                            <img src={require("../../../../images/person-pic.jpeg")} alt=""/>
                                         </div>
                                         <div className="person-info">
                                             <div className="base-info flex">

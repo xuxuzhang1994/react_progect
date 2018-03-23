@@ -16,6 +16,8 @@
     "echarts": "^4.0.4",
     "highcharts": "^6.0.7",
     "moment": "^2.21.0",
+    "rc-queue-anim": "^1.4.1",
+    "rc-tween-one": "^1.7.3",
     "react": "^16.2.0",
     "react-bootstrap": "^0.32.1",
     "react-datepicker": "^1.2.2",

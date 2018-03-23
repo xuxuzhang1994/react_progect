@@ -5,8 +5,6 @@ import './model-warning.less'
 import ModelPopupWarning from './model-popup-warning/model-popup-warning'
 import HighchartsMore from 'highcharts/highcharts-more';
 import SolidGauge from 'highcharts/modules/solid-gauge';
-HighchartsMore(Highcharts)
-SolidGauge(Highcharts)
 import { Modal, Button } from 'antd';
 export default class  ModelWarning extends Component{
     constructor(props) {
@@ -65,8 +63,8 @@ export default class  ModelWarning extends Component{
             currentTab: nextProps.currentTab
         });
         self._colume()
-        self._test()
         console.log(this.props.currentTab)
+        // self._solidgauge()
     }
     onPressEnter(data){
         alert(data)
@@ -90,11 +88,10 @@ export default class  ModelWarning extends Component{
         console.log(Highcharts.getOptions().colors)
         Highcharts.getOptions().colors = Highcharts.map(["#009FEB", "#E91F1F"], function (color) {
             return {
-                linearGradient: { x1: 0, x2: 1, y1: 0, y2: 0 },
+                linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
                 stops: [
-                    [0, '#09AAF5'],
-                   // [0.5, '#09AAF5'],
-                    [1, '#E30000']
+                    [0, '#25D7FB'],
+                    [1, '#0B5ECF']
                 ]
             };
             console.log(Highcharts.Color(color).brighten(-0.3).get('rgb'))
@@ -170,107 +167,6 @@ export default class  ModelWarning extends Component{
         var chart = Highcharts.chart('warning-colume', options);
 
     }
-
-    // 绘制图
-    _test(){
-        var option={
-            chart: {
-                type: 'solidgauge',
-                spacing : [40, 15 , 10, 10]
-            },
-            title: null,
-            pane: {
-                center: ['50%', '55%'],
-                size: '100%',
-                startAngle: -150,
-                endAngle: 150,
-                background: {
-                    backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || '#ccc',
-                    innerRadius: '100%',
-                    outerRadius: '60%',
-                    shape: 'arc'
-                }
-            },
-            tooltip: {
-                enabled: false
-            },
-            yAxis: {
-                // stops: [
-                //     [0.1, '#55BF3B'], // green
-                //     [0.5, '#DDDF0D'], // yellow
-                //     [0.9, '#DF5353'] // red
-                // ],
-                lineWidth: 0,
-                minorTickInterval: null,
-                tickPixelInterval: 400,
-                tickWidth: 0,
-                title: {
-                    y: -70
-                },
-                labels: {
-                    y: 16
-                },
-                shape: 'arc'
-            },
-            plotOptions: {
-                solidgauge: {
-                    dataLabels: {
-                        y: 5,
-                        borderWidth: 0,
-                        useHTML: true
-                    }
-                }
-            }
-        }
-        // 速度仪表
-        var chart1 = Highcharts.chart('warning-colume222', {
-            yAxis: {
-                min: 0,
-                max: 200,
-                title: {
-                    text: '速度'
-                }
-            },
-            credits: {
-                enabled: false
-            },
-            series: [{
-                name: '速度',
-                data: [200],
-                dataLabels: {
-                    format: '<div style="text-align:center"><span style="font-size:25px;color:' +
-                    ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y}</span><br/>' +
-                    '<span style="font-size:12px;color:silver">km/h</span></div>'
-                },
-                tooltip: {
-                    valueSuffix: ' km/h'
-                }
-            },
-                {
-                    name: '速度',
-                    data: [80],
-                    dataLabels: {
-                        format: '<div style="text-align:center"><span style="font-size:25px;color:' +
-                        ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y}</span><br/>' +
-                        '<span style="font-size:12px;color:silver">km/h</span></div>'
-                    },
-                    tooltip: {
-                        valueSuffix: ' km/h'
-                    }
-                }]
-        });
-        Highcharts.setOptions(option)
-        // 定时刷新数据
-        // if (chart1) {
-        //     var point = chart1.series[0].points[0];
-        //     var inc = Math.round((Math.random() - 0.5) * 100);
-        //     var newVal = point.y + inc;
-        //     if (newVal < 0 || newVal > 200) {
-        //         newVal = point.y - inc;
-        //     }
-        //     point.update(150);
-        // }
-    }
     render(){
         return (
             <div className={"model-warning " + (this.state.slidShowStatus?'slid-out':'' + this.state.currentTab==6?'':'hide')}>
@@ -302,7 +198,7 @@ export default class  ModelWarning extends Component{
                         <div className='data-list'>
                             {this.state.dataList.map((item,$index)=>{
                                 return(
-                                    <div className='data-item flex' key={$index} key={$index} onClick={() => {this.showModal()}}>
+                                    <div className='data-item flex' key={$index} onClick={() => {this.showModal()}}>
                                         <img src={require('./WechatIMG2681521429351_.pic.jpg')} alt=""/>
                                         <div className='data-item-right'>
                                             <div className='item-info'>
@@ -346,7 +242,6 @@ export default class  ModelWarning extends Component{
                 <div className='chart'>
                     <div id='warning-colume222' className='home-chars'></div>
                 </div>
-
                 {/* 单位详情弹框 */}
                 <Modal
                     title="Basic Modal"
@@ -358,5 +253,6 @@ export default class  ModelWarning extends Component{
                 </Modal>
 
             </div>
+
         )}
 }

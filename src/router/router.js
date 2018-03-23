@@ -47,75 +47,57 @@
 //
 
 import React from 'react'
+import Loading from 'components/Loading/Loading';
+import Bundle from './Bundle';
 import {
     BrowserRouter as Router,
     Route,
     Switch,
     Link
 } from 'react-router-dom'
-import PerceptionQingpu from '../pages/perception-qingpu/perception-qingpu';
+import PerceptionQingpu from 'bundle-loader?lazy!../pages/qinpu/perception-qingpu/perception-qingpu';
 import PageRoute from '../pages/page.routes';
+import QueueAnim from 'rc-queue-anim';
 
-<<<<<<< HEAD
 let routes = [{ path: '/',  component: PerceptionQingpu}]
 routes=routes.concat(PageRoute);
-=======
-import Bundle from './Bundle';
-import ComponentsRouter from '../components/components'
-import Loading from 'components/Loading/Loading';
-import Home from 'bundle-loader?lazy&name=home!pages/Home/Home';
-import Page1 from 'bundle-loader?lazy&name=page1!pages/Page1/Page1';
-import Counter from 'bundle-loader?lazy&name=counter!pages/Counter/Counter';
-import UserInfo from 'bundle-loader?lazy&name=userInfo!pages/UserInfo/UserInfo';
-import EarlyWarningCenter from 'bundle-loader?lazy&name=early-warning-center!pages/early-warning-center/early-warning-center';
-import PerceptionQingpu from 'bundle-loader?lazy&name=perception-qingpu!pages/perception-qingpu/perception-qingpu';
-import NotFound from 'bundle-loader?lazy&name=notFound!pages/NotFound/NotFound';
-import Warning from "bundle-loader?lazy&name=warning!pages/Warning/Warning";
-import IndexList from "bundle-loader?lazy&name=indexList!pages/IndexList/IndexList";
-import QueryIndex from "bundle-loader?lazy&name=query-index!pages/query-index/query-index";
->>>>>>> eea9463291ff89ecc11048137f76fb9dc8ad0b0c
 
-// const createComponent = (component) => (props) => (
-//     <Bundle load={component}>
-//         {
-//             (Component) => Component ? <Component {...props} /> : <Loading/>
-//         }
-//     </Bundle>
-// );
+
+const createComponent = (component) => (props) => (
+    <Bundle load={component}>
+        {
+            (Component) => Component ?<Component {...props} /> :<Loading/>
+        }
+    </Bundle>
+);
 
 // wrap <Route> and use this everywhere instead, then when
 // sub routes are added to any route it'll work
+// const RouteWithSubRoutes = (route) => (
+//     <Route exact path={route.path} render={props => (
+//         // pass the sub-routes down to keep nesting
+//         <route.component {...props} routes={route.routes}/>
+//     )}/>
+// )
 const RouteWithSubRoutes = (route) => (
-    <Route exact path={route.path} render={props => (
-        // pass the sub-routes down to keep nesting
-        <route.component {...props} routes={route.routes}/>
-    )}/>
-)
-<<<<<<< HEAD
-const RouteConfig = () => (
-    <div>{
-        routes.map((route, i) => (
-            <RouteWithSubRoutes key={i} {...route}/>
-        ))
-    }</div>
-=======
+        <Route exact path={route.path} component={createComponent(route.component)}/>
 
-const Parent = () => (
+)
+
+// const RouteWithSubRoutes = (route) => (
+//         <Route exact path={route.path} render={()=>(
+//             <QueueAnim delay={300} className="queue-simple">
+//                 <h1 key={'a'}>11111111</h1>
+//                 <h1 key={'b'}>11111111</h1>
+//             </QueueAnim>
+//         )}/>
+// )
+const RouteConfig = () => (
     <div>
-        <Switch>
-            <Route exact path="/" component={createComponent(Home)}/>
-            <Route path="/page1" component={createComponent(Page1)}/>
-            <Route path="/counter" component={createComponent(Counter)}/>
-            <Route path="/userinfo" component={createComponent(UserInfo)}/>
-            <Route path="/early-warning-center" component={createComponent(EarlyWarningCenter)}/>
-            <Route path="/warning" component={createComponent(Warning)}/>
-            <Route path="/indexList" component={createComponent(IndexList)}/>
-            <Route path="/perception-qingpu" component={createComponent(PerceptionQingpu)}/>
-            <Route path="/query-index" component={createComponent(QueryIndex)}/>
-            <Route component={createComponent(NotFound)}/>
-        </Switch>
+        {routes.map((route, i) => (
+            <RouteWithSubRoutes key={i} {...route}/>
+        ))}
     </div>
->>>>>>> eea9463291ff89ecc11048137f76fb9dc8ad0b0c
 )
 
 export default RouteConfig

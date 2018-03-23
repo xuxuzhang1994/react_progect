@@ -1,12 +1,7 @@
-import PerceptionQingpuModel from 'pages/perception-qingpu/perception-qingpu';
-import page1 from './perception-qingpu/page1/page1.routes';
+//import PerceptionQingpuModel from 'bundle-loader?page/perception-qingpu/perception-qingpu';
+import PerceptionQingpuModel from 'bundle-loader?lazy!./perception-qingpu/perception-qingpu';
+import page1Route from './perception-qingpu/page1/page1.routes';
 
-// import maintenanceRecommend from './maintenance-recommend/maintenance-recommend';
-// import maintenanceCycle from './maintenance-cycle/maintenance-cycle';
-// import maintenanceFeedback from './maintenance-feedback/maintenance-feedback';
-// import maintenanceHome from './maintenance-home/maintenance-home';
-// import maintenanceConfig from './maintenance-config/maintenance-config';
-// import maintenanceOtherConfig from './maintenance-other-recommend/maintenance-other-recommend';
 
 let PerceptionQingpuRoutes = [
     {
@@ -18,7 +13,7 @@ let PerceptionQingpuRoutes = [
     }
 ]
 PerceptionQingpuRoutes=PerceptionQingpuRoutes.concat(
-    page1
+    page1Route
 );
 console.log(PerceptionQingpuRoutes)
 
