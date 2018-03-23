@@ -1,8 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
-console.log(path.resolve('./src/index.js'))
-commonConfig = {
+console.log(path.resolve('./src/index.js'));
+const commonConfig = {
     optimization: {
         splitChunks: {
             name: 'vendor',
