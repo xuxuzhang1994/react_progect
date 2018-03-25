@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './man-car-control.less';
 import Nav from 'components/Nav/Nav';
 import ModelPopupManCar from './model-popup-man-car/model-popup-man-car'
-import {Modal, Input, Col, Select, InputNumber, DatePicker, AutoComplete, Cascader } from 'antd';
+import {Modal, Input,  Select } from 'antd';
 const InputGroup = Input.Group;
 const Option = Select.Option;
 

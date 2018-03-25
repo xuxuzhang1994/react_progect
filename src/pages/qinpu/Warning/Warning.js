@@ -100,7 +100,6 @@ class Waring extends Component {
     }
 
     _colume(){
-        console.log(Highcharts.getOptions().colors)
         Highcharts.getOptions().colors = Highcharts.map(["#009FEB", "#E91F1F"], function (color) {
             if(color=='#009FEB'){
                 return {
@@ -119,7 +118,7 @@ class Waring extends Component {
                     ]
                 };
             }
-            console.log(Highcharts.Color(color).brighten(-0.3).get('rgb'))
+            // console.log(Highcharts.Color(color).brighten(-0.3).get('rgb'))
 
         });
         // 图表配置
@@ -379,7 +378,7 @@ class Waring extends Component {
             }
         }
         function onChange(date, dateString) {
-            console.log(date, dateString);
+            // console.log(date, dateString);
         }
         return (
             <div className='warning'>

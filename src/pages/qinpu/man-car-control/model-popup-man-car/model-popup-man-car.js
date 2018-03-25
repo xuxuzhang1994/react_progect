@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './model-popup-man-car.less';
-import {input,Icon} from 'antd';
+import {Icon} from 'antd';
 import 'antd/dist/antd.css';
 
 export default class ModelPopupManCar extends Component{

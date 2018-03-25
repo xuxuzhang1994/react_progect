@@ -4,7 +4,7 @@ const Search = Input.Search;
 import './model-menu-left.less'
 import ModelChart from './model-chart/model-chart'
 import { Modal, Button } from 'antd';
-import moment from "moment/moment";
+
 export default class  ModelMenuLeft extends Component{
     constructor(props) {
         super(props);

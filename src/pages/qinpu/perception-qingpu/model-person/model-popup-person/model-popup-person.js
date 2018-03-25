@@ -28,43 +28,43 @@ export default class ModelPopupPerson extends Component{
                 <div className="model-info flex">
                     <div className="info-left">
                         <div className="car-info">
-                            <img src={require("./car.png")} alt=""/>
-                            <img src={require("./car-checked.png")} alt="" style={{display:'none'}}/>
+                            <img src={require("./img/car.png")} alt=""/>
+                            <img src={require("./img/car-checked.png")} alt="" style={{display:'none'}}/>
                         </div>
                         <div className="smoke-info">
-                            <img src={require("./smoke.png")} alt=""/>
-                            <img src={require("./smoke-checked.png")} alt="" style={{display:'none'}}/>
+                            <img src={require("./img/smoke.png")} alt=""/>
+                            <img src={require("./img/smoke-checked.png")} alt="" style={{display:'none'}}/>
                         </div>
                         <div className="mac-info">
-                            <img src={require("./mac.png")} alt=""/>
-                            <img src={require("./mac-checked.png")} alt="" style={{display:'none'}}/>
+                            <img src={require("./img/mac.png")} alt=""/>
+                            <img src={require("./img/mac-checked.png")} alt="" style={{display:'none'}}/>
                         </div>
                         <div className="event-info">
-                            <img src={require("./event.png")} alt=""/>
-                            <img src={require("./event-checked.png")} alt="" style={{display:'none'}}/>
+                            <img src={require("./img/event.png")} alt=""/>
+                            <img src={require("./img/event-checked.png")} alt="" style={{display:'none'}}/>
                         </div>
                         <div className="house-info">
-                            <img src={require("./house.png")} alt=""/>
-                            <img src={require("./house-checked.png")} alt="" style={{display:'none'}}/>
+                            <img src={require("./img/house.png")} alt=""/>
+                            <img src={require("./img/house-checked.png")} alt="" style={{display:'none'}}/>
                         </div>
                         <div className="base-info">
-                            <img src={require("./baseinfo.png")} alt="" style={{display:'none'}}/>
-                            <img src={require("./base-checked.png")} alt="" />
+                            <img src={require("./img/baseinfo.png")} alt="" style={{display:'none'}}/>
+                            <img src={require("./img/base-checked.png")} alt="" />
                         </div>
                         <div className="door-info">
-                            <img src={require("./door.png")} alt=""/>
-                            <img src={require("./door-checked.png")} alt="" style={{display:'none'}}/>
+                            <img src={require("./img/door.png")} alt=""/>
+                            <img src={require("./img/door-checked.png")} alt="" style={{display:'none'}}/>
                         </div>
                         <div className="unit-info">
-                            <img src={require("./unit.png")} alt=""/>
-                            <img src={require("./unit-checked.png")} alt="" style={{display:'none'}}/>
+                            <img src={require("./img/unit.png")} alt=""/>
+                            <img src={require("./img/unit-checked.png")} alt="" style={{display:'none'}}/>
                         </div>
 
                     </div>
                     <div className="info-right">
                         <div className="base-infos flex">
                             <div className="person-pic">
-                                <img src={require("./person-pic.jpeg")} alt=""/>
+                                <img src={require("./img/person-pic.jpeg")} alt=""/>
                             </div>
                             <div className="right-info">
                                 <div>
