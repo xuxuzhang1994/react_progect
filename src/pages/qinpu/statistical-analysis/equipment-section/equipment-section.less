@@ -1,9 +1,12 @@
 @import '../../../../base/project-common.less';
+@import '../../../../base/css/flex.less';
 
-.rank-section{
+.equipment-section{
   width: 4.67rem;
   height: 2.43rem;
   padding: .1rem .13rem .22rem .13rem;
+  position: relative;
+  margin-right:.05rem;
   .rank-title{
     font-family: "MicrosoftYaHei-Bold";
     font-size: .1rem;
@@ -93,6 +96,42 @@
         fill: RGBA(0, 148, 252, 1);
       }
 
+    }
+  }
+  .lagend-r{
+    font-size: .07rem;
+    position: absolute;
+    top: .32rem;
+    right: .1rem;
+    color: #fff;
+    justify-content: flex-start;
+    >div{
+      .flex-container-setting(@justify-content: flex-start);
+      margin-right:.12rem;
+      >i{
+        display: block;
+        width:.05rem;
+        height: .05rem;
+        border-radius: 50%;
+        background: RGBA(26, 153, 83, 1);
+
+        margin-right:.05rem;
+      }
+    }
+    >div:nth-child(2){
+      >i{
+        background: RGBA(248, 181, 81, 1);
+      }
+    }
+    >div:nth-child(3){
+      >i{
+        background: RGBA(231, 31, 25, 1);
+      }
+    }
+    >div:nth-child(4){
+      >i{
+        background: RGBA(0, 148, 252, 1);
+      }
     }
   }
 }

@@ -77,7 +77,7 @@ export default class RankSection extends Component{
     }
     render(){
         return(
-            <div className="rank-section shandow">
+            <div className="thermodynamic-section shandow">
                 <div className='jiao'>
                     <div className='top'></div>
                     <div className='right'></div>

@@ -50,12 +50,20 @@ export default class RankSection extends Component{
             tooltip: {
                 backgroundColor:'RGBA(0, 0, 0, .75)',
                 borderColor:'RGBA(0, 148, 252, 1)',
-                headerFormat: '<span style="font-size:10px;color: #fff">数量{point.y}个</span><table>',
-                pointFormat: '<tr><td>设备编号:</td><td>123456</td></tr>+<tr><td style="color:#fff;padding:0">{series.name}: </td>' +
-                '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                headerFormat: '<span style="font-size:10px;color: #fff">数量：{point.y}个</span><table>',
+                pointFormat: '<tr style="color:#fff;padding:0;margin-bottom: .05rem"><td><b style="display: inline-block;width: .05rem;height: .05rem ;border-radius: 100%;background:{series.color};margin-right: .04rem"></b>设备编号:</td><td>123456</td></tr>+<tr style="color:#fff;padding:0"><td >故障时间： </td>' +
+                '<td>03-03：19:32:01</td></tr>',
                 footerFormat: '</table>',
                 shared: true,
                 useHTML: true
+            },
+            legend:{
+                enabled:false,
+                // align:'right',
+                // floating:true,
+                // // y:-250
+                // // Format:'<span><i></i></span>',
+                // // useHTML:true,
             },
             plotOptions: {
                 column: {
@@ -86,7 +94,7 @@ export default class RankSection extends Component{
     }
     render(){
         return(
-            <div className="rank-section shandow">
+            <div className="equipment-section shandow">
                 <div className='jiao'>
                     <div className='top'></div>
                     <div className='right'></div>
@@ -101,6 +109,12 @@ export default class RankSection extends Component{
                     </div>
                 </div>
                 <div id="equipment-chart" className="equipment-chart">
+                </div>
+                <div className="lagend-r flex">
+                    <div><i></i><span>在线</span></div>
+                    <div><i></i><span>离线</span></div>
+                    <div><i></i><span>故障</span></div>
+                    <div><i></i><span>维修</span></div>
                 </div>
             </div>
         )
