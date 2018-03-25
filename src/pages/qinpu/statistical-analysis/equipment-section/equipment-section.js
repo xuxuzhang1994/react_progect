@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
-import './rank-section.less';
+import './equipment-section.less';
 import Nav from 'components/Nav/Nav';
-import { DropdownButton,MenuItem} from 'react-bootstrap';
 
 export default class RankSection extends Component{
     constructor(props){
@@ -9,10 +8,10 @@ export default class RankSection extends Component{
     }
     componentDidMount(){
         var self=this;
-        self._rank()
+        self._equipment()
     }
-    _rank(){
-        var opation={
+    _equipment(){
+        var opation= {
             chart: {
                 type: 'column',
                 backgroundColor:'transparent',
@@ -48,12 +47,11 @@ export default class RankSection extends Component{
                 gridLineColor:'RGBA(1, 170, 229, .5)',
                 gridLineDashStyle:'Dash',
             },
-            legend:{
-                enabled:false
-            },
             tooltip: {
-                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                backgroundColor:'RGBA(0, 0, 0, .75)',
+                borderColor:'RGBA(0, 148, 252, 1)',
+                headerFormat: '<span style="font-size:10px;color: #fff">数量{point.y}个</span><table>',
+                pointFormat: '<tr><td>设备编号:</td><td>123456</td></tr>+<tr><td style="color:#fff;padding:0">{series.name}: </td>' +
                 '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
                 footerFormat: '</table>',
                 shared: true,
@@ -61,19 +59,29 @@ export default class RankSection extends Component{
             },
             plotOptions: {
                 column: {
-                    borderWidth: 0,
-                    color:'RGBA(0, 148, 252, 1)'
-                }
+                    borderWidth: 0
+                },
+
             },
-            series: [{
-                name: '东京',
-                data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
-            }],
             credits: {
                 enabled:false
             },
+            series: [{
+                name: '在线',
+                data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+            }, {
+                name: '离线',
+                data: [83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0, 104.3, 91.2, 83.5, 106.6, 92.3]
+            }, {
+                name: '故障',
+                data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3, 51.2]
+            }, {
+                name: '维修',
+                data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8, 51.1]
+            }]
         };
-        Highcharts.chart('rank-chart',opation);
+        Highcharts.chart('equipment-chart',opation);
+
 
     }
     render(){
@@ -85,28 +93,15 @@ export default class RankSection extends Component{
                     <div className='bottom'></div>
                     <div className='left'></div>
                 </div>
-                <p className="rank-title">》预警排行统计</p>
+                <p className="rank-title">》预警热力图</p>
                 <div className="sel-section flex">
                     <div className="change-tab flex">
                         <div>公安实战</div>
                         <div>社会共治</div>
                     </div>
-                    <div className="sel-right flex">
-                        <div className="sel-drop">
-                            <DropdownButton bsStyle='success' title={'2月'} key={'d'} id={'d'}>
-                                <MenuItem eventKey="1">1月</MenuItem>
-                                <MenuItem eventKey="2">2月</MenuItem>
-                            </DropdownButton>
-                        </div>
-                        <div className="bar-btn">
-                            <img src={require("./bar.jpg")} alt=""/>
-                        </div>
-                        <div className="line-btn">
-                            <img src={require("./line.jpg")} alt=""/>
-                        </div>
-                    </div>
                 </div>
-                <div id="rank-chart" className="rank-chart"></div>
+                <div id="equipment-chart" className="equipment-chart">
+                </div>
             </div>
         )
     }
