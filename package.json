@@ -16,6 +16,7 @@
     "axios": "^0.18.0",
     "echarts": "^4.0.4",
     "highcharts": "^6.0.7",
+    "history": "^4.7.2",
     "moment": "^2.21.0",
     "prop-types": "^15.6.1",
     "rc-queue-anim": "^1.4.1",
