@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="car.css">
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                dpr = 1,
+                scale = 1 / dpr;
+            var metaEl = doc.createElement('meta');
+            metaEl.name = "viewport";
+            metaEl.content = 'initial-scale=' + scale + ',maximum-scale=' + scale + ',minimum-scale=' + scale;
+            docEl.firstElementChild.appendChild(metaEl);
+            var recalc = function () {
+                var deviceWidth = docEl.clientWidth;
+                //if (deviceWidth > 960) deviceWidth = 960;
+                docEl.style.fontSize = deviceWidth / 9.6 + 'px';
+            };
+            recalc();
+
+        })(document, window)
+    </script>
+    <title>Title</title>
+</head>
+<script src="../../js/vue.js"></script>
+
+<body>
+<div id="app">
+    <div class="fire-control">
+        <div class="left-section">
+            <div class="house-info shandow">
+                <div class='jiao'>
+                    <div class='top'></div>
+                    <div class='right'></div>
+                    <div class='bottom'></div>
+                    <div class='left'></div>
+                </div>
+                <div class="info-title clearfix">
+                    <p>》房屋信息</p>
+                    <div class="info-send">预警推送</div>
+                </div>
+                <ul class="info-section">
+                    <li ><p>小区：二联馨苑</p><p>地址：2楼6栋601室</p></li>
+                    <li><p>温度：50摄氏度</p><p>离窗高度：19m</p></li>
+                    <li><div>消防栓：二联馨苑西门</div></li>
+                    <li><div>警告时间：2018-02-09 12:12:13</div></li>
+                </ul>
+            </div>
+            <div class="distribution-info shandow">
+                <div class='jiao'>
+                    <div class='top'></div>
+                    <div class='right'></div>
+                    <div class='bottom'></div>
+                    <div class='left'></div>
+                </div>
+                <p class="title">》消防设备分布</p>
+                <ul class="distribution-list">
+                    <li class="flex">
+                        <div class="flex">
+                            <div class="icon">
+                            <img src="./img/xiaofangshuan.jpg" alt="">
+                        </div>
+                            <div class="distance">
+                            <p>距离  1241m</p>
+                            <p>青浦区二联馨苑21栋</p>
+                        </div>
+                        </div>
+                        <div class="state"><span>状态：</span><span>正常</span></div>
+                    </li>
+                    <li class="flex">
+                        <div class="flex">
+                            <div class="icon">
+                            <img src="./img/xiaofangshuan.jpg" alt="">
+                        </div>
+                            <div class="distance">
+                            <p style="font-size: .08rem">距离  1241m</p>
+                            <p>青浦区二联馨苑21栋</p>
+                        </div>
+                        </div>
+                        <div class="state"><span>状态：</span><span>正常</span></div>
+                    </li>
+                    <li class="flex">
+                        <div class="flex">
+                            <div class="icon error-icon">
+                            <img src="./img/xiaofangshuan.jpg" alt="">
+                        </div>
+                            <div class="distance">
+                            <p>距离  1241m</p>
+                            <p>青浦区二联馨苑21栋</p>
+                        </div>
+                        </div>
+                        <div class="state"><span>状态：</span><span class="error-title">正常</span></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="right-section">
+            <div class="alarm-top shandow">
+                <p class="alarm-title">警报实时情况</p>
+                <p class="alarm-leavel">等级</p>
+                <div class="alarm-info flex ">
+                    <ul class="warn-info">
+                        <li><span>时间：</span><span>2018-02-09  12:00</span></li>
+                        <li><span>地点：</span><span>青浦区二联馨苑2栋6楼601室</span></li>
+                        <li><span>事件：</span><span>出现烟雾报警温感报警</span></li>
+                    </ul>
+                    <div class="warn-icon">
+                        <img src="./img/warning.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <ul class="alarm-list">
+                <li class="shandow">
+                    <div class="warn-time ">
+                        <div>2018-02-09  12：01</div>
+                        <div>已通知物业和微型消防 </div>
+                    </div>
+                </li>
+                <li class="shandow">
+                    <div class="warn-time">
+                        <div>2018-02-09  12：01</div>
+                        <div>物业人员张三已到现场 </div>
+                    </div>
+                </li>
+                <li class="shandow">
+                    <div class="warn-time ">
+                        <div>2018-02-09  12：01</div>
+                        <div>物业人员张三上传一张图片 </div>
+                    </div>
+                    <div class="info-content">
+                        <img src="./img/fir-pic.jpg" alt="">
+                    </div>
+                </li>
+                <li class="shandow">
+                    <div class="warn-time ">
+                        <div>2018-02-09  12：01</div>
+                        <div>物业人员张三提高了警报等级</div>
+                    </div>
+                </li>
+                <li class="shandow">
+                    <div class="warn-time ">
+                        <div>2018-02-09  12：01</div>
+                        <div>已通知消防局 </div>
+                    </div>
+                </li>
+                <li class="shandow">
+                    <div class="warn-time ">
+                        <div>2018-02-09  12：01</div>
+                        <div>消防局已到现场 </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="warn-popup flex">
+            <div class="warn-pic"><img src="./img/waring-pic.png" alt=""></div>
+            <div>青浦区二联馨苑2栋6楼601室 出现烟雾报警温感报警请及时处理！</div>
+        </div>
+    </div>
+</div>
+<script>
+//    new Vue({
+//        el: '#app',
+//        data: obj
+//    })
+</script>
+</body>
+</html>
