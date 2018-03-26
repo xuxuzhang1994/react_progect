@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --mode development --config webpack/webpack.dev.config.js --color --progress --hot",
-    "build": "webpack --mode production --config webpack/webpack.config.js"
+    "build": "webpack --mode production --config webpack/webpack.config.js",
+    "new-page": "gulp component:lazy --component"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +17,7 @@
     "echarts": "^4.0.4",
     "highcharts": "^6.0.7",
     "moment": "^2.21.0",
+    "prop-types": "^15.6.1",
     "rc-queue-anim": "^1.4.1",
     "rc-tween-one": "^1.7.3",
     "react": "^16.2.0",
@@ -25,6 +27,7 @@
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
+    "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
@@ -42,6 +45,9 @@
     "css-loader": "^0.28.10",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^1.1.11",
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-template": "^5.0.0",
     "html-webpack-plugin": "^3.0.6",
     "jquery": "^3.3.1",
     "less": "^3.0.1",
